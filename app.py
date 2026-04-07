@@ -109,7 +109,8 @@ def conduct():
 @app.route('/timeline')
 def timeline():
     books = Book.query.order_by(Book.sort_order).all()
-    return render_template('timeline.html', books=books)
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    return render_template('timeline.html', books=books, tensions=tensions)
 
 
 # ---------------------------------------------------------------------------
@@ -289,6 +290,73 @@ def api_conduct(category_id):
         'entries': [{'book_id': bc.book_id, 'book_name': b.name, 'section': b.section,
                      'dating': b.dating, 'description': bc.description} for bc, b in rows],
     })
+
+
+# ---------------------------------------------------------------------------
+# API — timeline chart
+# ---------------------------------------------------------------------------
+
+# Approximate scholarly date (year CE; BCE = negative) for chronological ordering.
+# Composite midpoint estimates based on NOAB critical consensus.
+DATE_ESTIMATES = {
+    'AMO': -760, 'HOS': -750, 'MIC': -730, 'ISA': -720,
+    'ZEP': -630, 'NAM': -625, 'HAB': -610, 'JER': -605,
+    'DEU': -621, 'JOS': -610, 'JDG': -610, '1SA': -610, '2SA': -610,
+    '1KI': -610, '2KI': -610,
+    'GEN': -580, 'EXO': -570, 'NUM': -560,
+    'LAM': -586, 'EZK': -590, 'OBA': -550, 'LEV': -540,
+    'HAG': -520, 'ZEC': -518,
+    'JOB': -500, 'PRO': -480,
+    'PSA': -450, 'RUT': -450, 'JOL': -450, 'JON': -430,
+    '1CH': -400, '2CH': -400, 'EZR': -400, 'NEH': -445,
+    'EST': -400, 'SNG': -400,
+    'ECC': -250, 'DAN': -165,
+}
+
+
+@app.route('/api/timeline-chart')
+def api_timeline_chart():
+    tension_filter = request.args.get('tensions', '')
+    selected_ids = [t for t in tension_filter.split(',') if t] if tension_filter else None
+
+    tension_query = Tension.query.order_by(Tension.sort_order)
+    if selected_ids:
+        tension_query = tension_query.filter(Tension.id.in_(selected_ids))
+    tensions = tension_query.all()
+
+    books = Book.query.order_by(Book.sort_order).all()
+    # Sort books by scholarly date estimate, fall back to canonical order
+    books_sorted = sorted(
+        books,
+        key=lambda b: (DATE_ESTIMATES.get(b.id, 0), b.sort_order)
+    )
+
+    # Build score map
+    all_scores = BookTension.query.all()
+    score_map = {(bt.book_id, bt.tension_id): (bt.score, bt.note) for bt in all_scores}
+
+    # One trace per tension
+    traces = []
+    for t in tensions:
+        xs, ys, texts, notes = [], [], [], []
+        for b in books_sorted:
+            entry = score_map.get((b.id, t.id))
+            if entry and entry[0] is not None:
+                xs.append(b.name)
+                ys.append(entry[0])
+                texts.append(b.name)
+                notes.append(entry[1] or '')
+        traces.append({
+            'tension_id': t.id,
+            'tension_name': t.name,
+            'pole_a': t.pole_a,
+            'pole_b': t.pole_b,
+            'x': xs,
+            'y': ys,
+            'notes': notes,
+        })
+
+    return jsonify({'traces': traces})
 
 
 # ---------------------------------------------------------------------------
