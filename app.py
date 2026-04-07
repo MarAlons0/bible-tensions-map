@@ -312,6 +312,15 @@ DATE_ESTIMATES = {
     '1CH': -400, '2CH': -400, 'EZR': -400, 'NEH': -445,
     'EST': -400, 'SNG': -400,
     'ECC': -250, 'DAN': -165,
+    # New Testament (CE dates)
+    'MRK': 70, 'MAT': 85, 'LUK': 85, 'JHN': 95,
+    'ACT': 85,
+    '1TH': 51, '2TH': 51, 'GAL': 55, '1CO': 55, '2CO': 56, 'ROM': 57,
+    'PHP': 62, 'COL': 62, 'PHM': 62, 'EPH': 80,
+    '1TI': 100, '2TI': 100, 'TIT': 100,
+    'HEB': 80, 'JAS': 62, '1PE': 80, '2PE': 120,
+    '1JN': 100, '2JN': 100, '3JN': 100, 'JUD': 90,
+    'REV': 95,
 }
 
 
