@@ -3,7 +3,7 @@ services:
     name: bible-tensions-map
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && python seed.py
     startCommand: gunicorn app:app
     envVars:
       - key: FLASK_SECRET_KEY
