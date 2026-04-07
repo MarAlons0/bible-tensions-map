@@ -3,17 +3,23 @@
 
 {% block content %}
 <div class="page-header">
-  <h1>Scholarly Timeline</h1>
-  <p class="subtitle">Books in chronological order by scholarly dating. Shows actual historical sequence of theological development.</p>
+  <h1>Timeline</h1>
+  <p class="subtitle">Track how theological tensions evolve in order of scholarly composition.</p>
+</div>
+
+<!-- Order toggle -->
+<div class="timeline-toggle-bar">
+  <span class="toggle-label">Order:</span>
+  <div class="toggle-group">
+    <button class="toggle-btn active" data-order="scholarly">Scholarly (composition date)</button>
+    <button class="toggle-btn" data-order="canonical">Canonical</button>
+  </div>
+  <span class="toggle-hint" id="toggle-hint">Earliest composed → latest</span>
 </div>
 
 <!-- Evolution chart -->
 <section class="timeline-chart-section">
   <h2>Tension Evolution</h2>
-  <p class="subtitle" style="margin-bottom:1rem;">
-    Select tensions to trace their scores across the canon in chronological order.
-  </p>
-
   <div class="timeline-tension-picker">
     {% for t in tensions %}
     <label class="tension-pick-label">
@@ -23,7 +29,6 @@
     </label>
     {% endfor %}
   </div>
-
   <div id="timeline-chart" style="width:100%; height:480px; margin-top:1rem;"></div>
 </section>
 
@@ -31,13 +36,13 @@
 
 <!-- Book list -->
 <section>
-  <h2>Books in Chronological Order</h2>
-  <div class="timeline-note">
-    <p>Dates are scholarly consensus from the NOAB and standard critical scholarship.</p>
-  </div>
+  <h2>Books</h2>
   <div id="timeline-list">
     {% for book in books %}
-    <div class="timeline-item" data-section="{{ book.section }}">
+    <div class="timeline-item"
+         data-book-id="{{ book.id }}"
+         data-canonical-order="{{ loop.index }}"
+         data-date-estimate="{{ date_estimates.get(book.id, 9999) }}">
       <div class="timeline-dating">{{ book.dating or 'Dating uncertain' }}</div>
       <div class="timeline-book">
         <a href="/book/{{ book.id }}" class="timeline-book-link">

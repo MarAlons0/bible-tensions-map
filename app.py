@@ -110,7 +110,8 @@ def conduct():
 def timeline():
     books = Book.query.order_by(Book.sort_order).all()
     tensions = Tension.query.order_by(Tension.sort_order).all()
-    return render_template('timeline.html', books=books, tensions=tensions)
+    return render_template('timeline.html', books=books, tensions=tensions,
+                           date_estimates=DATE_ESTIMATES)
 
 
 # ---------------------------------------------------------------------------
@@ -317,6 +318,7 @@ DATE_ESTIMATES = {
 @app.route('/api/timeline-chart')
 def api_timeline_chart():
     tension_filter = request.args.get('tensions', '')
+    order = request.args.get('order', 'scholarly')  # 'scholarly' | 'canonical'
     selected_ids = [t for t in tension_filter.split(',') if t] if tension_filter else None
 
     tension_query = Tension.query.order_by(Tension.sort_order)
@@ -325,11 +327,13 @@ def api_timeline_chart():
     tensions = tension_query.all()
 
     books = Book.query.order_by(Book.sort_order).all()
-    # Sort books by scholarly date estimate, fall back to canonical order
-    books_sorted = sorted(
-        books,
-        key=lambda b: (DATE_ESTIMATES.get(b.id, 0), b.sort_order)
-    )
+    if order == 'canonical':
+        books_sorted = sorted(books, key=lambda b: b.sort_order)
+    else:
+        books_sorted = sorted(
+            books,
+            key=lambda b: (DATE_ESTIMATES.get(b.id, 9999), b.sort_order)
+        )
 
     # Build score map
     all_scores = BookTension.query.all()
