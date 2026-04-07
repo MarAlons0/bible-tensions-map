@@ -339,17 +339,20 @@ def api_timeline_chart():
     all_scores = BookTension.query.all()
     score_map = {(bt.book_id, bt.tension_id): (bt.score, bt.note) for bt in all_scores}
 
-    # One trace per tension
+    # One trace per tension — every book appears on x-axis; null where no score.
+    # This ensures connectgaps:false draws a break rather than a cross-chart line.
     traces = []
     for t in tensions:
-        xs, ys, texts, notes = [], [], [], []
+        xs, ys, notes = [], [], []
         for b in books_sorted:
             entry = score_map.get((b.id, t.id))
+            xs.append(b.name)
             if entry and entry[0] is not None:
-                xs.append(b.name)
                 ys.append(entry[0])
-                texts.append(b.name)
                 notes.append(entry[1] or '')
+            else:
+                ys.append(None)
+                notes.append('')
         traces.append({
             'tension_id': t.id,
             'tension_name': t.name,
