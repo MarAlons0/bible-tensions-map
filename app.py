@@ -1,0 +1,369 @@
+import os
+import json
+from flask import Flask, render_template, request, jsonify, abort
+from dotenv import load_dotenv
+from models import (
+    db, Tension, ConductCategory, Book, BookTension, BookConduct,
+    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote,
+)
+
+load_dotenv()
+
+
+def create_app():
+    app = Flask(__name__)
+
+    # --- Database ---
+    database_url = os.environ.get('DATABASE_URL', 'sqlite:///bible_tensions.db')
+    # Render provides postgres:// but SQLAlchemy requires postgresql://
+    if database_url.startswith('postgres://'):
+        database_url = database_url.replace('postgres://', 'postgresql://', 1)
+
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', 'dev-secret')
+
+    db.init_app(app)
+    return app
+
+
+app = create_app()
+
+
+# ---------------------------------------------------------------------------
+# Page routes
+# ---------------------------------------------------------------------------
+
+@app.route('/')
+def dashboard():
+    books = Book.query.order_by(Book.sort_order).all()
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    sections = sorted({b.section for b in books if b.section})
+    return render_template('dashboard.html', books=books, tensions=tensions, sections=sections)
+
+
+@app.route('/book/<book_id>')
+def book_detail(book_id):
+    book = Book.query.get_or_404(book_id)
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    categories = ConductCategory.query.order_by(ConductCategory.sort_order).all()
+
+    # Pre-index scores and conduct for template use
+    scores = {bt.tension_id: bt for bt in BookTension.query.filter_by(book_id=book_id)}
+    conduct = {bc.category_id: bc.description for bc in BookConduct.query.filter_by(book_id=book_id)}
+
+    # Which chapters have been analyzed?
+    analyzed_chapters = {
+        ca.chapter for ca in ChapterAnalysis.query.filter_by(book_id=book_id)
+    }
+
+    return render_template(
+        'book_detail.html',
+        book=book,
+        tensions=tensions,
+        categories=categories,
+        scores=scores,
+        conduct=conduct,
+        analyzed_chapters=analyzed_chapters,
+    )
+
+
+@app.route('/book/<book_id>/chapter/<int:chapter>')
+def chapter_view(book_id, chapter):
+    book = Book.query.get_or_404(book_id)
+    ca = ChapterAnalysis.query.filter_by(book_id=book_id, chapter=chapter).first()
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    categories = ConductCategory.query.order_by(ConductCategory.sort_order).all()
+
+    chapter_tensions = {}
+    chapter_conduct = {}
+    if ca:
+        chapter_tensions = {ct.tension_id: ct for ct in ChapterTension.query.filter_by(chapter_analysis_id=ca.id)}
+        chapter_conduct = {cc.category_id: cc.description for cc in ChapterConduct.query.filter_by(chapter_analysis_id=ca.id)}
+
+    return render_template(
+        'chapter_view.html',
+        book=book,
+        chapter=chapter,
+        ca=ca,
+        tensions=tensions,
+        categories=categories,
+        chapter_tensions=chapter_tensions,
+        chapter_conduct=chapter_conduct,
+    )
+
+
+@app.route('/biplot')
+def biplot():
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    sections = [r[0] for r in db.session.query(Book.section).distinct().order_by(Book.section) if r[0]]
+    return render_template('biplot.html', tensions=tensions, sections=sections)
+
+
+@app.route('/conduct')
+def conduct():
+    categories = ConductCategory.query.order_by(ConductCategory.sort_order).all()
+    return render_template('conduct.html', categories=categories)
+
+
+@app.route('/timeline')
+def timeline():
+    books = Book.query.order_by(Book.sort_order).all()
+    return render_template('timeline.html', books=books)
+
+
+# ---------------------------------------------------------------------------
+# API — reference data
+# ---------------------------------------------------------------------------
+
+@app.route('/api/books')
+def api_books():
+    books = Book.query.order_by(Book.sort_order).all()
+    return jsonify([{
+        'id': b.id, 'name': b.name, 'testament': b.testament,
+        'section': b.section, 'chapters': b.chapters,
+        'sort_order': b.sort_order, 'dating': b.dating,
+        'sources': b.sources, 'summary': b.summary,
+    } for b in books])
+
+
+@app.route('/api/books/<book_id>')
+def api_book(book_id):
+    book = Book.query.get_or_404(book_id)
+    tensions = {
+        bt.tension_id: {'score': bt.score, 'note': bt.note}
+        for bt in BookTension.query.filter_by(book_id=book_id)
+    }
+    conduct = {
+        bc.category_id: bc.description
+        for bc in BookConduct.query.filter_by(book_id=book_id)
+    }
+    return jsonify({
+        'id': book.id, 'name': book.name, 'testament': book.testament,
+        'section': book.section, 'chapters': book.chapters,
+        'dating': book.dating, 'sources': book.sources, 'summary': book.summary,
+        'tensions': tensions, 'conduct': conduct,
+    })
+
+
+@app.route('/api/tensions')
+def api_tensions():
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    return jsonify([{
+        'id': t.id, 'name': t.name, 'pole_a': t.pole_a, 'pole_b': t.pole_b,
+    } for t in tensions])
+
+
+@app.route('/api/tensions/<tension_id>/scores')
+def api_tension_scores(tension_id):
+    tension = Tension.query.get_or_404(tension_id)
+    rows = (
+        db.session.query(BookTension, Book)
+        .join(Book, BookTension.book_id == Book.id)
+        .filter(BookTension.tension_id == tension_id)
+        .order_by(Book.sort_order)
+        .all()
+    )
+    return jsonify({
+        'tension': {'id': tension.id, 'name': tension.name, 'pole_a': tension.pole_a, 'pole_b': tension.pole_b},
+        'scores': [{'book_id': bt.book_id, 'book_name': b.name, 'score': bt.score, 'note': bt.note} for bt, b in rows],
+    })
+
+
+# ---------------------------------------------------------------------------
+# API — heatmap
+# ---------------------------------------------------------------------------
+
+@app.route('/api/heatmap')
+def api_heatmap():
+    book_filter = request.args.get('books')
+    tension_filter = request.args.get('tensions')
+    section_filter = request.args.get('section')
+
+    book_query = Book.query.order_by(Book.sort_order)
+    if book_filter:
+        ids = book_filter.split(',')
+        book_query = book_query.filter(Book.id.in_(ids))
+    if section_filter and section_filter != 'All':
+        book_query = book_query.filter(Book.section == section_filter)
+    books = book_query.all()
+
+    tension_query = Tension.query.order_by(Tension.sort_order)
+    if tension_filter:
+        ids = tension_filter.split(',')
+        tension_query = tension_query.filter(Tension.id.in_(ids))
+    tensions = tension_query.all()
+
+    # Build score lookup: {(book_id, tension_id): (score, note)}
+    all_scores = BookTension.query.all()
+    score_map = {(bt.book_id, bt.tension_id): (bt.score, bt.note) for bt in all_scores}
+
+    tension_ids = [t.id for t in tensions]
+    z = []
+    notes = []
+    book_names = []
+
+    for b in books:
+        row_z = []
+        row_notes = []
+        for t in tensions:
+            entry = score_map.get((b.id, t.id))
+            if entry and entry[0] is not None:
+                row_z.append(entry[0])
+                row_notes.append(entry[1] or '')
+            else:
+                row_z.append(None)
+                row_notes.append('')
+        z.append(row_z)
+        notes.append(row_notes)
+        book_names.append(b.name)
+
+    return jsonify({
+        'books': [{'id': b.id, 'name': b.name, 'section': b.section} for b in books],
+        'tensions': [{'id': t.id, 'name': t.name, 'pole_a': t.pole_a, 'pole_b': t.pole_b} for t in tensions],
+        'z': z,
+        'notes': notes,
+    })
+
+
+# ---------------------------------------------------------------------------
+# API — biplot
+# ---------------------------------------------------------------------------
+
+@app.route('/api/biplot')
+def api_biplot():
+    x_id = request.args.get('x', 'T01')
+    y_id = request.args.get('y', 'T07')
+    color_by = request.args.get('color', 'section')  # section | testament | dating
+
+    tx = Tension.query.get_or_404(x_id)
+    ty = Tension.query.get_or_404(y_id)
+
+    books = Book.query.order_by(Book.sort_order).all()
+    scores_x = {bt.book_id: (bt.score, bt.note) for bt in BookTension.query.filter_by(tension_id=x_id)}
+    scores_y = {bt.book_id: (bt.score, bt.note) for bt in BookTension.query.filter_by(tension_id=y_id)}
+
+    points = []
+    for b in books:
+        sx, nx = scores_x.get(b.id, (None, None))
+        sy, ny = scores_y.get(b.id, (None, None))
+        if sx is None or sy is None:
+            continue
+        points.append({
+            'book_id': b.id,
+            'book_name': b.name,
+            'x': sx,
+            'y': sy,
+            'note_x': nx,
+            'note_y': ny,
+            'section': b.section,
+            'testament': b.testament,
+            'dating': b.dating,
+            'color_val': getattr(b, color_by, b.section),
+        })
+
+    return jsonify({
+        'x_tension': {'id': tx.id, 'name': tx.name, 'pole_a': tx.pole_a, 'pole_b': tx.pole_b},
+        'y_tension': {'id': ty.id, 'name': ty.name, 'pole_a': ty.pole_a, 'pole_b': ty.pole_b},
+        'color_by': color_by,
+        'points': points,
+    })
+
+
+# ---------------------------------------------------------------------------
+# API — conduct
+# ---------------------------------------------------------------------------
+
+@app.route('/api/conduct/<category_id>')
+def api_conduct(category_id):
+    cat = ConductCategory.query.get_or_404(category_id)
+    rows = (
+        db.session.query(BookConduct, Book)
+        .join(Book, BookConduct.book_id == Book.id)
+        .filter(BookConduct.category_id == category_id)
+        .order_by(Book.sort_order)
+        .all()
+    )
+    return jsonify({
+        'category': {'id': cat.id, 'label': cat.label},
+        'entries': [{'book_id': bc.book_id, 'book_name': b.name, 'section': b.section,
+                     'dating': b.dating, 'description': bc.description} for bc, b in rows],
+    })
+
+
+# ---------------------------------------------------------------------------
+# API — chapter analysis
+# ---------------------------------------------------------------------------
+
+@app.route('/api/analyze/<book_id>/<int:chapter>', methods=['POST'])
+def api_analyze(book_id, chapter):
+    book = Book.query.get_or_404(book_id)
+
+    # Return cached result if available
+    ca = ChapterAnalysis.query.filter_by(book_id=book_id, chapter=chapter).first()
+    if ca:
+        tensions = {ct.tension_id: {'score': ct.score, 'note': ct.note}
+                    for ct in ChapterTension.query.filter_by(chapter_analysis_id=ca.id)}
+        conduct = {cc.category_id: cc.description
+                   for cc in ChapterConduct.query.filter_by(chapter_analysis_id=ca.id)}
+        return jsonify({'cached': True, 'id': ca.id, 'summary': ca.summary,
+                        'tensions': tensions, 'conduct': conduct})
+
+    # Live analysis
+    try:
+        from analyze import analyze_chapter
+        result = analyze_chapter(book_id, chapter, book.name)
+        return jsonify({'cached': False, **result})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/chapter/<book_id>/<int:chapter>')
+def api_chapter(book_id, chapter):
+    ca = ChapterAnalysis.query.filter_by(book_id=book_id, chapter=chapter).first()
+    if not ca:
+        return jsonify(None)
+    tensions = {ct.tension_id: {'score': ct.score, 'note': ct.note}
+                for ct in ChapterTension.query.filter_by(chapter_analysis_id=ca.id)}
+    conduct = {cc.category_id: cc.description
+               for cc in ChapterConduct.query.filter_by(chapter_analysis_id=ca.id)}
+    return jsonify({'id': ca.id, 'summary': ca.summary,
+                    'analyzed_at': ca.analyzed_at.isoformat(),
+                    'tensions': tensions, 'conduct': conduct})
+
+
+# ---------------------------------------------------------------------------
+# API — user notes
+# ---------------------------------------------------------------------------
+
+@app.route('/api/notes', methods=['GET', 'POST'])
+def api_notes():
+    if request.method == 'POST':
+        data = request.get_json()
+        note = UserNote(
+            book_id=data.get('book_id'),
+            chapter=data.get('chapter'),
+            tension_id=data.get('tension_id'),
+            note=data.get('note', ''),
+        )
+        db.session.add(note)
+        db.session.commit()
+        return jsonify({'id': note.id}), 201
+
+    book_id = request.args.get('book')
+    chapter = request.args.get('chapter', type=int)
+    query = UserNote.query.filter_by(book_id=book_id)
+    if chapter is not None:
+        query = query.filter_by(chapter=chapter)
+    notes = query.order_by(UserNote.created_at.desc()).all()
+    return jsonify([{
+        'id': n.id, 'book_id': n.book_id, 'chapter': n.chapter,
+        'tension_id': n.tension_id, 'note': n.note,
+        'created_at': n.created_at.isoformat(),
+    } for n in notes])
+
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)

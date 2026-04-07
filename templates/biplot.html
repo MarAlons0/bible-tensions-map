@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Biplot — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Biplot Builder</h1>
+  <p class="subtitle">Compare any two tension axes. Each point is a book.</p>
+</div>
+
+<div class="biplot-controls">
+  <div class="control-group">
+    <label for="x-axis">X axis</label>
+    <select id="x-axis">
+      {% for t in tensions %}
+      <option value="{{ t.id }}" {% if t.id == 'T01' %}selected{% endif %}>{{ t.id }} — {{ t.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="control-group">
+    <label for="y-axis">Y axis</label>
+    <select id="y-axis">
+      {% for t in tensions %}
+      <option value="{{ t.id }}" {% if t.id == 'T07' %}selected{% endif %}>{{ t.id }} — {{ t.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="control-group">
+    <label for="color-by">Color by</label>
+    <select id="color-by">
+      <option value="section" selected>Section</option>
+      <option value="testament">Testament</option>
+    </select>
+  </div>
+  <button id="update-biplot" class="btn-primary">Update</button>
+</div>
+
+<div class="preset-bar">
+  <span>Presets:</span>
+  <button class="preset-btn" data-x="T01" data-y="T07">Monotheism vs Afterlife</button>
+  <button class="preset-btn" data-x="T02" data-y="T15">Universalism vs God-as-Warrior</button>
+  <button class="preset-btn" data-x="T04" data-y="T14">Moral Order vs Election-as-Burden</button>
+  <button class="preset-btn" data-x="T05" data-y="T12">Prophetic vs Priestly + Centralization</button>
+  <button class="preset-btn" data-x="T06" data-y="T07">Evil Externalized vs Resurrection</button>
+  <button class="preset-btn" data-x="T03" data-y="T11">Divine Fickleness vs Determinism</button>
+  <button class="preset-btn" data-x="T08" data-y="T02">Women's Agency vs Universalism</button>
+</div>
+
+<div id="biplot" style="width:100%; height:600px;"></div>
+<div id="biplot-legend" class="biplot-legend"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/biplot.js') }}"></script>
+<script>
+  initBiplot();
+</script>
+{% endblock %}

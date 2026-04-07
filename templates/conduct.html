@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Conduct Codes — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Conduct Code Evolution</h1>
+  <p class="subtitle">How regulations on each topic evolve across the canon (canonical order).</p>
+</div>
+
+<div class="filter-bar">
+  {% for cat in categories %}
+  <button class="filter-btn {% if loop.first %}active{% endif %}" data-cat="{{ cat.id }}">
+    {{ cat.label }}
+  </button>
+  {% endfor %}
+</div>
+
+<div id="conduct-view">
+  <div id="conduct-entries"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/conduct.js') }}"></script>
+<script>
+  const FIRST_CAT = '{{ categories[0].id }}';
+  initConduct(FIRST_CAT);
+</script>
+{% endblock %}

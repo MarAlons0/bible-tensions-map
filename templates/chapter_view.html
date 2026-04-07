@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}{{ book.name }} {{ chapter }} — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <a href="/book/{{ book.id }}" class="back-link">← {{ book.name }}</a>
+  <h1>{{ book.name }} — Chapter {{ chapter }}</h1>
+</div>
+
+{% if ca %}
+<div class="chapter-summary">
+  <p>{{ ca.summary }}</p>
+  <small class="analyzed-at">Analyzed {{ ca.analyzed_at.strftime('%Y-%m-%d') }}</small>
+</div>
+
+<div class="two-col">
+  <section class="tension-section">
+    <h2>Tensions</h2>
+    <div class="tension-bars">
+      {% for tension in tensions %}
+      {% set ct = chapter_tensions.get(tension.id) %}
+      {% if ct and ct.score is not none %}
+      <div class="tension-row">
+        <div class="tension-label">
+          <span class="tension-id">{{ tension.id }}</span>
+          <span class="tension-name">{{ tension.name }}</span>
+        </div>
+        <div class="tension-bar-wrapper">
+          <span class="pole pole-a">{{ tension.pole_a }}</span>
+          <div class="bar-track">
+            <div class="bar-marker" style="left: {{ ((ct.score + 5) / 10 * 100) | round(1) }}%;"
+                 title="Score: {{ ct.score }}"></div>
+          </div>
+          <span class="pole pole-b">{{ tension.pole_b }}</span>
+        </div>
+        {% if ct.note %}
+        <div class="tension-note">{{ ct.note }}</div>
+        {% endif %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="conduct-section">
+    <h2>Conduct Codes</h2>
+    {% for cat in categories %}
+    {% if chapter_conduct.get(cat.id) %}
+    <div class="conduct-entry">
+      <strong>{{ cat.label }}</strong>
+      <p>{{ chapter_conduct[cat.id] }}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% if not chapter_conduct %}
+    <p class="empty-state">No conduct codes flagged for this chapter.</p>
+    {% endif %}
+  </section>
+</div>
+
+{% else %}
+<div class="analyze-prompt">
+  <p>This chapter has not been analyzed yet.</p>
+  <button id="analyze-btn" class="btn-primary">Analyze with Claude</button>
+  <div id="analyze-status" style="display:none;">
+    <p>Analyzing… this takes a few seconds.</p>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{% if not ca %}
+<script>
+document.getElementById('analyze-btn').addEventListener('click', async () => {
+  document.getElementById('analyze-btn').style.display = 'none';
+  document.getElementById('analyze-status').style.display = 'block';
+  const res = await fetch('/api/analyze/{{ book.id }}/{{ chapter }}', {method: 'POST'});
+  if (res.ok) {
+    window.location.reload();
+  } else {
+    document.getElementById('analyze-status').innerHTML = '<p class="error">Analysis failed. Check your API key.</p>';
+  }
+});
+</script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% block title %}{{ book.name }} — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="book-header">
+  <div class="book-header-meta">
+    <a href="/" class="back-link">← All books</a>
+    <h1>{{ book.name }}</h1>
+    <div class="book-meta-row">
+      <span class="tag">{{ book.section }}</span>
+      {% if book.dating %}<span class="tag tag-dating">{{ book.dating }}</span>{% endif %}
+      {% if book.sources %}<span class="tag tag-sources">{{ book.sources }}</span>{% endif %}
+    </div>
+    {% if book.summary %}
+    <p class="book-summary">{{ book.summary }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="two-col">
+  <!-- Left: Tension bars -->
+  <section class="tension-section">
+    <h2>Theological Tensions</h2>
+    <div class="tension-bars" id="tension-bars">
+      {% for tension in tensions %}
+      {% set bt = scores.get(tension.id) %}
+      <div class="tension-row" data-tension="{{ tension.id }}">
+        <div class="tension-label">
+          <span class="tension-id">{{ tension.id }}</span>
+          <span class="tension-name">{{ tension.name }}</span>
+        </div>
+        <div class="tension-bar-wrapper">
+          <span class="pole pole-a">{{ tension.pole_a }}</span>
+          <div class="bar-track">
+            {% if bt and bt.score is not none %}
+            <div class="bar-marker" style="left: {{ ((bt.score + 5) / 10 * 100) | round(1) }}%;"
+                 title="Score: {{ bt.score }}"></div>
+            {% else %}
+            <div class="bar-na">n/a</div>
+            {% endif %}
+          </div>
+          <span class="pole pole-b">{{ tension.pole_b }}</span>
+        </div>
+        {% if bt and bt.note %}
+        <div class="tension-note">{{ bt.note }}</div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Right: Conduct codes -->
+  <section class="conduct-section">
+    <h2>Conduct Codes</h2>
+    <div class="conduct-tabs">
+      {% for cat in categories %}
+      <button class="conduct-tab {% if loop.first %}active{% endif %}"
+              data-cat="{{ cat.id }}">{{ cat.label }}</button>
+      {% endfor %}
+    </div>
+    <div class="conduct-panels">
+      {% for cat in categories %}
+      <div class="conduct-panel {% if loop.first %}active{% endif %}" data-cat="{{ cat.id }}">
+        {% if conduct.get(cat.id) %}
+        <p>{{ conduct[cat.id] }}</p>
+        {% else %}
+        <p class="empty-state">No specific conduct codes in this book for this category.</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<!-- Chapter grid -->
+<section class="chapter-section">
+  <h2>Chapters</h2>
+  <p class="chapter-hint">Click a chapter to analyze it with Claude. Already-analyzed chapters are highlighted.</p>
+  <div class="chapter-grid">
+    {% for n in range(1, book.chapters + 1) %}
+    <a href="/book/{{ book.id }}/chapter/{{ n }}"
+       class="chapter-btn {% if n in analyzed_chapters %}analyzed{% endif %}">
+      {{ n }}
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- User notes -->
+<section class="notes-section">
+  <h2>My Notes</h2>
+  <div id="notes-list"></div>
+  <form id="note-form">
+    <textarea id="note-text" placeholder="Add a note about {{ book.name }}…" rows="3"></textarea>
+    <button type="submit">Save note</button>
+  </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const BOOK_ID = '{{ book.id }}';
+
+// Conduct tabs
+document.querySelectorAll('.conduct-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.conduct-tab, .conduct-panel').forEach(el => el.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelector(`.conduct-panel[data-cat="${tab.dataset.cat}"]`).classList.add('active');
+  });
+});
+
+// Notes
+async function loadNotes() {
+  const res = await fetch(`/api/notes?book=${BOOK_ID}`);
+  const notes = await res.json();
+  const list = document.getElementById('notes-list');
+  if (!notes.length) { list.innerHTML = '<p class="empty-state">No notes yet.</p>'; return; }
+  list.innerHTML = notes.map(n =>
+    `<div class="note-item"><p>${n.note}</p><small>${n.created_at.slice(0,10)}</small></div>`
+  ).join('');
+}
+
+document.getElementById('note-form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const text = document.getElementById('note-text').value.trim();
+  if (!text) return;
+  await fetch('/api/notes', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({book_id: BOOK_ID, note: text}),
+  });
+  document.getElementById('note-text').value = '';
+  loadNotes();
+});
+
+loadNotes();
+</script>
+{% endblock %}
