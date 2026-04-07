@@ -1,6 +1,7 @@
 """
-Seed the database from seed_data.json.
-Run once after creating the schema: python seed.py
+Seed (and re-seed) the database from seed_data.json.
+Safe to run multiple times — uses upserts throughout.
+Run: python seed.py
 """
 import json
 import os
@@ -19,93 +20,135 @@ CONDUCT_LABELS = {
     'ritual_calendar': 'Ritual Calendar',
 }
 
-# All 38 OT books covered in seed data, in canonical order.
-# Used to derive sort_order since the JSON dict preserves insertion order.
 CANONICAL_ORDER = [
-    'GEN', 'EXO', 'LEV', 'NUM', 'DEU',           # Pentateuch
-    'JOS', 'JDG', 'RUT', '1SA', '2SA',            # Historical
+    'GEN', 'EXO', 'LEV', 'NUM', 'DEU',
+    'JOS', 'JDG', 'RUT', '1SA', '2SA',
     '1KI', '2KI', '1CH', '2CH', 'EZR', 'NEH', 'EST',
-    'JOB', 'PSA', 'PRO', 'ECC', 'SNG',            # Wisdom / Poetry
-    'ISA', 'JER', 'LAM', 'EZK', 'DAN',            # Major Prophets
-    'HOS', 'JOL', 'AMO', 'OBA', 'JON',            # Minor Prophets
+    'JOB', 'PSA', 'PRO', 'ECC', 'SNG',
+    'ISA', 'JER', 'LAM', 'EZK', 'DAN',
+    'HOS', 'JOL', 'AMO', 'OBA', 'JON',
     'MIC', 'NAM', 'HAB', 'ZEP', 'HAG', 'ZEC',
+    # NT — appended when NT seed data is added
+    'MAT', 'MRK', 'LUK', 'JHN', 'ACT',
+    'ROM', '1CO', '2CO', 'GAL', 'EPH', 'PHP', 'COL',
+    '1TH', '2TH', '1TI', '2TI', 'TIT', 'PHM',
+    'HEB', 'JAS', '1PE', '2PE', '1JN', '2JN', '3JN', 'JUD',
+    'REV',
 ]
 
 
-def seed():
-    data_path = os.path.join(os.path.dirname(__file__), 'seed_data.json')
+def upsert_tension(i, t):
+    existing = db.session.get(Tension, t['id'])
+    if existing:
+        existing.name = t['name']
+        existing.pole_a = t['pole_a']
+        existing.pole_b = t['pole_b']
+        existing.sort_order = i
+    else:
+        db.session.add(Tension(
+            id=t['id'], name=t['name'],
+            pole_a=t['pole_a'], pole_b=t['pole_b'],
+            sort_order=i,
+        ))
+
+
+def upsert_book(book_id, book, testament):
+    sort_order = CANONICAL_ORDER.index(book_id) if book_id in CANONICAL_ORDER else 999
+    existing = db.session.get(Book, book_id)
+    if existing:
+        existing.name = book['name']
+        existing.testament = testament
+        existing.section = book.get('section')
+        existing.chapters = book.get('chapters')
+        existing.sort_order = sort_order
+        existing.dating = book.get('dating')
+        existing.sources = book.get('sources')
+        existing.summary = book.get('summary')
+    else:
+        db.session.add(Book(
+            id=book_id, name=book['name'], testament=testament,
+            section=book.get('section'), chapters=book.get('chapters'),
+            sort_order=sort_order, dating=book.get('dating'),
+            sources=book.get('sources'), summary=book.get('summary'),
+        ))
+
+
+def upsert_book_tension(book_id, tension_id, t_data):
+    score = t_data.get('score') if isinstance(t_data, dict) else None
+    note  = t_data.get('note')  if isinstance(t_data, dict) else None
+    existing = db.session.get(BookTension, (book_id, tension_id))
+    if existing:
+        existing.score = score
+        existing.note  = note
+    else:
+        db.session.add(BookTension(
+            book_id=book_id, tension_id=tension_id,
+            score=score, note=note,
+        ))
+
+
+def upsert_book_conduct(book_id, cat_id, description):
+    if not description:
+        return
+    existing = db.session.get(BookConduct, (book_id, cat_id))
+    if existing:
+        existing.description = description
+    else:
+        db.session.add(BookConduct(
+            book_id=book_id, category_id=cat_id,
+            description=description,
+        ))
+
+
+def seed_file(data_path, testament):
     with open(data_path) as f:
         data = json.load(f)
 
-    # --- Tensions ---
+    # Tensions
     for i, t in enumerate(data['tensions']):
-        if not db.session.get(Tension, t['id']):
-            db.session.add(Tension(
-                id=t['id'],
-                name=t['name'],
-                pole_a=t['pole_a'],
-                pole_b=t['pole_b'],
-                sort_order=i,
-            ))
+        upsert_tension(i, t)
 
-    # --- Conduct categories ---
+    # Conduct categories
     for i, cat_id in enumerate(data['conduct_categories']):
-        if not db.session.get(ConductCategory, cat_id):
-            db.session.add(ConductCategory(
-                id=cat_id,
-                label=CONDUCT_LABELS.get(cat_id, cat_id.replace('_', ' ').title()),
-                sort_order=i,
-            ))
+        existing = db.session.get(ConductCategory, cat_id)
+        label = CONDUCT_LABELS.get(cat_id, cat_id.replace('_', ' ').title())
+        if existing:
+            existing.label = label
+            existing.sort_order = i
+        else:
+            db.session.add(ConductCategory(id=cat_id, label=label, sort_order=i))
 
     db.session.flush()
 
-    # --- Books ---
+    # Books + scores + conduct
     for book_id, book in data['books'].items():
-        sort_order = CANONICAL_ORDER.index(book_id) if book_id in CANONICAL_ORDER else 99
-
-        if not db.session.get(Book, book_id):
-            db.session.add(Book(
-                id=book_id,
-                name=book['name'],
-                testament='Old Testament',   # all seed data is OT
-                section=book.get('section'),
-                chapters=book.get('chapters'),
-                sort_order=sort_order,
-                dating=book.get('dating'),
-                sources=book.get('sources'),
-                summary=book.get('summary'),
-            ))
-
+        upsert_book(book_id, book, testament)
         db.session.flush()
 
-        # Tension scores
         for tension_id, t_data in book.get('tensions', {}).items():
-            existing = db.session.get(BookTension, (book_id, tension_id))
-            if not existing:
-                # t_data may be None (not applicable) or a dict with score/note
-                score = t_data.get('score') if isinstance(t_data, dict) else None
-                note  = t_data.get('note')  if isinstance(t_data, dict) else None
-                db.session.add(BookTension(
-                    book_id=book_id,
-                    tension_id=tension_id,
-                    score=score,
-                    note=note,
-                ))
+            upsert_book_tension(book_id, tension_id, t_data)
 
-        # Conduct entries
         for cat_id, description in book.get('conduct', {}).items():
-            existing = db.session.get(BookConduct, (book_id, cat_id))
-            if not existing and description:
-                db.session.add(BookConduct(
-                    book_id=book_id,
-                    category_id=cat_id,
-                    description=description,
-                ))
+            upsert_book_conduct(book_id, cat_id, description)
 
     db.session.commit()
-    print(f"Seeded {len(data['tensions'])} tensions, "
-          f"{len(data['conduct_categories'])} conduct categories, "
-          f"{len(data['books'])} books.")
+    print(f"  {testament}: {len(data['books'])} books, "
+          f"{len(data['tensions'])} tensions, "
+          f"{len(data['conduct_categories'])} conduct categories")
+
+
+def seed():
+    base = os.path.dirname(__file__)
+
+    print("Seeding OT...")
+    seed_file(os.path.join(base, 'seed_data.json'), 'Old Testament')
+
+    nt_path = os.path.join(base, 'seed_data_nt.json')
+    if os.path.exists(nt_path):
+        print("Seeding NT...")
+        seed_file(nt_path, 'New Testament')
+
+    print("Done.")
 
 
 if __name__ == '__main__':
