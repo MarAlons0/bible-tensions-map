@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block title %}About — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>About</h1>
+</div>
+
+<div class="about-body">
+
+  <p class="about-lead">
+    An interactive tool for secular, academic analysis of the Bible as literature and historical document.
+    It maps 65 biblical books along 20 analytical axes, asking: where does each book sit on each theological
+    tension, and how do those positions shift across time and tradition?
+  </p>
+  <p style="margin-top:0.5rem;">
+    <a href="https://github.com/MarAlons0/bible-tensions-map" target="_blank" rel="noopener">
+      View source on GitHub →
+    </a>
+  </p>
+
+  <hr class="about-rule">
+
+  <h2>Views</h2>
+
+  <div class="about-features">
+    <div class="about-feature">
+      <div class="about-feature-name"><a href="/">Heatmap</a></div>
+      <p>
+        The main view. Rows are books (or aggregates), columns are the 20 tensions, cells are colored
+        blue (Pole A, −5) → gray (0) → coral (Pole B, +5). The heatmap is <strong>layered</strong>:
+        it opens with Old Testament and New Testament aggregate rows showing median scores.
+        Click a row to expand it into canonical sections, then again to expand sections into individual books.
+        Click any cell in a book row to open a tension detail bar chart.
+      </p>
+    </div>
+    <div class="about-feature">
+      <div class="about-feature-name"><a href="/biplot">Biplot</a></div>
+      <p>
+        A two-dimensional scatter plot. Select any two tensions as axes and see where each book falls.
+        Useful for identifying clusters and outliers. Preset pairs highlight classic scholarly comparisons.
+      </p>
+    </div>
+    <div class="about-feature">
+      <div class="about-feature-name"><a href="/conduct">Conduct Codes</a></div>
+      <p>
+        Tracks how nine categories of practical conduct are addressed across the canon:
+        diet, marriage &amp; sexuality, homosexuality, slavery, clothing, agriculture,
+        economic justice, violence &amp; war, and ritual calendar.
+      </p>
+    </div>
+    <div class="about-feature">
+      <div class="about-feature-name"><a href="/timeline">Timeline</a></div>
+      <p>
+        A line chart showing how tension scores shift across books, ordered by
+        <strong>scholarly dating</strong> (when scholars think the text was composed) or
+        <strong>canonical order</strong> (the traditional sequence). Toggle between the two;
+        select which tensions to overlay.
+      </p>
+    </div>
+  </div>
+
+  <hr class="about-rule">
+
+  <h2>The 20 tensions</h2>
+  <p style="margin-bottom:1rem; color:var(--text-muted); font-size:13px;">
+    Scores run −5 (strongly Pole A) to +5 (strongly Pole B). 0 means both poles actively present.
+    Empty = not applicable to that book.
+  </p>
+
+  <table class="about-table">
+    <thead>
+      <tr><th>ID</th><th>Tension</th><th>Pole A (−)</th><th>Pole B (+)</th></tr>
+    </thead>
+    <tbody>
+      {% for t in tensions %}
+      <tr>
+        <td class="tension-id-cell">{{ t.id }}</td>
+        <td>{{ t.name }}</td>
+        <td style="color:var(--pole-a)">{{ t.pole_a }}</td>
+        <td style="color:var(--pole-b)">{{ t.pole_b }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <hr class="about-rule">
+
+  <h2>Chapter analysis</h2>
+  <p>
+    On any book page, individual chapters can be analyzed on demand via the
+    <strong>Anthropic API</strong> (<code>claude-sonnet-4-6</code>). The model returns a summary,
+    scores for all 20 tensions, and conduct code entries. Results are stored and reused on
+    subsequent visits — no re-querying needed.
+  </p>
+
+  <hr class="about-rule">
+
+  <h2>Data &amp; methodology</h2>
+  <p>
+    <strong>65 books</strong> — 38 Old Testament + 27 New Testament.
+    Scores are pre-computed scholarly assessments based on historical-critical consensus
+    (drawing on resources such as the New Oxford Annotated Bible and standard academic commentaries).
+    They reflect the dominant theological position of the text as reconstructed by scholars —
+    not any single confessional tradition.
+  </p>
+  <p style="margin-top:0.75rem;">
+    <strong>Dating</strong> follows critical consensus: e.g. Deuteronomy ~621 BCE,
+    Second Isaiah ~550–540 BCE, Mark ~70 CE, Revelation ~95 CE.
+    These dates drive the chronological ordering in the Timeline view.
+  </p>
+
+  <hr class="about-rule">
+
+  <h2>Technical stack</h2>
+  <table class="about-table about-table-narrow">
+    <tbody>
+      <tr><td>Backend</td><td>Python / Flask</td></tr>
+      <tr><td>ORM</td><td>SQLAlchemy</td></tr>
+      <tr><td>Database</td><td>PostgreSQL (Render managed)</td></tr>
+      <tr><td>Charts</td><td>Plotly.js</td></tr>
+      <tr><td>AI analysis</td><td>Anthropic API — claude-sonnet-4-6</td></tr>
+      <tr><td>Deployment</td><td>Render</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="about-rule">
+
+  <h2>Local development</h2>
+  <pre class="about-code">git clone https://github.com/MarAlons0/bible-tensions-map.git
+cd bible-tensions-map
+pip install -r requirements.txt
+
+export DATABASE_URL=sqlite:///bible.db
+export ANTHROPIC_API_KEY=sk-...   # optional
+
+python seed.py
+flask run</pre>
+
+  <p style="margin-top:1rem;">
+    <a href="https://github.com/MarAlons0/bible-tensions-map" target="_blank" rel="noopener">
+      Full README and source on GitHub →
+    </a>
+  </p>
+
+</div>
+{% endblock %}

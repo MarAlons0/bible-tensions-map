@@ -114,6 +114,12 @@ def timeline():
                            date_estimates=DATE_ESTIMATES)
 
 
+@app.route('/about')
+def about():
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    return render_template('about.html', tensions=tensions)
+
+
 # ---------------------------------------------------------------------------
 # API — reference data
 # ---------------------------------------------------------------------------
