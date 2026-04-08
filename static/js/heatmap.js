@@ -22,6 +22,7 @@ let allData = null;
 let expandedTestaments = new Set(['Old Testament']);
 let expandedSections   = new Set();
 let labelToMeta = {};  // rebuilt each render — maps y-label string → row meta
+let clickHandlerAttached = false;
 
 // --------------------------------------------------------------------------
 // Aggregation helpers
@@ -162,29 +163,29 @@ function renderHeatmap() {
 
   Plotly.react('heatmap', [trace], layout, { responsive: true, displayModeBar: false });
 
-  // Re-attach click handler after each react() call
-  const el = document.getElementById('heatmap');
-  el.removeAllListeners('plotly_click');
-  el.on('plotly_click', evt => {
-    const pt   = evt.points[0];
-    const meta = labelToMeta[pt.y];
-    if (!meta) return;
+  // Attach click handler once — labelToMeta is always current at click time
+  if (!clickHandlerAttached) {
+    document.getElementById('heatmap').on('plotly_click', evt => {
+      const pt   = evt.points[0];
+      const meta = labelToMeta[pt.y];
+      if (!meta) return;
 
-    if (meta.type === 'testament') {
-      expandedTestaments.has(meta.id)
-        ? expandedTestaments.delete(meta.id)
-        : expandedTestaments.add(meta.id);
-      renderHeatmap();
-    } else if (meta.type === 'section') {
-      expandedSections.has(meta.id)
-        ? expandedSections.delete(meta.id)
-        : expandedSections.add(meta.id);
-      renderHeatmap();
-    } else if (meta.type === 'book') {
-      // Show tension detail for the clicked tension column across all visible rows
-      showTensionDetail(pt.x, buildRows(), tensions);
-    }
-  });
+      if (meta.type === 'testament') {
+        expandedTestaments.has(meta.id)
+          ? expandedTestaments.delete(meta.id)
+          : expandedTestaments.add(meta.id);
+        renderHeatmap();
+      } else if (meta.type === 'section') {
+        expandedSections.has(meta.id)
+          ? expandedSections.delete(meta.id)
+          : expandedSections.add(meta.id);
+        renderHeatmap();
+      } else if (meta.type === 'book') {
+        showTensionDetail(pt.x, buildRows(), allData.tensions);
+      }
+    });
+    clickHandlerAttached = true;
+  }
 }
 
 // --------------------------------------------------------------------------
