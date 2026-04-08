@@ -21,7 +21,7 @@ const SECTION_ORDER = {
 const NB = '\u00A0';
 
 let allData = null;
-let expandedTestaments = new Set(['Old Testament']); // OT sections visible on load
+let expandedTestaments = new Set(); // both collapsed on load
 let expandedSections   = new Set();
 let labelToMeta = {};   // rebuilt each render: label string → row meta
 let cellClickAttached  = false;
