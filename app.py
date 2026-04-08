@@ -228,6 +228,34 @@ def api_heatmap():
     })
 
 
+@app.route('/api/heatmap-full')
+def api_heatmap_full():
+    """Return all books with scores keyed by tension_id — used by the layered heatmap."""
+    books = Book.query.order_by(Book.sort_order).all()
+    tensions = Tension.query.order_by(Tension.sort_order).all()
+    all_bt = BookTension.query.all()
+    score_map = {(bt.book_id, bt.tension_id): (bt.score, bt.note) for bt in all_bt}
+
+    books_data = []
+    for b in books:
+        scores = {}
+        notes = {}
+        for t in tensions:
+            entry = score_map.get((b.id, t.id))
+            scores[t.id] = entry[0] if entry and entry[0] is not None else None
+            notes[t.id] = entry[1] if entry and entry[1] else ''
+        books_data.append({
+            'id': b.id, 'name': b.name,
+            'testament': b.testament, 'section': b.section,
+            'scores': scores, 'notes': notes,
+        })
+
+    return jsonify({
+        'books': books_data,
+        'tensions': [{'id': t.id, 'name': t.name, 'pole_a': t.pole_a, 'pole_b': t.pole_b} for t in tensions],
+    })
+
+
 # ---------------------------------------------------------------------------
 # API — biplot
 # ---------------------------------------------------------------------------

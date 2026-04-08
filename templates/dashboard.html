@@ -3,29 +3,25 @@
 
 {% block content %}
 <div class="page-header">
-  <h1>Theological Tensions — Old Testament</h1>
-  <p class="subtitle">Each cell scores a book's position on a tension axis from −5 (Pole A) to +5 (Pole B).</p>
+  <h1>Theological Tensions — Bible</h1>
+  <p class="subtitle">
+    Each cell scores a book's position on a tension axis from −5 (Pole A) to +5 (Pole B).
+    Aggregate rows show the median. Click a testament or section row to expand it;
+    click a cell in a book row to see the tension detail below.
+  </p>
 </div>
 
-<div class="filter-bar">
-  <button class="filter-btn active" data-section="All">All OT</button>
-  {% for section in sections %}
-  <button class="filter-btn" data-section="{{ section }}">{{ section }}</button>
-  {% endfor %}
-</div>
-
-<div id="heatmap-container">
-  <div id="heatmap" style="width:100%; height:600px;"></div>
-</div>
+<div id="heatmap" style="width:100%;"></div>
 
 <div class="tension-detail" id="tension-detail" style="display:none;">
   <h3 id="tension-detail-title"></h3>
-  <div id="tension-bar-chart" style="width:100%; height:350px;"></div>
+  <div id="tension-bar-chart" style="width:100%;"></div>
 </div>
 
+<h2 style="margin-top:2rem;">Books</h2>
 <div class="book-grid">
   {% for book in books %}
-  <a href="/book/{{ book.id }}" class="book-card" data-section="{{ book.section }}">
+  <a href="/book/{{ book.id }}" class="book-card" data-section="{{ book.section }}" data-testament="{{ book.testament }}">
     <span class="book-id">{{ book.id }}</span>
     <span class="book-name">{{ book.name }}</span>
     <span class="book-section">{{ book.section }}</span>
