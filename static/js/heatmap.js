@@ -1,6 +1,6 @@
 // Layered heatmap: Testament → Section → Book
-// Click a testament or section row to expand/collapse it.
-// Click a book-row cell to show the tension detail bar chart.
+// Click the ▶/▼ label on the y-axis to expand/collapse.
+// Click a cell in a book row to see the tension detail bar chart.
 
 const COLORSCALE = [
   [0.0,  '#0C447C'],
@@ -17,12 +17,14 @@ const SECTION_ORDER = {
   'New Testament': ['Gospels', 'Gospels & Acts', 'Pauline Epistles', 'General Epistles', 'Revelation'],
 };
 
+// Non-breaking space — SVG preserves these; regular spaces get collapsed.
+const NB = '\u00A0';
+
 let allData = null;
-// OT starts expanded (sections visible), NT starts collapsed
-let expandedTestaments = new Set(['Old Testament']);
+let expandedTestaments = new Set(['Old Testament']); // OT sections visible on load
 let expandedSections   = new Set();
-let labelToMeta = {};  // rebuilt each render — maps y-label string → row meta
-let clickHandlerAttached = false;
+let labelToMeta = {};   // rebuilt each render: label string → row meta
+let cellClickAttached  = false;
 
 // --------------------------------------------------------------------------
 // Aggregation helpers
@@ -49,7 +51,7 @@ function aggNotes(books, tensions, scores) {
 }
 
 // --------------------------------------------------------------------------
-// Row builder — determines what's visible based on expand state
+// Row builder
 // --------------------------------------------------------------------------
 
 function buildRows() {
@@ -62,6 +64,7 @@ function buildRows() {
     if (!tBooks.length) continue;
 
     const expanded = expandedTestaments.has(testament);
+    // Testament label — no indentation
     const label = `${expanded ? '▼' : '▶'} ${testament}`;
     const aScores = aggScores(tBooks, tensions);
     const aNotes  = aggNotes(tBooks, tensions, aScores);
@@ -70,14 +73,14 @@ function buildRows() {
     labelToMeta[label] = { type: 'testament', id: testament };
 
     if (expanded) {
-      const sections = SECTION_ORDER[testament] || [];
-      for (const section of sections) {
+      for (const section of (SECTION_ORDER[testament] || [])) {
         const sBooks = tBooks.filter(b => b.section === section);
         if (!sBooks.length) continue;
 
-        const sKey = `${testament}::${section}`;
+        const sKey      = `${testament}::${section}`;
         const sExpanded = expandedSections.has(sKey);
-        const sLabel = `  ${sExpanded ? '▼' : '▶'} ${section}`;
+        // Two non-breaking spaces for section indentation
+        const sLabel = `${NB}${NB}${sExpanded ? '▼' : '▶'} ${section}`;
         const sScores = aggScores(sBooks, tensions);
         const sNotes  = aggNotes(sBooks, tensions, sScores);
 
@@ -86,9 +89,10 @@ function buildRows() {
 
         if (sExpanded) {
           for (const book of sBooks) {
+            // Four non-breaking spaces for book indentation
+            const bLabel  = `${NB}${NB}${NB}${NB}${book.name}`;
             const bScores = tensions.map(t => book.scores[t.id] ?? null);
             const bNotes  = tensions.map(t => book.notes[t.id] || '');
-            const bLabel  = `    ${book.name}`;
             rows.push({ label: bLabel, scores: bScores, notes: bNotes });
             labelToMeta[bLabel] = { type: 'book', id: book.id, name: book.name };
           }
@@ -98,6 +102,52 @@ function buildRows() {
   }
 
   return rows;
+}
+
+// --------------------------------------------------------------------------
+// Toggle helpers (used by both label clicks and cell clicks)
+// --------------------------------------------------------------------------
+
+function toggleMeta(meta) {
+  if (meta.type === 'testament') {
+    expandedTestaments.has(meta.id)
+      ? expandedTestaments.delete(meta.id)
+      : expandedTestaments.add(meta.id);
+    renderHeatmap();
+  } else if (meta.type === 'section') {
+    expandedSections.has(meta.id)
+      ? expandedSections.delete(meta.id)
+      : expandedSections.add(meta.id);
+    renderHeatmap();
+  }
+}
+
+// --------------------------------------------------------------------------
+// Make y-axis tick labels for aggregate rows clickable
+// --------------------------------------------------------------------------
+
+function attachYAxisClickHandlers() {
+  // Plotly renders asynchronously; give it a tick to finish painting the SVG.
+  requestAnimationFrame(() => {
+    const tickEls = document.querySelectorAll('#heatmap .ytick > text');
+    tickEls.forEach(el => {
+      const rawLabel = el.textContent;
+      const meta = labelToMeta[rawLabel];
+      if (!meta || meta.type === 'book') return;
+
+      // Replace the node to clear any prior listeners
+      const fresh = el.cloneNode(true);
+      el.parentNode.replaceChild(fresh, el);
+
+      fresh.style.cursor = 'pointer';
+      fresh.style.fontWeight = '700';
+
+      fresh.addEventListener('click', e => {
+        e.stopPropagation();
+        toggleMeta(meta);
+      });
+    });
+  });
 }
 
 // --------------------------------------------------------------------------
@@ -147,49 +197,37 @@ function renderHeatmap() {
 
   const layout = {
     margin: { t: 30, b: 60, l: 185, r: 60 },
-    xaxis: {
-      tickangle: -45,
-      tickfont: { size: 11 },
-      fixedrange: true,
-    },
-    yaxis: {
-      tickfont: { size: 11 },
-      autorange: 'reversed',
-      fixedrange: true,
-    },
+    xaxis: { tickangle: -45, tickfont: { size: 11 }, fixedrange: true },
+    yaxis: { tickfont: { size: 11 }, autorange: 'reversed', fixedrange: true },
     plot_bgcolor: '#f8f8f6',
     paper_bgcolor: '#f8f8f6',
   };
 
   Plotly.react('heatmap', [trace], layout, { responsive: true, displayModeBar: false });
 
-  // Attach click handler once — labelToMeta is always current at click time
-  if (!clickHandlerAttached) {
+  // Make aggregate y-axis labels clickable (SVG post-processing)
+  attachYAxisClickHandlers();
+
+  // Cell click handler — attached once; labelToMeta is always current
+  if (!cellClickAttached) {
     document.getElementById('heatmap').on('plotly_click', evt => {
       const pt   = evt.points[0];
       const meta = labelToMeta[pt.y];
       if (!meta) return;
 
-      if (meta.type === 'testament') {
-        expandedTestaments.has(meta.id)
-          ? expandedTestaments.delete(meta.id)
-          : expandedTestaments.add(meta.id);
-        renderHeatmap();
-      } else if (meta.type === 'section') {
-        expandedSections.has(meta.id)
-          ? expandedSections.delete(meta.id)
-          : expandedSections.add(meta.id);
-        renderHeatmap();
-      } else if (meta.type === 'book') {
+      if (meta.type === 'book') {
         showTensionDetail(pt.x, buildRows(), allData.tensions);
+      } else {
+        // Fallback: cell click on aggregate row also toggles
+        toggleMeta(meta);
       }
     });
-    clickHandlerAttached = true;
+    cellClickAttached = true;
   }
 }
 
 // --------------------------------------------------------------------------
-// Tension detail panel (bar chart below heatmap)
+// Tension detail panel
 // --------------------------------------------------------------------------
 
 function showTensionDetail(tensionId, rows, tensions) {
