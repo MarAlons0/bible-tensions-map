@@ -1,14 +1,24 @@
-// Section color palette
-const SECTION_COLORS = {
-  'Pentateuch':      '#0C447C',
-  'Historical Books':'#2E7D32',
-  'Wisdom / Poetry': '#6A1E8A',
-  'Major Prophets':  '#B45309',
-  'Minor Prophets':  '#C62828',
+// Color palettes by grouping type
+const GROUP_COLORS = {
+  // Testament
+  'Old Testament':     '#0C447C',
+  'New Testament':     '#A0320A',
+  // OT sections
+  'Pentateuch':        '#1565C0',
+  'Historical Books':  '#2E7D32',
+  'Wisdom Literature': '#6A1E8A',
+  'Major Prophets':    '#B45309',
+  'Minor Prophets':    '#C62828',
+  // NT sections
+  'Gospels':           '#D84315',
+  'Gospels & Acts':    '#E65100',
+  'Pauline Epistles':  '#AD1457',
+  'General Epistles':  '#6A1E8A',
+  'Revelation':        '#1A237E',
 };
 
 function colorForValue(val) {
-  return SECTION_COLORS[val] || '#888';
+  return GROUP_COLORS[val] || '#888';
 }
 
 async function fetchBiplotData(xId, yId, colorBy) {
