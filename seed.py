@@ -27,7 +27,7 @@ CANONICAL_ORDER = [
     'JOB', 'PSA', 'PRO', 'ECC', 'SNG',
     'ISA', 'JER', 'LAM', 'EZK', 'DAN',
     'HOS', 'JOL', 'AMO', 'OBA', 'JON',
-    'MIC', 'NAM', 'HAB', 'ZEP', 'HAG', 'ZEC',
+    'MIC', 'NAM', 'HAB', 'ZEP', 'HAG', 'ZEC', 'MAL',
     # NT — appended when NT seed data is added
     'MAT', 'MRK', 'LUK', 'JHN', 'ACT',
     'ROM', '1CO', '2CO', 'GAL', 'EPH', 'PHP', 'COL',
