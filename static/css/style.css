@@ -245,6 +245,23 @@ main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 .empty-state { color: var(--text-muted); font-style: italic; font-size: 14px; }
 .error { color: var(--pole-b); }
 
+/* ===== Word Cloud page ===== */
+.wc-controls {
+  display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: flex-end;
+}
+.wc-control-group { display: flex; flex-direction: column; gap: 4px; }
+.wc-control-group label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.wc-control-group select { padding: 6px 10px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; background: var(--surface); min-width: 180px; }
+.wc-control-group select:disabled { opacity: 0.45; cursor: not-allowed; }
+.wc-breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 0.75rem; font-style: italic; }
+.wc-wrapper { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.wc-wrapper canvas { display: block; width: 100% !important; }
+.wc-empty { padding: 4rem; text-align: center; color: var(--text-muted); font-style: italic; }
+.wc-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1rem; align-items: center; }
+.wc-legend-label { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-right: 4px; }
+.wc-pill { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 999px; font-size: 12px; color: #fff; font-weight: 600; }
+.wc-pill em { font-style: normal; opacity: 0.75; font-weight: 400; }
+
 /* ===== About page ===== */
 .about-body { max-width: 860px; }
 .about-lead { font-size: 16px; line-height: 1.7; }

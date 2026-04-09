@@ -1,5 +1,7 @@
 import os
+import re
 import json
+from collections import Counter
 from flask import Flask, render_template, request, jsonify, abort
 from dotenv import load_dotenv
 from models import (
@@ -118,6 +120,16 @@ def timeline():
 def about():
     tensions = Tension.query.order_by(Tension.sort_order).all()
     return render_template('about.html', tensions=tensions)
+
+
+@app.route('/wordcloud')
+def wordcloud():
+    books = Book.query.order_by(Book.sort_order).all()
+    # Build section list grouped by testament for cascading dropdowns
+    ot_sections = sorted({b.section for b in books if b.testament == 'Old Testament' and b.section})
+    nt_sections = sorted({b.section for b in books if b.testament == 'New Testament' and b.section})
+    return render_template('wordcloud.html', books=books,
+                           ot_sections=ot_sections, nt_sections=nt_sections)
 
 
 # ---------------------------------------------------------------------------
@@ -331,6 +343,179 @@ def api_conduct(category_id):
 # API — timeline chart
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Word cloud — text processing
+# ---------------------------------------------------------------------------
+
+_STOP_WORDS = {
+    'the','a','an','and','or','but','in','on','at','to','for','of','with',
+    'by','from','as','is','are','was','were','be','been','being','have',
+    'has','had','do','does','did','will','would','could','should','may',
+    'might','must','shall','can','not','no','nor','so','yet','than','then',
+    'when','where','while','who','whom','whose','what','how','why','if',
+    'although','though','since','because','whether','throughout','within',
+    'between','among','through','during','before','after','above','below',
+    'up','down','out','off','over','under','again','once','here','there',
+    'all','each','every','other','another','such','same','first','second',
+    'third','often','particularly','especially','rather','quite','very',
+    'more','most','less','least','much','many','few','some','any','both',
+    'either','neither','this','these','those','their','they','them','he',
+    'she','it','we','you','his','her','its','our','your','i','me','my',
+    'him','who','also','just','even','only','upon','into','about','which',
+    'that','thus','hence','toward','towards','without','against','along',
+    'around','across','behind','beyond','despite','except','inside','near',
+    'outside','since','until','upon','within','become','becomes','became',
+    'make','makes','made','take','takes','took','give','gives','given',
+    'use','uses','used','see','seen','come','comes','came','go','goes',
+    'went','include','includes','included','become','often','always',
+    'never','still','already','now','then','here','there','away','back',
+    'text','book','books','biblical','author','authors','one','two','three',
+    'four','five','six','seven','eight','nine','ten','cf','eg','ie','vs',
+    'reflect','reflects','reflected','represent','represents','suggest',
+    'suggests','indicate','indicates','demonstrate','demonstrates','show',
+    'shows','appear','appears','seem','seems','present','presents',
+    'focus','focuses','establish','establishes','develop','develops',
+    'provide','provides','emphasize','emphasizes','central','major','key',
+    'primary','important','significant','strong','clear','explicit',
+    'dominant','prominent','pervasive','later','early','however','overall',
+}
+
+# Map variants and near-synonyms to a single canonical form
+_NORMALIZE = {
+    # God / deity
+    'lord':'god','lords':'god','yhwh':'god','divine':'god','deity':'god',
+    'gods':'god','almighty':'god','heavenly':'god',
+    # Prophet / prophecy
+    'prophets':'prophet','prophecy':'prophet','prophetic':'prophet',
+    'prophesied':'prophet','prophesy':'prophet','prophecies':'prophet',
+    # Covenant
+    'covenants':'covenant','treaty':'covenant',
+    # Law / commandment
+    'laws':'law','torah':'law','commandments':'commandment',
+    'statutes':'law','ordinances':'law','precepts':'law','decrees':'law',
+    # Sacrifice / offering
+    'sacrifices':'sacrifice','offerings':'offering','sacrificial':'sacrifice',
+    # King / ruler
+    'kings':'king','ruler':'king','rulers':'king','kingship':'king',
+    'royal':'king','monarch':'king','reign':'king','reigns':'king',
+    'kingdom':'king','kingdoms':'king',
+    # Temple / sanctuary
+    'temples':'temple','sanctuary':'temple','tabernacle':'temple',
+    'shrine':'temple','shrines':'temple','altar':'temple','altars':'temple',
+    # Priest / Levite
+    'priests':'priest','priestly':'priest','priesthood':'priest',
+    'levite':'priest','levites':'priest','levitical':'priest',
+    # Israel / people of God
+    'israelites':'israel','israelite':'israel','hebrew':'israel',
+    'hebrews':'israel','judah':'israel','judean':'israel','jewish':'israel',
+    'zion':'israel','jerusalem':'israel',
+    # Sin / evil
+    'sins':'sin','sinful':'sin','sinner':'sin','sinners':'sin',
+    'transgression':'sin','transgressions':'sin','wickedness':'sin',
+    'iniquity':'sin','iniquities':'sin','evil':'sin','evils':'sin',
+    'wicked':'sin','corruption':'sin','corrupt':'sin',
+    # Righteousness / justice
+    'justice':'righteousness','righteous':'righteousness',
+    'just':'righteousness','judgment':'righteousness',
+    'judgments':'righteousness',
+    # Grace / mercy
+    'mercy':'grace','compassion':'grace','lovingkindness':'grace',
+    'kindness':'grace','steadfast':'grace','forgiveness':'grace',
+    'forgive':'grace','forgives':'grace',
+    # Redemption / salvation
+    'salvation':'redemption','deliverance':'redemption','saved':'redemption',
+    'redeem':'redemption','redeemed':'redemption','redeemer':'redemption',
+    'rescue':'redemption','liberate':'redemption','liberation':'redemption',
+    # Faith / trust
+    'belief':'faith','trust':'faith','faithful':'faith',
+    'faithfulness':'faith','obedience':'faith','obedient':'faith',
+    # Wisdom / knowledge
+    'wise':'wisdom','understanding':'wisdom','knowledge':'wisdom',
+    'discernment':'wisdom','insight':'wisdom',
+    # Resurrection / life after death
+    'risen':'resurrection','raised':'resurrection','raise':'resurrection',
+    # Apocalyptic
+    'apocalypse':'apocalyptic','apocalypticism':'apocalyptic',
+    # Nation / peoples
+    'nations':'nation','peoples':'people','gentiles':'nation',
+    'foreigners':'nation','outsiders':'nation',
+    # War / violence
+    'wars':'war','warfare':'war','military':'war','battle':'war',
+    'battles':'war','warrior':'war','warriors':'war','violence':'war',
+    'violent':'war','conquest':'war','conquer':'war',
+    # Death
+    'deaths':'death','dying':'death','dead':'death','die':'death',
+    # Spirit / holy spirit
+    'spirits':'spirit','spiritual':'spirit','holy':'spirit',
+    # Blessing
+    'blessings':'blessing','blessed':'blessing','bless':'blessing',
+    # Curse / punishment
+    'curses':'curse','cursed':'curse','punishment':'curse',
+    'punish':'curse','punishes':'curse','wrath':'curse',
+    # Suffering / affliction
+    'suffer':'suffering','suffers':'suffering','affliction':'suffering',
+    'afflictions':'suffering','pain':'suffering','anguish':'suffering',
+    'lament':'suffering','lamentation':'suffering',
+    # Worship / prayer
+    'worships':'worship','worshipped':'worship','worshipping':'worship',
+    'prayers':'prayer','pray':'prayer','prays':'prayer','praying':'prayer',
+    # Community / church
+    'communities':'community','church':'community','congregation':'community',
+    'assembly':'community',
+    # Love
+    'loves':'love','loved':'love','loving':'love',
+    # Mission / universalism
+    'missionary':'mission','missions':'mission',
+    # Eschatology
+    'eschaton':'eschatology','eschatological':'eschatology',
+    'endtimes':'eschatology','endtime':'eschatology',
+    # Ethics / moral
+    'ethical':'ethics','morality':'ethics','moral':'ethics',
+}
+
+
+def _process_text(text, max_words=80):
+    words = re.findall(r"\b[a-z']{3,}\b", text.lower())
+    normalized = []
+    for w in words:
+        w = _NORMALIZE.get(w, w)
+        if w not in _STOP_WORDS and len(w) >= 3:
+            normalized.append(w)
+    counter = Counter(normalized)
+    return [[word, count] for word, count in counter.most_common(max_words)]
+
+
+@app.route('/api/wordcloud')
+def api_wordcloud():
+    testament = request.args.get('testament', '')
+    section   = request.args.get('section', '')
+    book_id   = request.args.get('book', '')
+
+    query = Book.query
+    if book_id:
+        query = query.filter(Book.id == book_id)
+    elif section:
+        query = query.filter(Book.section == section)
+    elif testament:
+        query = query.filter(Book.testament == testament)
+    books = query.all()
+
+    chunks = []
+    for b in books:
+        if b.summary:
+            chunks.append(b.summary)
+        for bt in BookTension.query.filter_by(book_id=b.id).all():
+            if bt.note:
+                chunks.append(bt.note)
+        for bc in BookConduct.query.filter_by(book_id=b.id).all():
+            if bc.description:
+                chunks.append(bc.description)
+
+    words = _process_text(' '.join(chunks))
+    return jsonify({'words': words, 'book_count': len(books)})
+
+
+# ---------------------------------------------------------------------------
 # Approximate scholarly date (year CE; BCE = negative) for chronological ordering.
 # Composite midpoint estimates based on NOAB critical consensus.
 DATE_ESTIMATES = {

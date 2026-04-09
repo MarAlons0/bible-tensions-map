@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}Word Cloud — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Word Cloud</h1>
+  <p class="subtitle">
+    Vocabulary drawn from book summaries, tension notes, and conduct descriptions.
+    Related terms are merged (e.g. sacrifice / offering, sin / wickedness / iniquity).
+    Drill down from the full Bible to a testament, section, or individual book.
+  </p>
+</div>
+
+<div class="wc-controls">
+  <div class="wc-control-group">
+    <label for="wc-testament">Testament</label>
+    <select id="wc-testament">
+      <option value="">All Books</option>
+      <option value="Old Testament">Old Testament</option>
+      <option value="New Testament">New Testament</option>
+    </select>
+  </div>
+
+  <div class="wc-control-group">
+    <label for="wc-section">Section</label>
+    <select id="wc-section" disabled>
+      <option value="">All Sections</option>
+      <optgroup label="Old Testament" id="ot-section-group">
+        {% for s in ot_sections %}
+        <option value="{{ s }}" data-testament="Old Testament">{{ s }}</option>
+        {% endfor %}
+      </optgroup>
+      <optgroup label="New Testament" id="nt-section-group">
+        {% for s in nt_sections %}
+        <option value="{{ s }}" data-testament="New Testament">{{ s }}</option>
+        {% endfor %}
+      </optgroup>
+    </select>
+  </div>
+
+  <div class="wc-control-group">
+    <label for="wc-book">Book</label>
+    <select id="wc-book" disabled>
+      <option value="">All Books in Section</option>
+      {% for book in books %}
+      <option value="{{ book.id }}"
+              data-testament="{{ book.testament }}"
+              data-section="{{ book.section }}">{{ book.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+<div class="wc-breadcrumb" id="wc-breadcrumb">Full Bible</div>
+
+<div class="wc-wrapper">
+  <canvas id="wc-canvas"></canvas>
+  <div class="wc-empty" id="wc-empty" style="display:none;">
+    Not enough text to generate a word cloud for this selection.
+  </div>
+</div>
+
+<div class="wc-legend" id="wc-legend"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.2.2/wordcloud2.min.js"></script>
+<script src="{{ url_for('static', filename='js/wordcloud_view.js') }}"></script>
+<script>initWordCloud();</script>
+{% endblock %}
