@@ -17,6 +17,7 @@
     <select id="wc-testament">
       <option value="">All Books</option>
       <option value="Old Testament">Old Testament</option>
+      <option value="Apocrypha">Apocrypha</option>
       <option value="New Testament">New Testament</option>
     </select>
   </div>
@@ -28,6 +29,11 @@
       <optgroup label="Old Testament" id="ot-section-group">
         {% for s in ot_sections %}
         <option value="{{ s }}" data-testament="Old Testament">{{ s }}</option>
+        {% endfor %}
+      </optgroup>
+      <optgroup label="Apocrypha" id="ap-section-group">
+        {% for s in ap_sections %}
+        <option value="{{ s }}" data-testament="Apocrypha">{{ s }}</option>
         {% endfor %}
       </optgroup>
       <optgroup label="New Testament" id="nt-section-group">

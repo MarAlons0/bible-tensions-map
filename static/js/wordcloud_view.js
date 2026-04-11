@@ -108,6 +108,8 @@ function initWordCloud() {
     // Show/hide section optgroups
     document.getElementById('ot-section-group').style.display =
       (!t || t === 'Old Testament') ? '' : 'none';
+    document.getElementById('ap-section-group').style.display =
+      (!t || t === 'Apocrypha') ? '' : 'none';
     document.getElementById('nt-section-group').style.display =
       (!t || t === 'New Testament') ? '' : 'none';
 

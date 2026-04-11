@@ -126,10 +126,12 @@ def about():
 def wordcloud():
     books = Book.query.order_by(Book.sort_order).all()
     # Build section list grouped by testament for cascading dropdowns
-    ot_sections = sorted({b.section for b in books if b.testament == 'Old Testament' and b.section})
-    nt_sections = sorted({b.section for b in books if b.testament == 'New Testament' and b.section})
+    ot_sections  = sorted({b.section for b in books if b.testament == 'Old Testament' and b.section})
+    ap_sections  = sorted({b.section for b in books if b.testament == 'Apocrypha'    and b.section})
+    nt_sections  = sorted({b.section for b in books if b.testament == 'New Testament' and b.section})
     return render_template('wordcloud.html', books=books,
-                           ot_sections=ot_sections, nt_sections=nt_sections)
+                           ot_sections=ot_sections, ap_sections=ap_sections,
+                           nt_sections=nt_sections)
 
 
 # ---------------------------------------------------------------------------
