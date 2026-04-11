@@ -28,7 +28,10 @@ CANONICAL_ORDER = [
     'ISA', 'JER', 'LAM', 'EZK', 'DAN',
     'HOS', 'JOL', 'AMO', 'OBA', 'JON',
     'MIC', 'NAM', 'HAB', 'ZEP', 'HAG', 'ZEC', 'MAL',
-    # NT — appended when NT seed data is added
+    # Apocrypha (NOAB NRSV order)
+    'TOB', 'JDT', 'AES', '1MA', '2MA', 'WIS', 'SIR',
+    'BAR', 'LJE', 'PAZ', 'SUS', 'BEL', '1ES', 'MAN', 'PS2', '3MA', '2ES',
+    # NT
     'MAT', 'MRK', 'LUK', 'JHN', 'ACT',
     'ROM', '1CO', '2CO', 'GAL', 'EPH', 'PHP', 'COL',
     '1TH', '2TH', '1TI', '2TI', 'TIT', 'PHM',
@@ -104,12 +107,12 @@ def seed_file(data_path, testament):
     with open(data_path) as f:
         data = json.load(f)
 
-    # Tensions
-    for i, t in enumerate(data['tensions']):
+    # Tensions (optional — already seeded from OT)
+    for i, t in enumerate(data.get('tensions', [])):
         upsert_tension(i, t)
 
-    # Conduct categories
-    for i, cat_id in enumerate(data['conduct_categories']):
+    # Conduct categories (optional — already seeded from OT)
+    for i, cat_id in enumerate(data.get('conduct_categories', [])):
         existing = db.session.get(ConductCategory, cat_id)
         label = CONDUCT_LABELS.get(cat_id, cat_id.replace('_', ' ').title())
         if existing:
@@ -133,8 +136,8 @@ def seed_file(data_path, testament):
 
     db.session.commit()
     print(f"  {testament}: {len(data['books'])} books, "
-          f"{len(data['tensions'])} tensions, "
-          f"{len(data['conduct_categories'])} conduct categories")
+          f"{len(data.get('tensions', []))} tensions, "
+          f"{len(data.get('conduct_categories', []))} conduct categories")
 
 
 def seed():
@@ -142,6 +145,11 @@ def seed():
 
     print("Seeding OT...")
     seed_file(os.path.join(base, 'seed_data.json'), 'Old Testament')
+
+    apocrypha_path = os.path.join(base, 'seed_data_apocrypha.json')
+    if os.path.exists(apocrypha_path):
+        print("Seeding Apocrypha...")
+        seed_file(apocrypha_path, 'Apocrypha')
 
     nt_path = os.path.join(base, 'seed_data_nt.json')
     if os.path.exists(nt_path):

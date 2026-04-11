@@ -531,6 +531,14 @@ DATE_ESTIMATES = {
     '1CH': -400, '2CH': -400, 'EZR': -400, 'NEH': -445,
     'EST': -400, 'SNG': -400,
     'ECC': -250, 'DAN': -165,
+    # Apocrypha (BCE/CE dates, NOAB NRSV scholarly consensus)
+    'TOB': -200, 'JDT': -100, 'AES': -90,
+    '1MA': -100, '2MA': -120,
+    'WIS': -40,  'SIR': -180,
+    'BAR': -150, 'LJE': -300,
+    'PAZ': -100, 'SUS': -100, 'BEL': -100,
+    '1ES': -150, 'MAN': -100, 'PS2': -150,
+    '3MA': -75,  '2ES': 100,
     # New Testament (CE dates)
     'MRK': 70, 'MAT': 85, 'LUK': 85, 'JHN': 95,
     'ACT': 85,

@@ -1,0 +1,1738 @@
+{
+  "books": {
+    "TOB": {
+      "name": "Tobit",
+      "id": "TOB",
+      "section": "Narrative",
+      "chapters": 14,
+      "dating": "c. 225\u2013175 BCE",
+      "sources": "Composed in Aramaic or Hebrew (Qumran fragments found in both); set in Assyrian exile but written in the Diaspora, probably eastern Mediterranean.",
+      "summary": "A Diaspora wisdom tale about the righteous Tobit, blinded by bird droppings while burying the dead, and his son Tobias, who travels to Media guided by the angel Raphael in disguise. Tobias marries Sarah, whose seven previous husbands were killed by the demon Asmodaeus. The book celebrates almsgiving, proper burial, prayer, and endogamy \u2014 marrying within Israel \u2014 as the pillars of faithful Diaspora life.",
+      "tensions": {
+        "T01": {
+          "score": 1,
+          "note": "God is responsive and immanent through Raphael's agency, but the angel mediates distance \u2014 God does not appear directly."
+        },
+        "T02": {
+          "score": -3,
+          "note": "Strongly particularist: Tobit commands Tobias to marry only within their tribe (4:12\u201313). Jewish identity in exile is maintained through endogamy and dietary purity."
+        },
+        "T03": {
+          "score": -1,
+          "note": "Human acts of piety (almsgiving, burial) matter and God responds, but the plot is divinely orchestrated from the outset."
+        },
+        "T04": {
+          "score": -2,
+          "note": "Restorative: Tobit suffers despite righteousness and is ultimately healed. Suffering is not presented as punishment."
+        },
+        "T05": {
+          "score": 0,
+          "note": "Both poles equally present: almsgiving and care for the poor (ethical) and proper burial and dietary purity (ritual) are co-equal obligations."
+        },
+        "T06": {
+          "score": 0,
+          "note": "Individual story of two households, but the values upheld are collective Diaspora identity."
+        },
+        "T07": {
+          "score": -2,
+          "note": "Straightforward narrative; the supernatural (demon, angel) is presented as literal fact, not allegory."
+        },
+        "T08": {
+          "score": -3,
+          "note": "Exclusivist: salvation and blessing flow through Israel's covenant community. Endogamy ensures the boundary holds."
+        },
+        "T09": {
+          "score": 2,
+          "note": "Works strongly emphasized: almsgiving, burial of the dead, prayer at set times \u2014 deeds of piety accumulate merit."
+        },
+        "T10": {
+          "score": 0,
+          "note": "No significant engagement with governance; the Assyrian court is backdrop, not subject."
+        },
+        "T11": {
+          "score": -2,
+          "note": "Sarah's story is told through her father's household; Tobias claims her as bride. Patriarchal household structure is assumed."
+        },
+        "T12": {
+          "score": null,
+          "note": "War and violence are not themes."
+        },
+        "T13": {
+          "score": -2,
+          "note": "Tobit suffers despite righteousness and is restored \u2014 an anti-prosperity narrative that insists the righteous do suffer, but are ultimately vindicated."
+        },
+        "T14": {
+          "score": 1,
+          "note": "Tobit instructs Tobias from memory of Moses and the prophets; textual tradition is the reference point."
+        },
+        "T15": {
+          "score": null,
+          "note": "Creation care is not a theme."
+        },
+        "T16": {
+          "score": -3,
+          "note": "Strict monotheism: Raphael is explicitly a servant of God, not an independent divine figure. Pagan contexts are navigated but not adopted."
+        },
+        "T17": {
+          "score": 0,
+          "note": "Wisdom teaching (Tobit's farewell address to Tobias) and divine revelation (Raphael's identity) are equally present."
+        },
+        "T18": {
+          "score": -2,
+          "note": "Social care \u2014 burying the poor, feeding the hungry, almsgiving \u2014 is the primary ethical demand and the ground of Tobit's righteousness."
+        },
+        "T19": {
+          "score": 1,
+          "note": "Tobit's final prophecy (14:5\u20137) anticipates Israel's return and the conversion of nations \u2014 a mild future orientation."
+        },
+        "T20": {
+          "score": -2,
+          "note": "Tobit's suffering is explicitly not punishment: he is described as righteous throughout. Suffering is a trial, not retribution."
+        }
+      },
+      "conduct": {
+        "diet": "Tobit refuses to eat the food of the Gentiles when deported to Nineveh (1:10\u201313), maintaining dietary distinctiveness as a mark of Jewish identity in exile. Food purity is a non-negotiable boundary.",
+        "marriage_sexuality": "Endogamy is the book's central social ethic: Tobit charges Tobias to marry only within their tribe and family (4:12\u201313). Tobias's marriage to Sarah \u2014 arranged through the angel and conducted with prayer \u2014 is the narrative climax, presented as the model of proper covenantal marriage.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Household servants are assumed as normal social fixtures but are not the subject of ethical reflection.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Almsgiving is Tobit's defining virtue: 'Give some of your food to the hungry and some of your clothing to the naked. Give all your surplus as alms' (1:16\u201317; 4:7\u201311). The book presents generosity to the poor as the foundation of righteousness.",
+        "violence_war": "Not addressed. The only violence in the book is the demon Asmodaeus, overcome by fish liver smoke \u2014 a supernatural rather than human conflict.",
+        "ritual_calendar": "Tobit observes pilgrimage festivals, brings firstfruits and tithes to Jerusalem (1:6\u20138), and prays at set times (3:11). Proper burial is treated as a sacred obligation even at personal risk."
+      }
+    },
+    "JDT": {
+      "name": "Judith",
+      "id": "JDT",
+      "section": "Narrative",
+      "chapters": 16,
+      "dating": "c. 100 BCE",
+      "sources": "Composed in Hebrew (now lost); the story is historically anachronistic (Nebuchadnezzar as king of Assyria) and was likely never intended as literal history. Qumran yielded no fragments.",
+      "summary": "A fictional heroic tale in which the pious widow Judith saves Israel by seducing the Assyrian general Holofernes, decapitating him while he sleeps, and returning his head to her city. The book celebrates female courage, ritual piety, and God's use of the humble and weak to defeat the arrogant powerful.",
+      "tensions": {
+        "T01": {
+          "score": 1,
+          "note": "God acts through Judith, but does not appear directly. Divine agency is mediated through human courage and prayer."
+        },
+        "T02": {
+          "score": -3,
+          "note": "Strongly particularist: Israel vs. the nations. Holofernes represents the Gentile presumption against Israel's God."
+        },
+        "T03": {
+          "score": -2,
+          "note": "Judith's bold individual agency is decisive \u2014 she acts while the male elders waver. Human courage drives the plot."
+        },
+        "T04": {
+          "score": -1,
+          "note": "Retributive for Holofernes and the enemy army; restorative for Israel. The two poles overlap."
+        },
+        "T05": {
+          "score": 0,
+          "note": "Judith's fasting, prayer, and ritual purity (she fasts except on sabbaths and feast days) are co-equal with her ethical courage and strategic deception."
+        },
+        "T06": {
+          "score": -3,
+          "note": "Israel is saved as a collective people. Judith is the instrument, not a private hero \u2014 her victory belongs to the whole community."
+        },
+        "T07": {
+          "score": -2,
+          "note": "Presented as literal narrative, though historically impossible. The miraculous is taken for granted."
+        },
+        "T08": {
+          "score": -3,
+          "note": "Exclusivist: God saves Israel specifically. Achior the Ammonite joins Israel only after the victory."
+        },
+        "T09": {
+          "score": 0,
+          "note": "Both faith (prayer, trust that God will act) and courageous works (the assassination) are equally essential to the outcome."
+        },
+        "T10": {
+          "score": -2,
+          "note": "The male elders defer to time and conditions rather than acting; Judith rebukes them and acts. God, not human rulers, is in control."
+        },
+        "T11": {
+          "score": -1,
+          "note": "Judith operates entirely within a patriarchal framework (she needs to be seen as non-threatening) yet overturns it by her deed. The text celebrates female heroism while remaining formally patriarchal."
+        },
+        "T12": {
+          "score": 3,
+          "note": "Violence is divinely sanctioned and celebrated. Judith's decapitation of Holofernes is presented as God's own act through her. The community celebrates with song."
+        },
+        "T13": {
+          "score": -2,
+          "note": "Righteousness and piety lead to national salvation \u2014 a broadly prosperity-oriented framework applied collectively."
+        },
+        "T14": {
+          "score": 1,
+          "note": "Judith corrects the elders by appeal to God's past deeds; implicit Torah background throughout."
+        },
+        "T15": {
+          "score": null,
+          "note": "Creation care is not a theme."
+        },
+        "T16": {
+          "score": -4,
+          "note": "Fierce exclusive monotheism: Holofernes' claim that Nebuchadnezzar alone is god (3:8) is the blasphemy that demands divine response."
+        },
+        "T17": {
+          "score": 2,
+          "note": "Judith's confidence is rooted in revelation \u2014 she knows God will act and prays accordingly. Wisdom and prayer, not strategy alone, guide her."
+        },
+        "T18": {
+          "score": -1,
+          "note": "The book honors the community's suffering and the care of widows implied in Judith's status. Social justice is implicit in the liberation narrative."
+        },
+        "T19": {
+          "score": 0,
+          "note": "No developed eschatology. Judith's victory is this-worldly and immediate."
+        },
+        "T20": {
+          "score": -2,
+          "note": "Israel's suffering under Holofernes is temporary and overcome; the book does not frame suffering as punishment."
+        }
+      },
+      "conduct": {
+        "diet": "Judith brings her own food into Holofernes' camp \u2014 ritually pure provisions she has prepared herself (10:5; 12:2\u20134) \u2014 and refuses to eat from the general's table. Dietary distinctiveness is a mark of holiness even when one's life is at stake.",
+        "marriage_sexuality": "Judith is a model widow who refuses remarriage despite many suitors (16:22). Her sexual virtue \u2014 she uses her beauty as a weapon while maintaining absolute chastity \u2014 is central to her identity as a holy woman. Holofernes' lust is his fatal vulnerability.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Judith has a trusted female slave (maid) who accompanies her on the mission (8:10; 10:5). Slavery is assumed as normal; no ethical reflection on it.",
+        "clothing": "Judith's deliberate dressing in fine clothes and jewelry to attract Holofernes (10:3\u20134) is presented as a weapon of holy strategy, not vanity. Her appearance is part of her arsenal.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not specifically addressed. Judith is wealthy and acts from personal resources.",
+        "violence_war": "The central act is targeted political assassination framed as holy war. Judith decapitates Holofernes with his own sword. The community then routs the leaderless army. Divine sanction for violence against Israel's enemies is explicit and celebrated.",
+        "ritual_calendar": "Judith fasts on all days except sabbaths, new moons, and feast days (8:6). Her ritual calendar discipline is presented as part of her piety. She bathes ritually before entering Holofernes' camp."
+      }
+    },
+    "AES": {
+      "name": "Additions to Esther",
+      "id": "AES",
+      "section": "Narrative",
+      "chapters": 6,
+      "dating": "c. 100\u201378 BCE (Greek translation with additions)",
+      "sources": "Six additions (A\u2013F) inserted into the Greek translation of Esther to supply the explicit religiosity absent from the Hebrew original. Origin probably Alexandria.",
+      "summary": "Six sections added to the Greek Esther: Mordecai's dream, the king's decree ordering Jewish genocide, the prayers of Mordecai and Esther, Esther's audience with the king, the counter-decree, and Mordecai's dream interpretation. Together they supply God, prayer, and covenantal theology to what was a secular court tale.",
+      "tensions": {
+        "T01": {
+          "score": 2,
+          "note": "God is explicitly present in prayers and Mordecai's dream \u2014 a marked shift from the Hebrew Esther where God never appears."
+        },
+        "T02": {
+          "score": -2,
+          "note": "Jewish identity vs. Persian authority; the additions strengthen the particularist framing already in the Hebrew."
+        },
+        "T03": {
+          "score": -1,
+          "note": "Esther and Mordecai pray, but divine orchestration is the added theological point."
+        },
+        "T04": {
+          "score": -2,
+          "note": "Haman and enemies are punished; the Jewish community is restored."
+        },
+        "T05": {
+          "score": 2,
+          "note": "The additions explicitly add prayer, fasting, and covenantal piety to what was originally a politically savvy secular story."
+        },
+        "T06": {
+          "score": -2,
+          "note": "The fate of the Jewish community as a whole is the stakes throughout."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Fairly literal narrative; Mordecai's dream uses symbolic imagery but is interpreted literally."
+        },
+        "T08": {
+          "score": -2,
+          "note": "God saves the Jewish people specifically; the additions reinforce exclusivist covenantal theology."
+        },
+        "T09": {
+          "score": 1,
+          "note": "Prayer is presented as effective \u2014 what Esther does (pray, fast, approach the king) leads to deliverance."
+        },
+        "T10": {
+          "score": -2,
+          "note": "Divine sovereignty operates over and through the Persian king's decrees."
+        },
+        "T11": {
+          "score": -1,
+          "note": "Esther acts courageously but within constraint \u2014 she hates her position as a foreign queen (Addition C)."
+        },
+        "T12": {
+          "score": 1,
+          "note": "The counter-decree authorizes the Jews to kill their enemies (Addition E)."
+        },
+        "T13": {
+          "score": -2,
+          "note": "God protects his people; the additions frame the deliverance as covenantal faithfulness."
+        },
+        "T14": {
+          "score": 1,
+          "note": "Torah law is referenced; Mordecai refuses to bow as a matter of covenantal fidelity."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not a theme."
+        },
+        "T16": {
+          "score": -3,
+          "note": "Mordecai's refusal to bow to Haman is explicitly because he worships only God (Addition A). Idolatry is the implicit charge against the persecutors."
+        },
+        "T17": {
+          "score": 2,
+          "note": "Mordecai's dream and its interpretation frame the events as divinely revealed in advance."
+        },
+        "T18": {
+          "score": 2,
+          "note": "Communal prayer and fasting are the community's response to crisis \u2014 cultic piety is the primary action."
+        },
+        "T19": {
+          "score": 0,
+          "note": "No eschatological horizon. Deliverance is this-worldly and immediate."
+        },
+        "T20": {
+          "score": -1,
+          "note": "Suffering precedes deliverance but is not framed as punishment."
+        }
+      },
+      "conduct": {
+        "diet": "Not specifically addressed in the additions, though Esther's prayer (Addition C) mentions she hates eating at the king's table and the food of the Gentiles \u2014 a detail absent from the Hebrew.",
+        "marriage_sexuality": "Esther's prayer (Addition C) reveals that she hates her marriage to an uncircumcised foreign king and has not eaten at his table. The additions make explicit what the Hebrew conceals: intermarriage with the Gentile king is a source of anguish, not triumph.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Esther puts on her royal robes before approaching the king \u2014 mentioned in both Hebrew and Greek versions as preparation for the dangerous audience.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "The counter-decree (Addition E) authorizes the Jews to defend themselves and kill their enemies on the appointed day. The additions frame this as divinely sanctioned self-defense.",
+        "ritual_calendar": "Fasting and communal prayer (Addition C: Mordecai and Esther each pray) are the Jewish community's ritual response to the threat of genocide."
+      }
+    },
+    "1MA": {
+      "name": "1 Maccabees",
+      "id": "1MA",
+      "section": "Narrative",
+      "chapters": 16,
+      "dating": "c. 100 BCE",
+      "sources": "Written in Hebrew (now lost); Greek is the surviving form. A pro-Hasmonean dynastic history, probably composed in Jerusalem under John Hyrcanus I (135\u2013104 BCE). The most historically reliable account of the Maccabean period.",
+      "summary": "A historical chronicle of the Jewish revolt against Seleucid persecution from Antiochus IV Epiphanes (175 BCE) through the early Hasmonean dynasty. Mattathias ignites the revolt; his son Judas Maccabeus leads the military campaigns and rededicates the Temple (Hanukkah, 164 BCE); his brothers Jonathan and Simon consolidate political and religious independence. God's role is implicit \u2014 there are no miracles; human courage and military strategy determine the outcome.",
+      "tensions": {
+        "T01": {
+          "score": -1,
+          "note": "The most theologically restrained of the Maccabean texts: God does not appear, send angels, or perform miracles. Victory comes from military skill and courage. God's presence is implicit but distant."
+        },
+        "T02": {
+          "score": -4,
+          "note": "Strongly particularist: Jewish identity against Hellenistic assimilation is the entire stakes. Those who adopt Greek ways are traitors; those who die for the law are heroes."
+        },
+        "T03": {
+          "score": -4,
+          "note": "Human agency drives everything. The Maccabees decide to fight, plan campaigns, make alliances, and win by their own courage. No angel tips the balance."
+        },
+        "T04": {
+          "score": -3,
+          "note": "Enemies are punished through military defeat. Justice is exacted by human hands, not divine intervention."
+        },
+        "T05": {
+          "score": 1,
+          "note": "Torah observance AND military defense of the Temple are both required. The Hasmoneans combine priestly and military roles \u2014 slightly toward institutional/ritual priority."
+        },
+        "T06": {
+          "score": -4,
+          "note": "Israel as a national collective is the subject. Individual heroes serve the nation; their deaths are meaningful only in collective terms."
+        },
+        "T07": {
+          "score": -3,
+          "note": "The most historically realistic text in the Apocrypha \u2014 dates, places, military details. Minimal supernatural; maximum literal historiography."
+        },
+        "T08": {
+          "score": -3,
+          "note": "Exclusivist: Jewish identity is the boundary to be defended at all costs."
+        },
+        "T09": {
+          "score": 3,
+          "note": "Works \u2014 fighting for the law, observing Torah, rebuilding the Temple \u2014 are what fidelity looks like. Faith without military action would mean annihilation."
+        },
+        "T10": {
+          "score": -3,
+          "note": "The Hasmonean dynasty rules as high priests under God's authority. Theocratic legitimacy is claimed for the new dynastic order."
+        },
+        "T11": {
+          "score": -3,
+          "note": "Exclusively male military heroes. Women appear as mourners and victims, not agents."
+        },
+        "T12": {
+          "score": 5,
+          "note": "Just war is the book's defining theme \u2014 the most extended theology of righteous warfare in the Jewish biblical tradition. War in defense of Torah and Temple is sacred."
+        },
+        "T13": {
+          "score": -2,
+          "note": "Righteousness and military victory are correlated: the faithful warriors win because God favors them. A collective prosperity-through-fidelity framework."
+        },
+        "T14": {
+          "score": 2,
+          "note": "Torah as written law is what is being defended. The defilement of Torah scrolls by Antiochus is among his worst crimes (1:56\u201357)."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -4,
+          "note": "Strict monotheism against the Hellenistic syncretism imposed by Antiochus \u2014 the defining conflict of the book."
+        },
+        "T17": {
+          "score": 1,
+          "note": "Torah as divine revelation is the standard, but the book's epistemology is practical and historical rather than visionary."
+        },
+        "T18": {
+          "score": 3,
+          "note": "Temple restoration is the climactic achievement (4:36\u201361). Cultic piety \u2014 the proper worship of God \u2014 is the goal of all the military effort."
+        },
+        "T19": {
+          "score": -1,
+          "note": "No developed apocalyptic. The heroes look for 'a prophet to come' (4:46; 14:41) but do not themselves prophesy an imminent end."
+        },
+        "T20": {
+          "score": -2,
+          "note": "Martyrdom is honored \u2014 dying for the law is meaningful and respected \u2014 but it is not salvific or redemptive in itself. The goal is victory, not sacrifice."
+        }
+      },
+      "conduct": {
+        "diet": "Antiochus's persecution specifically targets Jewish dietary laws: Jews are forced to eat pork and other unclean foods as a test of apostasy (1:47, 62\u201363). Many die rather than eat. Diet becomes a mortal marker of identity.",
+        "marriage_sexuality": "Not addressed specifically, though the Hasmonean dynasty's dynastic marriages are mentioned in passing.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Antiochus sells Jews into slavery (1:32). The Maccabees seek to free captives.",
+        "clothing": "Not addressed.",
+        "agriculture": "The land lies fallow and uncultivated during the years of fighting and persecution (6:49, 53) \u2014 a sign of the land's suffering alongside the people.",
+        "economic_justice": "Not directly addressed. The book's economic concern is with tribute, tribute refusal, and the resources needed for warfare.",
+        "violence_war": "War is the central ethical subject: the Maccabees' decision to fight on the Sabbath after the slaughter of non-resisters (2:39\u201341) is among the most significant legal decisions in the book. Self-defense overrides Sabbath law \u2014 a practical ethics of survival.",
+        "ritual_calendar": "The rededication of the Temple and institution of the eight-day festival of Hanukkah (4:36\u201359) is the book's climax. Proper Temple service \u2014 daily sacrifice, lampstand, incense, showbread \u2014 is restored. The Sabbath is a recurring point of conflict throughout."
+      }
+    },
+    "2MA": {
+      "name": "2 Maccabees",
+      "id": "2MA",
+      "section": "Narrative",
+      "chapters": 15,
+      "dating": "c. 120 BCE (epitome); original five-volume work by Jason of Cyrene slightly earlier",
+      "sources": "An epitome (condensation) of a now-lost five-volume history by Jason of Cyrene. More theologically reflective than 1 Maccabees, with explicit theology of martyrdom, resurrection, and divine intervention. Probably composed in Greek in the Diaspora.",
+      "summary": "Covers the period from the high priest Onias III to Judas Maccabeus's defeat of Nicanor (180\u2013161 BCE). Unlike 1 Maccabees, emphasizes divine miracles, angelic appearances, and the theology of martyrdom: those who die for the law will be resurrected. The seven brothers and their mother who die rather than eat pork (chapter 7) are the theological heart of the book and the earliest clear statement of bodily resurrection in Jewish literature.",
+      "tensions": {
+        "T01": {
+          "score": 3,
+          "note": "God is actively immanent: angels appear on horseback to strike down Heliodorus (3:25\u201326), heavenly warriors accompany Judas (10:29\u201330), epiphanies punctuate the narrative. Very different from 1 Maccabees."
+        },
+        "T02": {
+          "score": -3,
+          "note": "Strongly particularist: the Jewish people and their Temple are the focus. God's special relationship with Israel is the theological premise."
+        },
+        "T03": {
+          "score": -1,
+          "note": "The martyrs choose to die rather than violate Torah \u2014 human agency in moral choice is real. But divine intervention is also decisive."
+        },
+        "T04": {
+          "score": -1,
+          "note": "Enemies punished; Israel restored. Both poles are present, though the book's most moving passages are about the redemptive suffering of the martyrs."
+        },
+        "T05": {
+          "score": 0,
+          "note": "Both Temple restoration (cultic/institutional) and the martyrs' moral courage (ethical) receive equal weight and honor."
+        },
+        "T06": {
+          "score": 0,
+          "note": "Individual martyrs (the seven brothers, Eleazar, Razis) and the collective community are both fully present. The individual deaths matter for the collective."
+        },
+        "T07": {
+          "score": 0,
+          "note": "Historical narrative with theological interpretation. Some symbolic/typological reading of events. Neither pole dominates."
+        },
+        "T08": {
+          "score": -3,
+          "note": "Exclusivist: the Jewish people and Temple are uniquely under God's protection. Gentiles who violate the Temple are punished."
+        },
+        "T09": {
+          "score": 1,
+          "note": "Keeping Torah to death is the defining act of the martyrs. Works + divine grace (resurrection as God's gift) are both present."
+        },
+        "T10": {
+          "score": -2,
+          "note": "Theocratic: the Temple is God's house; earthly rulers who violate it face divine punishment."
+        },
+        "T11": {
+          "score": -2,
+          "note": "The mother of the seven brothers is a remarkable female figure \u2014 she encourages her sons to die and finally offers herself (7:20\u201323, 41). Yet she acts within a patriarchal narrative."
+        },
+        "T12": {
+          "score": 3,
+          "note": "Just war AND martyrdom theology: both fighting and dying for the law are honored. Judas's military victories and the martyrs' deaths are equally celebrated forms of fidelity."
+        },
+        "T13": {
+          "score": -3,
+          "note": "The martyrs suffer precisely because they are righteous. Suffering is not prosperity's opposite but the badge of faithfulness. The book's anti-prosperity orientation is strong."
+        },
+        "T14": {
+          "score": 2,
+          "note": "Torah as written divine authority is what the martyrs die to protect."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -4,
+          "note": "Strict monotheism against Hellenistic syncretism, mirroring 1 Maccabees."
+        },
+        "T17": {
+          "score": 3,
+          "note": "Angels, visions, and divine epiphanies make revelation concrete and visible. The book interprets history through a lens of divine disclosure."
+        },
+        "T18": {
+          "score": 1,
+          "note": "Temple restoration is primary, but the martyrs' ethical courage and the condemnation of corrupt priesthood also matter."
+        },
+        "T19": {
+          "score": 3,
+          "note": "Bodily resurrection of the martyrs at the end of days is explicit and central (7:9, 11, 14, 23, 29). One of the earliest clear statements of future bodily resurrection in Jewish literature."
+        },
+        "T20": {
+          "score": -4,
+          "note": "The most explicit theology of redemptive martyrdom in the Jewish tradition: Eleazar's death atones for the community (6:28); the mother encourages her sons because the Creator will restore their bodies. Death for the law is not punishment but the path to resurrection."
+        }
+      },
+      "conduct": {
+        "diet": "The martyrdom of Eleazar (6:18\u201331) and the seven brothers (7:1\u201342) centers on the refusal to eat pork. Eleazar refuses even the pretense of eating it. Diet as covenant identity marker is worth dying for.",
+        "marriage_sexuality": "Not specifically addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not specifically addressed.",
+        "violence_war": "War for the Temple and the law is holy. Judas Maccabeus leads with divine support. The suicide of Razis rather than capture (14:37\u201346) raises questions about the ethics of self-destruction that the book presents approvingly.",
+        "ritual_calendar": "The book begins with a letter about Hanukkah (1:1\u20132:18) and ends with the institution of Nicanor's Day (15:36). Festival commemoration of divine rescue is a governing structure. Proper Temple sacrifice and Sabbath observance are central concerns."
+      }
+    },
+    "WIS": {
+      "name": "Wisdom of Solomon",
+      "id": "WIS",
+      "section": "Wisdom",
+      "chapters": 19,
+      "dating": "c. 50\u201330 BCE",
+      "sources": "Written in Greek by an Alexandrian Jew; attributed to Solomon as a literary device. Heavily influenced by Middle Platonism and Stoic philosophy while remaining within Jewish monotheism.",
+      "summary": "A sophisticated philosophical defense of Jewish wisdom written for Diaspora Jews tempted by Hellenistic culture. Part I argues that righteousness leads to immortality and wickedness to futility (1\u20135). Part II celebrates Wisdom as a divine emanation whom Solomon courts (6\u20139). Part III retells the Exodus as a demonstration of how God uses nature to punish idolaters and save the righteous (10\u201319).",
+      "tensions": {
+        "T01": {
+          "score": 2,
+          "note": "Wisdom is a divine emanation that pervades all things (7:24\u20138:1), making God powerfully immanent. Yet God remains the ultimate transcendent source."
+        },
+        "T02": {
+          "score": -1,
+          "note": "Wisdom is available to all who seek her in principle, but in practice she comes through Israel's covenant and the Exodus. A mild tension between potential universalism and actual particularism."
+        },
+        "T03": {
+          "score": -2,
+          "note": "Moral choices determine the fate of the soul. The wicked choose wickedness; the righteous choose righteousness. Free will is the implicit framework."
+        },
+        "T04": {
+          "score": -2,
+          "note": "Ultimately restorative: the righteous attain immortality. Wickedness is self-defeating rather than externally punished."
+        },
+        "T05": {
+          "score": -2,
+          "note": "Strongly ethical: righteousness, not ritual performance, leads to immortality. The critique of idolatry is moral and philosophical as much as cultic."
+        },
+        "T06": {
+          "score": 2,
+          "note": "Individual souls and their immortality are central. The righteous individual persists beyond death; the wicked individual perishes."
+        },
+        "T07": {
+          "score": 2,
+          "note": "Wisdom is personified allegorically (she is a bride, a craftsman, a spirit). The Exodus plagues are interpreted typologically. Symbolic reading is native to this book."
+        },
+        "T08": {
+          "score": -1,
+          "note": "Wisdom is theoretically available to all (6:12\u201316), but Israel is the people God loves and saves. A mild universalism in principle, exclusivism in history."
+        },
+        "T09": {
+          "score": 0,
+          "note": "Both righteous works (pursuing wisdom, practicing justice) and God's gracious gift of wisdom are present. Neither alone suffices."
+        },
+        "T10": {
+          "score": -1,
+          "note": "Rulers are exhorted to govern with divinely given wisdom (6:1\u201311). Governance is theocratic in ideal even if not in practice."
+        },
+        "T11": {
+          "score": 0,
+          "note": "Wisdom is personified as feminine (she is beloved, a bride), which complicates simple patriarchal assumptions. The text is unusually open to feminine divine attributes."
+        },
+        "T12": {
+          "score": 0,
+          "note": "The Exodus retelling includes divinely sanctioned violence against Egypt, but war as a human institution is not the topic."
+        },
+        "T13": {
+          "score": -2,
+          "note": "The righteous appear to suffer and die, but this is illusion: their souls are immortal (3:1\u20139). Suffering is reframed as divine testing, not punishment."
+        },
+        "T14": {
+          "score": 1,
+          "note": "The written tradition of wisdom \u2014 Solomon's quest \u2014 is the vehicle. Torah is implicitly the written form of Wisdom."
+        },
+        "T15": {
+          "score": -1,
+          "note": "Nature testifies to God's wisdom and power (13:1\u20135). Creation is a witness to divinity, though the argument is used polemically against idolaters."
+        },
+        "T16": {
+          "score": -4,
+          "note": "The most sustained philosophical anti-idolatry argument in the Apocrypha (13\u201315): idols are dead works of human hands, and idolatry corrupts morality."
+        },
+        "T17": {
+          "score": 0,
+          "note": "Genuine balance: wisdom is accessible through reason (nature testifies to God, 13:1\u20135) AND through divine revelation (Wisdom is given, 8:21). Neither pole dominates."
+        },
+        "T18": {
+          "score": -1,
+          "note": "Justice for the poor and oppressed is part of the righteousness that leads to immortality (2:10\u201320 shows the wicked oppressing the righteous)."
+        },
+        "T19": {
+          "score": -2,
+          "note": "The immortality of the soul is a present reality for the righteous \u2014 they are already in God's hands (3:1). This is realized eschatology at the individual level."
+        },
+        "T20": {
+          "score": -3,
+          "note": "The suffering of the righteous is only apparent: 'their hope is full of immortality' (3:4). Suffering is not punishment but testing, and death for the righteous is not death at all."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed. The focus is on moral and spiritual purity rather than food laws.",
+        "marriage_sexuality": "Solomon's relationship with Wisdom is described in erotic marital terms (8:2\u20139), sublimating sexuality into the pursuit of divine wisdom. Sexual immorality is listed among the corrupting effects of idolatry (14:12, 24\u201326).",
+        "homosexuality": "Idolatry is linked to sexual disorder including 'confusion of sex' (14:26) among its corrupting effects \u2014 a brief but negative reference in the context of condemning idolatry's moral consequences.",
+        "slavery": "Not addressed directly.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "The wicked oppress the righteous poor man, reasoning that might makes right (2:10\u201320). The book treats this as the defining characteristic of wickedness, and justice for the oppressed as the mark of righteousness.",
+        "violence_war": "The Exodus plagues are retold as God's precision instrument: the same phenomena that destroy Egypt protect Israel (16\u201319). Divine violence in history is celebrated as just and calibrated.",
+        "ritual_calendar": "Not specifically addressed. The book's concerns are philosophical and ethical rather than liturgical."
+      }
+    },
+    "SIR": {
+      "name": "Sirach",
+      "id": "SIR",
+      "section": "Wisdom",
+      "chapters": 51,
+      "dating": "c. 180 BCE (original Hebrew); c. 132 BCE (Greek translation by author's grandson)",
+      "sources": "Written in Hebrew by Jesus ben Sira, a Jerusalem scribe and teacher. One of the few Apocryphal books whose author is known. Hebrew manuscripts recovered from Cairo Geniza and Qumran.",
+      "summary": "The longest wisdom book in the Jewish tradition, Ben Sira's compendium covers the fear of the Lord, creation, social ethics, proper speech, table manners, friendship, the duties of priests and kings, the beauty of the cosmos, and the Praise of Famous Men (44\u201350) culminating in the high priest Simon II. Wisdom is identified with Torah (24:23). Deeply indebted to Proverbs while more systematic.",
+      "tensions": {
+        "T01": {
+          "score": 1,
+          "note": "God's wisdom pervades creation and dwells in Israel through Torah. Somewhat immanent, but God is also the transcendent judge whose ways are inscrutable."
+        },
+        "T02": {
+          "score": -2,
+          "note": "Wisdom was sent to dwell in Israel specifically (24:8\u201312) \u2014 it is Israel's gift. The nations have other options; none match Torah."
+        },
+        "T03": {
+          "score": -3,
+          "note": "The clearest free-will statement in the Apocrypha: 'If you choose, you can keep the commandments' (15:15\u201317). Human agency in moral choice is unambiguous."
+        },
+        "T04": {
+          "score": -2,
+          "note": "Retributive wisdom ethic: good and bad actions reliably produce good and bad consequences in this life. The righteous are rewarded; the wicked suffer."
+        },
+        "T05": {
+          "score": 0,
+          "note": "Ben Sira is equally committed to proper worship, sacrifice, and priestly order (chapters 45, 50) and to social ethics (almsgiving, treatment of workers, care for the poor). Both are given equal weight."
+        },
+        "T06": {
+          "score": 0,
+          "note": "Wisdom addresses the individual (moral formation, self-discipline) and the community (social ethics, worship). Neither dominates."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Practical and largely literal: wisdom proverbs, direct moral instruction, hymns. Little allegory, though cosmic personification of Wisdom is present."
+        },
+        "T08": {
+          "score": -2,
+          "note": "Wisdom given to Israel through covenant; the nations are not the audience. Exclusivist in the delivery of wisdom, though all humans can theoretically pursue it."
+        },
+        "T09": {
+          "score": 3,
+          "note": "Works are overwhelmingly emphasized. The fear of the Lord is demonstrated by deeds. Almsgiving, honoring parents, keeping the commandments \u2014 all are active obligations."
+        },
+        "T10": {
+          "score": -1,
+          "note": "The ideal king governs with wisdom from God (10:1\u20135). Priestly authority alongside civil authority. Theocratic ideal."
+        },
+        "T11": {
+          "score": -4,
+          "note": "Among the most patriarchal texts in the tradition. Extended warnings about wives (25:13\u201326:27), daughters (42:9\u201314), and the dangers of women generally. 'Better is the wickedness of a man than a woman who does good' (42:14, NRSV). Unambiguously misogynist passages."
+        },
+        "T12": {
+          "score": 2,
+          "note": "The Praise of the Fathers celebrates military heroes \u2014 Joshua, David, the Maccabean predecessors \u2014 alongside prophets and priests. Just war in service of Israel is honored."
+        },
+        "T13": {
+          "score": -2,
+          "note": "Long life, honor, and prosperity attend the righteous; shame and trouble attend the wicked. A broadly this-worldly retributive theology."
+        },
+        "T14": {
+          "score": 2,
+          "note": "Wisdom is explicitly identified with the Torah of Moses (24:23). Written Scripture is the concrete form wisdom takes in Israel."
+        },
+        "T15": {
+          "score": -1,
+          "note": "Creation reveals God's wisdom and power; the hymn to creation (42:15\u201343:33) is one of the book's peaks. Nature is a witness to God."
+        },
+        "T16": {
+          "score": -3,
+          "note": "Strict monotheism throughout; the one God of Israel is the source of all wisdom. Idolatry is not a major polemical theme, but monotheism is assumed."
+        },
+        "T17": {
+          "score": 0,
+          "note": "Wisdom/reason and revelation hold in genuine tension: Ben Sira teaches from human observation and experience AND from Torah as divine revelation. Both are authoritative."
+        },
+        "T18": {
+          "score": 0,
+          "note": "Extensive teaching on almsgiving and justice for the poor (3:30\u20134:10, 29:8\u201313) alongside detailed rules for proper sacrifice and priestly service (45, 50). Both receive full treatment."
+        },
+        "T19": {
+          "score": -1,
+          "note": "Notably this-worldly: Ben Sira has little to say about afterlife or eschatology. The dead are in Sheol and that is that (14:16\u201317). No resurrection, no apocalyptic horizon."
+        },
+        "T20": {
+          "score": -1,
+          "note": "Suffering is a form of divine discipline and testing (2:1\u20136): 'Accept whatever befalls you, and in times of humiliation be patient.' Not punishment in the simple retributive sense."
+        }
+      },
+      "conduct": {
+        "diet": "Ben Sira addresses table manners and moderation extensively (31:12\u201332:13): don't gorge yourself, be considerate of others at table, wine in moderation. Dietary laws assumed but the focus is on social etiquette.",
+        "marriage_sexuality": "Marriage to a good wife is praised as God's gift (26:1\u20134, 13\u201316), but the text is deeply suspicious of women. Men are warned against wayward wives (25:13\u201326), seductive women, and daughters who bring shame. Endogamy is preferred. The text's view of women as sources of danger to men is one of the most negative in Scripture.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Ben Sira addresses masters directly (33:25\u201333): slaves should be given food, discipline, and hard work. 'Fodder and a stick and burdens for a donkey; bread and discipline and work for a slave.' Slavery is assumed as normal and the master's authority is affirmed without question.",
+        "clothing": "Not specifically addressed as an ethical matter.",
+        "agriculture": "Agricultural imagery pervades the book, but it is used as metaphor rather than as subject of legislation. Tilling the soil is honored as honest work (7:15).",
+        "economic_justice": "Extensive teaching: give alms to the poor (3:30\u20134:10); lend without expecting repayment from the needy (29:1\u20132); warn against stinginess (14:3\u201310). Merchants and traders are warned they can hardly avoid sin (26:29\u201327:3). One of the strongest economic justice sections in the Apocrypha.",
+        "violence_war": "The Praise of the Fathers honors military heroes: Joshua who 'waged the wars of the Lord' (46:1), David, and others. War in service of Israel and God's honor is celebrated alongside priestly and prophetic service.",
+        "ritual_calendar": "Extensive coverage: proper sacrifice and priestly duty (chapters 45, 50), the beauty of the high priest Simon's liturgy (50:1\u201321), tithes, offerings, and feast days. Ben Sira is a temple-enthusiast \u2014 the cult is one of creation's glories."
+      }
+    },
+    "BAR": {
+      "name": "Baruch",
+      "id": "BAR",
+      "section": "Prophetic & Liturgical",
+      "chapters": 5,
+      "dating": "c. 150 BCE",
+      "sources": "Attributed to Baruch, Jeremiah's scribe, but clearly post-exilic composition. Three distinct sections by possibly different authors: prose confession (1:1\u20133:8), wisdom poem (3:9\u20134:4), poems of consolation (4:5\u20135:9).",
+      "summary": "A composite work in three movements: a communal confession of sin explaining the exile as punishment for abandoning Torah; a wisdom poem identifying Wisdom with the Torah given to Israel alone; and lyrical poems of consolation promising Israel's return from exile. The whole addresses Diaspora communities seeking meaning in displacement.",
+      "tensions": {
+        "T01": {
+          "score": 1,
+          "note": "God hears prayer from exile and promises restoration. Present but not directly accessible \u2014 the community confesses and waits."
+        },
+        "T02": {
+          "score": -3,
+          "note": "Israel is the unique recipient of Wisdom/Torah. The nations have not found her (3:15\u20134:4). Exile is the context but covenant particularity is the answer."
+        },
+        "T03": {
+          "score": -1,
+          "note": "The community can choose repentance and return to God."
+        },
+        "T04": {
+          "score": 0,
+          "note": "Exile is framed as punishment (retributive), but the poems of consolation promise unconditional restoration (restorative). Both poles are present."
+        },
+        "T05": {
+          "score": 0,
+          "note": "Confession of sin (ritual act) and call to walk in Torah's way (ethical-wisdom) are equally present in the three sections."
+        },
+        "T06": {
+          "score": -4,
+          "note": "Israel as a collective people confesses, mourns, and hopes. Individual voices are absent \u2014 this is communal liturgy."
+        },
+        "T07": {
+          "score": -2,
+          "note": "Fairly literal confession and promise. The wisdom poem has some personification but is less allegorical than Wisdom of Solomon."
+        },
+        "T08": {
+          "score": -2,
+          "note": "Torah/Wisdom is Israel's alone: 'She has not been heard of in Canaan or seen in Teman' (3:22). Exclusivist."
+        },
+        "T09": {
+          "score": 2,
+          "note": "Return to Torah observance \u2014 obedience to the written commandments \u2014 is the prescribed response to exile."
+        },
+        "T10": {
+          "score": -2,
+          "note": "God is sovereign over history; Babylon is an instrument of divine judgment, not a legitimate alternative authority."
+        },
+        "T11": {
+          "score": 0,
+          "note": "Wisdom is personified as female (4:1). Jerusalem is personified as a mourning mother (4:9\u20135:9). Feminine imagery is prominent."
+        },
+        "T12": {
+          "score": null,
+          "note": "Not a theme."
+        },
+        "T13": {
+          "score": 2,
+          "note": "Exile is clearly framed as punishment for abandoning Torah. 'We have sinned before the Lord our God, and have not obeyed him' (1:17)."
+        },
+        "T14": {
+          "score": 3,
+          "note": "Torah as written text is the concrete form of Wisdom: 'She is the book of the commandments of God' (4:1). Written Scripture is the path back from exile."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not a theme."
+        },
+        "T16": {
+          "score": -4,
+          "note": "The nations' gods are nothing; Israel's God is the only true God. Babylon's power is temporary and delegated."
+        },
+        "T17": {
+          "score": 3,
+          "note": "Torah is revelation: God gave Wisdom to Jacob and Israel alone (3:36\u20134:1). Revelation through written Scripture is the epistemological foundation."
+        },
+        "T18": {
+          "score": 2,
+          "note": "Cultic confession and liturgical mourning dominate. Social justice concerns are present in the background but not foregrounded."
+        },
+        "T19": {
+          "score": 2,
+          "note": "The consolation poems promise Israel's return and restoration. A moderately future-oriented hope, not yet apocalyptic."
+        },
+        "T20": {
+          "score": 3,
+          "note": "The exile is directly attributed to Israel's sin. 'The Lord our God is in the right, but there is open shame on us today' (2:6). Suffering as divine punishment for covenant breach."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Not specifically addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not specifically addressed. The focus is on covenant fidelity to Torah rather than social ethics.",
+        "violence_war": "Not addressed as a direct ethical concern.",
+        "ritual_calendar": "Communal confession and liturgical prayer frame the entire book. It was likely composed for use in communal worship during the exile \u2014 a liturgical text before it is a theological one."
+      }
+    },
+    "LJE": {
+      "name": "Letter of Jeremiah",
+      "id": "LJE",
+      "section": "Prophetic & Liturgical",
+      "chapters": 1,
+      "dating": "c. 300 BCE (earliest Apocryphal text; Qumran fragment dated to c. 100 BCE confirms antiquity)",
+      "sources": "Purports to be a letter from Jeremiah to exiles in Babylon. Probably composed in Hebrew or Aramaic; the Greek is the surviving form. Counted as Baruch chapter 6 in Catholic tradition.",
+      "summary": "A sustained, repetitive polemic against idolatry addressed to Jews in Babylon. The argument is simple and hammered home seventeen times: idols cannot speak, move, save, or act \u2014 they are powerless objects made by craftsmen, dressed by women, and worshipped by fools. Therefore do not fear them.",
+      "tensions": {
+        "T01": {
+          "score": -2,
+          "note": "God is implicitly transcendent \u2014 contrasted with the powerless idols \u2014 but does not appear or act directly in this text."
+        },
+        "T02": {
+          "score": -2,
+          "note": "The letter is addressed to Israel in Babylon: don't be seduced by the surrounding culture's gods. Particularist warning."
+        },
+        "T03": {
+          "score": -1,
+          "note": "Israel can choose not to worship idols. The entire letter is an argument designed to persuade people to make the right choice."
+        },
+        "T04": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T05": {
+          "score": -2,
+          "note": "The ethical-religious obligation not to worship idols is the sole focus."
+        },
+        "T06": {
+          "score": -2,
+          "note": "Warning addressed to the community collectively."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Literal and repetitive descriptions of idols and their absurdity. No allegory."
+        },
+        "T08": {
+          "score": -3,
+          "note": "Exclusivist monotheism: only YHWH is worthy of worship. All other gods are nothing."
+        },
+        "T09": {
+          "score": 1,
+          "note": "Behavioral: don't worship idols. The required 'work' is abstention and fidelity."
+        },
+        "T10": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T11": {
+          "score": -1,
+          "note": "Women are mentioned making offerings to idols during menstruation (v. 43), used as evidence of the cult's degradation \u2014 a patriarchal framing."
+        },
+        "T12": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T13": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T14": {
+          "score": 1,
+          "note": "A written letter \u2014 textual form is the medium of divine instruction."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -5,
+          "note": "The most concentrated anti-idolatry argument in the entire biblical tradition. Idols cannot speak, see, walk, or save. 'They are not gods, so do not fear them' \u2014 repeated as a refrain throughout."
+        },
+        "T17": {
+          "score": 2,
+          "note": "The letter presents itself as divine revelation (from Jeremiah by implication). Revealed instruction replaces human religious exploration."
+        },
+        "T18": {
+          "score": 3,
+          "note": "Cultic piety \u2014 or rather, the refusal of false cultic piety \u2014 is the entire concern. Social ethics are entirely absent."
+        },
+        "T19": {
+          "score": null,
+          "note": "No eschatological horizon."
+        },
+        "T20": {
+          "score": null,
+          "note": "Suffering is not addressed."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Not addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Idols are dressed by women in fine garments (v. 11) \u2014 used as a sign of their impotence (they need humans to dress them).",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "Not addressed.",
+        "ritual_calendar": "The idolatrous cult calendar \u2014 priests eating sacrifice, women making offerings during menstruation, torches burned before idols \u2014 is described and mocked as evidence of the cult's degradation."
+      }
+    },
+    "PAZ": {
+      "name": "Prayer of Azariah / Song of Three Jews",
+      "id": "PAZ",
+      "section": "Additions to Daniel",
+      "chapters": 1,
+      "dating": "c. 100 BCE",
+      "sources": "Inserted between Daniel 3:23 and 3:24 in the Greek and Latin versions. Origin probably Hebrew or Aramaic. Two originally independent pieces: Azariah's prayer of communal confession (vv. 1\u201322) and the three men's hymn of praise from within the furnace (vv. 28\u201368).",
+      "summary": "Two liturgical additions to Daniel 3. First, Azariah prays from inside the furnace, confessing Israel's sins and asking God to restore the people despite the absence of Temple sacrifice. Second, Shadrach, Meshach, and Abednego sing a cosmic praise hymn calling all creation \u2014 angels, waters, mountains, animals \u2014 to bless the Lord.",
+      "tensions": {
+        "T01": {
+          "score": 3,
+          "note": "God hears prayer even in the furnace and responds. The hymn celebrates God's presence in all creation. Highly immanent."
+        },
+        "T02": {
+          "score": -2,
+          "note": "Israel's covenant frames the prayer. God is asked to act for the sake of his name and his covenant with the patriarchs."
+        },
+        "T03": {
+          "score": -1,
+          "note": "Repentance and prayer are the human response that matters, but God's action is what delivers."
+        },
+        "T04": {
+          "score": -3,
+          "note": "God rescues the three men \u2014 restorative intervention in extremis."
+        },
+        "T05": {
+          "score": 3,
+          "note": "The prayer explicitly acknowledges that sacrifice and Temple are unavailable (vv. 15\u201317) and substitutes prayer and a contrite heart. Liturgical piety is the whole concern."
+        },
+        "T06": {
+          "score": -3,
+          "note": "Azariah prays on behalf of all Israel, confessing collective sin and asking collective restoration."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Fairly literal liturgical compositions. The hymn is a catalogue of creation, not an allegory."
+        },
+        "T08": {
+          "score": -2,
+          "note": "God of Israel and the patriarchs \u2014 particularist frame."
+        },
+        "T09": {
+          "score": 0,
+          "note": "Both contrite heart (faith/disposition) and the turn from sin (behavioral change) are offered as substitutes for unavailable sacrifice."
+        },
+        "T10": {
+          "score": -3,
+          "note": "Nebuchadnezzar's unjust authority is the backdrop; God's kingship is the implicit alternative."
+        },
+        "T11": {
+          "score": null,
+          "note": "Gender is not a theme."
+        },
+        "T12": {
+          "score": 1,
+          "note": "Implied divine judgment on the unjust king, but no human warfare."
+        },
+        "T13": {
+          "score": -1,
+          "note": "The three men suffer despite faithfulness. Suffering precedes divine deliverance."
+        },
+        "T14": {
+          "score": null,
+          "note": "Not addressed directly."
+        },
+        "T15": {
+          "score": -3,
+          "note": "The cosmic hymn calls all creation to praise God \u2014 sun, moon, stars, rain, mountains, animals, all people. Creation is a choir of praise, which implies its value and order."
+        },
+        "T16": {
+          "score": -4,
+          "note": "Strict monotheism: only the God of Israel is praised. Nebuchadnezzar's claim to divine authority is the foil."
+        },
+        "T17": {
+          "score": 3,
+          "note": "Prayer and revelation are the sources of confidence. No rational argument \u2014 pure doxology."
+        },
+        "T18": {
+          "score": 3,
+          "note": "Cultic piety in extremis: prayer and contrite heart offered as substitute for unavailable sacrifice. The liturgical impulse drives the text."
+        },
+        "T19": {
+          "score": -2,
+          "note": "Deliverance is immediate and miraculous \u2014 a realized intervention, not an apocalyptic future hope."
+        },
+        "T20": {
+          "score": -2,
+          "note": "The three men suffer unjustly \u2014 their suffering is a test, not punishment. They are righteous throughout."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Not addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "Not addressed.",
+        "ritual_calendar": "The prayer explicitly addresses the absence of Temple cult (no burnt offerings, no sacrifice, no place to stand before God) and proposes prayer and a contrite heart as substitutes \u2014 a theological innovation that anticipates post-70 CE Jewish prayer theology."
+      }
+    },
+    "SUS": {
+      "name": "Susanna",
+      "id": "SUS",
+      "section": "Additions to Daniel",
+      "chapters": 1,
+      "dating": "c. 100 BCE",
+      "sources": "Appears as Daniel chapter 13 in the Vulgate and Catholic Bibles; as a preface to Daniel in the LXX. Probably composed in Hebrew or Aramaic. Qumran has no fragment.",
+      "summary": "Two elders spy on the beautiful and pious Susanna as she bathes in her garden, then falsely accuse her of adultery when she refuses their advances. She is condemned to death. The young Daniel intervenes, cross-examines the elders separately, exposes their lie, and has them executed instead. A story about sexual harassment, false testimony, the vindication of the innocent, and divinely given wisdom.",
+      "tensions": {
+        "T01": {
+          "score": 2,
+          "note": "God hears Susanna's prayer and stirs up the spirit of young Daniel (v. 45). Divine response to prayer is immediate."
+        },
+        "T02": {
+          "score": -1,
+          "note": "The conflict is within the Jewish community \u2014 corrupt leaders vs. a faithful woman. Not a Jewish-Gentile tension."
+        },
+        "T03": {
+          "score": -2,
+          "note": "Daniel's wisdom and Susanna's refusal to comply \u2014 both are acts of human courage that drive the resolution."
+        },
+        "T04": {
+          "score": -3,
+          "note": "Restorative justice: the innocent are vindicated, the guilty punished. Justice is corrected, not merely exacted."
+        },
+        "T05": {
+          "score": -3,
+          "note": "The central ethical concern is justice for the falsely accused. Susanna's moral integrity \u2014 her refusal to sin even to save her life \u2014 is the ethical pole."
+        },
+        "T06": {
+          "score": 1,
+          "note": "Susanna's individual case is the focus. The community's corruption (the elders) and the community's justice system are the context."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Literal narrative. No allegory."
+        },
+        "T08": {
+          "score": -1,
+          "note": "Within the Jewish community; no Gentile-Jewish binary."
+        },
+        "T09": {
+          "score": 1,
+          "note": "Susanna's righteous behavior \u2014 she prays and refuses to sin \u2014 and Daniel's active intervention together produce justice."
+        },
+        "T10": {
+          "score": -1,
+          "note": "The Jewish community's legal system is implicated in injustice; Daniel's wisdom corrects it."
+        },
+        "T11": {
+          "score": -2,
+          "note": "Susanna is subject to male authority at every point (husband, elders, assembly) and must be rescued by a young male. Yet the text celebrates her moral courage and the elders' evil. The patriarchal system is not challenged, but its corruption is condemned."
+        },
+        "T12": {
+          "score": null,
+          "note": "No war or violence beyond the judicial execution of the guilty elders."
+        },
+        "T13": {
+          "score": -2,
+          "note": "Susanna suffers unjustly but is vindicated \u2014 not a prosperity narrative, since the righteous do suffer, but also not suffering-as-punishment."
+        },
+        "T14": {
+          "score": 2,
+          "note": "The law of Moses on false testimony is applied (Deuteronomy 19:18\u201319) to execute the elders. Written Torah is the standard."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -2,
+          "note": "Monotheism is assumed; Susanna prays to God directly."
+        },
+        "T17": {
+          "score": 1,
+          "note": "God stirs up Daniel's spirit \u2014 divine wisdom given to the young over the corrupt establishment."
+        },
+        "T18": {
+          "score": -4,
+          "note": "Social justice for the falsely accused against corrupt authority \u2014 the book's entire point is the defense of the innocent against institutional power."
+        },
+        "T19": {
+          "score": null,
+          "note": "No eschatological dimension."
+        },
+        "T20": {
+          "score": -3,
+          "note": "Susanna's suffering is explicitly unjust \u2014 she is righteous. Suffering is not punishment here but the experience of injustice awaiting correction."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Susanna is a faithful, beautiful married woman. The elders' lust for her and their attempt to coerce her into adultery \u2014 'Consent to us and lie with us' (v. 20) \u2014 are the book's moral crisis. The text presents female sexual virtue as worth dying for and male sexual predation as deserving death.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Susanna has maids who are sent away so she can bathe \u2014 slavery assumed as normal background.",
+        "clothing": "Susanna removes her veils to wash \u2014 a moment of vulnerability exploited by the elders. Clothing and modesty are part of the narrative setup.",
+        "agriculture": "The garden setting is incidental.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "The elders are stoned to death per the lex talionis for false testimony \u2014 judicial violence sanctioned by Torah law.",
+        "ritual_calendar": "Not addressed."
+      }
+    },
+    "BEL": {
+      "name": "Bel and the Dragon",
+      "id": "BEL",
+      "section": "Additions to Daniel",
+      "chapters": 1,
+      "dating": "c. 100 BCE",
+      "sources": "Appears as Daniel chapter 14 in Vulgate/Catholic Bibles and as an appendix in some LXX manuscripts. Origin probably Semitic. Two episodes: Daniel exposes the priests of Bel and then kills the Dragon.",
+      "summary": "Two linked tales in which Daniel uses rational investigation to debunk false religion. In the first, he exposes the priests of Bel as frauds who secretly eat the idol's food, by scattering ashes on the floor and revealing their footprints. In the second, he kills the 'dragon' (a large snake worshipped as a god) by feeding it lethal cakes \u2014 proving it is a mortal animal, not a god. Daniel is thrown to the lions for his iconoclasm but miraculously fed by Habakkuk.",
+      "tensions": {
+        "T01": {
+          "score": 0,
+          "note": "God rescues Daniel from the lions' den, but Daniel's own rational investigation is the primary vehicle of divine truth in this story."
+        },
+        "T02": {
+          "score": -2,
+          "note": "Daniel as the Jewish hero against Babylonian religion \u2014 particularist framing."
+        },
+        "T03": {
+          "score": -3,
+          "note": "Daniel's rational detective method \u2014 the ashes on the floor, the lethal cakes \u2014 is the most rationalistic approach to religion in the Apocrypha. Human reason unmasks false religion."
+        },
+        "T04": {
+          "score": -2,
+          "note": "The priests are executed; the king who supported them is humiliated. Retributive."
+        },
+        "T05": {
+          "score": -2,
+          "note": "The ethical-rational imperative to reject false religion dominates. Formal worship of the true God is in the background."
+        },
+        "T06": {
+          "score": 1,
+          "note": "Daniel acts as an individual; the community's fate depends on his courage."
+        },
+        "T07": {
+          "score": -3,
+          "note": "The most rationalistic text in the Apocrypha: Daniel offers no miracle, only evidence. The idol's fraud is exposed by detective work, not divine sign."
+        },
+        "T08": {
+          "score": -2,
+          "note": "Only the God of Israel is the true God. Exclusivist."
+        },
+        "T09": {
+          "score": 0,
+          "note": "Daniel's action (rational investigation) and his faith (he worships only God) are both essential."
+        },
+        "T10": {
+          "score": -2,
+          "note": "The Babylonian king's authority is subordinated to Daniel's demonstration of truth. God's kingship is the implicit truth."
+        },
+        "T11": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T12": {
+          "score": null,
+          "note": "No warfare."
+        },
+        "T13": {
+          "score": -1,
+          "note": "Daniel is thrown to the lions \u2014 suffers for his faithfulness \u2014 but is miraculously fed and saved."
+        },
+        "T14": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -5,
+          "note": "The most sustained rational debunking of idolatry in the Apocrypha. Bel cannot eat; the Dragon is a natural animal. 'I worship the Lord my God, for he is the living God' \u2014 all else is nothing."
+        },
+        "T17": {
+          "score": -3,
+          "note": "Reason \u2014 detective evidence \u2014 is the primary weapon against false religion. This is the opposite pole from pure revelation; reason unmasks the fraud that superstition maintains."
+        },
+        "T18": {
+          "score": 2,
+          "note": "Anti-cultic in the specific sense: false cult is exposed. True worship is implied but not specified."
+        },
+        "T19": {
+          "score": null,
+          "note": "No eschatological dimension."
+        },
+        "T20": {
+          "score": null,
+          "note": "Not addressed."
+        }
+      },
+      "conduct": {
+        "diet": "Daniel's lethal cakes for the Dragon (pitch, fat, and hair baked together) are a weapon, not food \u2014 though the episode exploits the irony of the idol's 'appetite'. The priests' secret eating of Bel's food offering is the core scandal.",
+        "marriage_sexuality": "Not addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "Daniel kills the dragon by feeding it a substance that ruptures it \u2014 a form of targeted assassination rather than warfare. The priests are executed by the king for their fraud.",
+        "ritual_calendar": "The offering of food to Bel daily is the ritual practice exposed as fraudulent. True worship of the living God requires no such feeding."
+      }
+    },
+    "1ES": {
+      "name": "1 Esdras",
+      "id": "1ES",
+      "section": "Narrative",
+      "chapters": 9,
+      "dating": "c. 150 BCE",
+      "sources": "A Greek compilation paralleling much of 2 Chronicles 35\u201336, all of Ezra, and Nehemiah 8. Its unique addition is the Story of the Three Guardsmen (3:1\u20135:6), in which Zerubbabel wins a wisdom contest at Darius's court by arguing that truth is the strongest thing.",
+      "summary": "A retelling of Josiah's Passover, the fall of Jerusalem, the return from exile under Cyrus, the rebuilding of the Temple under Zerubbabel, and the Torah reforms of Ezra. The distinctive Story of the Three Guardsmen frames Zerubbabel as a wisdom hero whose praise of truth wins from Darius the permission to rebuild Jerusalem.",
+      "tensions": {
+        "T01": {
+          "score": 1,
+          "note": "God acts through history \u2014 through Persian decrees and Zerubbabel's wisdom \u2014 but does not appear directly."
+        },
+        "T02": {
+          "score": -3,
+          "note": "Strongly particularist: the restoration of Israel, the Temple, and the Torah community is the whole concern. Foreign wives are expelled."
+        },
+        "T03": {
+          "score": -1,
+          "note": "Zerubbabel's wisdom and the community's repentance matter; divine orchestration operates through them."
+        },
+        "T04": {
+          "score": -2,
+          "note": "Restorative: exile was punishment; return is restoration. The community is reestablished."
+        },
+        "T05": {
+          "score": 3,
+          "note": "Temple restoration \u2014 the proper cult \u2014 is the goal of all the action. Ritual/institutional concerns drive the narrative."
+        },
+        "T06": {
+          "score": -3,
+          "note": "The returning community as a collective is the subject throughout."
+        },
+        "T07": {
+          "score": -2,
+          "note": "Historical narrative. The Story of the Three Guardsmen is a quasi-philosophical wisdom tale but is treated as historical."
+        },
+        "T08": {
+          "score": -3,
+          "note": "Exclusivist: community boundaries enforced by expelling foreign wives."
+        },
+        "T09": {
+          "score": 2,
+          "note": "Obedience to Torah \u2014 the required works \u2014 is the mark of the restored community."
+        },
+        "T10": {
+          "score": -1,
+          "note": "Persian king's decree and divine will work together; the king is God's instrument, not an independent authority."
+        },
+        "T11": {
+          "score": -2,
+          "note": "Patriarchal: male leaders, priests, and scribes are the agents. Foreign wives are expelled on male decision."
+        },
+        "T12": {
+          "score": null,
+          "note": "No warfare theme."
+        },
+        "T13": {
+          "score": -1,
+          "note": "Exile \u2192 restoration pattern. Suffering leads to return."
+        },
+        "T14": {
+          "score": 2,
+          "note": "Ezra reads the Torah publicly as a written authoritative text. Written Scripture governs the restored community."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -3,
+          "note": "Monotheism assumed. The Temple as the dwelling of Israel's God must be restored."
+        },
+        "T17": {
+          "score": 1,
+          "note": "Revelation through history and Torah. Zerubbabel's argument for 'truth' has a wisdom/rational element unusual in this context."
+        },
+        "T18": {
+          "score": 3,
+          "note": "Temple cult restoration is the priority and culmination of the narrative."
+        },
+        "T19": {
+          "score": -1,
+          "note": "Partial, this-worldly restoration. No apocalyptic horizon."
+        },
+        "T20": {
+          "score": 2,
+          "note": "The exile is the consequence of the people's sin. Return is conditioned on covenant fidelity."
+        }
+      },
+      "conduct": {
+        "diet": "Not specifically addressed beyond general Torah observance.",
+        "marriage_sexuality": "The crisis of foreign wives (8:65\u20139:36) \u2014 men of the restored community who have married foreign women must divorce them, sending them away with their children. Endogamy is enforced as the boundary of the covenant community.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not specifically addressed.",
+        "violence_war": "Not a theme.",
+        "ritual_calendar": "Passover celebration under Josiah (1:1\u201322) and again after the return (7:10\u201315). The proper celebration of Passover marks the transition points of the community's history. Temple service and the Levitical calendar are restored as the community's defining structure."
+      }
+    },
+    "MAN": {
+      "name": "Prayer of Manasseh",
+      "id": "MAN",
+      "section": "Prophetic & Liturgical",
+      "chapters": 1,
+      "dating": "c. 100 BCE",
+      "sources": "Short penitential prayer attributed to Manasseh king of Judah (2 Chr 33:12\u201313 mentions such a prayer but does not preserve it). Probably composed in Greek. Found in some LXX manuscripts and the Didache.",
+      "summary": "Fourteen verses in which Manasseh, the worst king in the Deuteronomistic History, confesses his sins and pleads for God's mercy. The prayer celebrates God as the God of the repentant, whose mercy surpasses the number of sins and who accepts the penitent even after the worst wickedness.",
+      "tensions": {
+        "T01": {
+          "score": 4,
+          "note": "The most immanent text in the Apocrypha: God bends down to hear the prayer of a wretched sinner in distress. Radically relational."
+        },
+        "T02": {
+          "score": -2,
+          "note": "God of Abraham, Isaac, and Jacob \u2014 the particularist covenant God. But the universality of the mercy theme slightly softens the particularism."
+        },
+        "T03": {
+          "score": -4,
+          "note": "The prayer is Manasseh's free choice to repent. The whole point is that even the worst sinner can turn and be heard. Human agency in repentance is maximized."
+        },
+        "T04": {
+          "score": -4,
+          "note": "The most restoratively-oriented text in the Apocrypha: God's mercy is limitless, extended even to Manasseh who 'provoked your wrath' by multiplying his sins beyond number."
+        },
+        "T05": {
+          "score": -2,
+          "note": "Ethical repentance \u2014 turning from sin \u2014 is what matters, not ritual performance."
+        },
+        "T06": {
+          "score": 4,
+          "note": "Pure individual prayer: Manasseh speaks for himself alone before God. No community, no collective confession."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Literal and direct. No symbolism."
+        },
+        "T08": {
+          "score": -1,
+          "note": "God of the patriarchs, but the mercy extended to Manasseh \u2014 a terrible sinner \u2014 has a slightly inclusivist quality: even the worst can repent."
+        },
+        "T09": {
+          "score": 0,
+          "note": "Repentance involves both the turn of the heart (faith/contrition) and the act of returning (behavioral change). Neither dominates."
+        },
+        "T10": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T11": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T12": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T13": {
+          "score": -2,
+          "note": "Manasseh's affliction (captivity in Babylon, 2 Chr 33:11) leads to repentance and restoration \u2014 suffering as the vehicle of conversion."
+        },
+        "T14": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -2,
+          "note": "Monotheism is assumed; Manasseh confesses to the God of the patriarchs."
+        },
+        "T17": {
+          "score": 2,
+          "note": "Pure prayer addressed to God \u2014 revelation flows downward to Manasseh in his affliction; he responds upward in prayer."
+        },
+        "T18": {
+          "score": null,
+          "note": "No social ethics \u2014 this is personal penitential prayer."
+        },
+        "T19": {
+          "score": null,
+          "note": "No eschatological horizon."
+        },
+        "T20": {
+          "score": 1,
+          "note": "Manasseh's suffering in Babylon is the consequence of his sin \u2014 but the text's point is that even this does not exhaust divine mercy. Suffering as consequence, not final judgment."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Not addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "Not addressed.",
+        "ritual_calendar": "Not addressed. The prayer is a personal act of contrition, not a liturgical rite."
+      }
+    },
+    "PS2": {
+      "name": "Psalm 151",
+      "id": "PS2",
+      "section": "Prophetic & Liturgical",
+      "chapters": 1,
+      "dating": "c. 150 BCE (Hebrew Qumran version 11QPsa; Greek canonical form somewhat later)",
+      "sources": "Found at Qumran in an expanded Hebrew version (two psalms, 151A and 151B). The Greek LXX version is a condensed adaptation. Describes David's selection over his brothers and defeat of Goliath.",
+      "summary": "A brief autobiographical psalm in the voice of David: God chose him, the least of his brothers and a shepherd, over his older, stronger siblings. David made a lyre and harp to praise God. God sent Samuel to anoint him. Then David defeated Goliath and cut off his head \u2014 claiming God's victory over the Philistines.",
+      "tensions": {
+        "T01": {
+          "score": 3,
+          "note": "God directly calls David, speaks through Samuel, and acts through David against Goliath. Highly immanent and relational."
+        },
+        "T02": {
+          "score": -2,
+          "note": "Israel's God chooses Israel's king against the Philistines \u2014 particularist framework."
+        },
+        "T03": {
+          "score": -2,
+          "note": "God's initiative and choice dominate: David does not seek the anointing, God sends Samuel to him."
+        },
+        "T04": {
+          "score": -1,
+          "note": "God grants victory to the humble and chosen. Somewhat restorative \u2014 David is exalted from lowliness."
+        },
+        "T05": {
+          "score": -2,
+          "note": "God looks at the heart rather than outward appearance (implicit in the choice of the youngest): ethical/inward quality over ritual status."
+        },
+        "T06": {
+          "score": 3,
+          "note": "David's individual calling and vocation are the entire subject."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Literal narrative psalm. No allegory."
+        },
+        "T08": {
+          "score": -2,
+          "note": "God of Israel chooses Israel's king \u2014 exclusivist."
+        },
+        "T09": {
+          "score": -1,
+          "note": "David is chosen by grace \u2014 the emphasis is on God's initiative rather than David's meritorious works."
+        },
+        "T10": {
+          "score": -2,
+          "note": "God anoints the king \u2014 theocratic legitimacy flows from divine choice, not human selection."
+        },
+        "T11": {
+          "score": -2,
+          "note": "David is the youngest son of his father's household \u2014 patriarchal structure assumed; God upends the usual primogeniture but not the gendered household structure."
+        },
+        "T12": {
+          "score": 2,
+          "note": "David kills Goliath and takes his sword \u2014 violence against Israel's enemy is divinely sanctioned and celebrated."
+        },
+        "T13": {
+          "score": -2,
+          "note": "The humble and overlooked are exalted by God. An anti-prosperity-through-status narrative."
+        },
+        "T14": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -2,
+          "note": "God of Israel vs. the Philistine's challenge \u2014 monotheistic assumption."
+        },
+        "T17": {
+          "score": 3,
+          "note": "God's direct call through Samuel \u2014 pure revelation. David did not discover his vocation through reflection."
+        },
+        "T18": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T19": {
+          "score": null,
+          "note": "No eschatological dimension."
+        },
+        "T20": {
+          "score": null,
+          "note": "Not addressed."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Not addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "David is a shepherd \u2014 pastoral life mentioned but not as an ethical subject.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "David kills Goliath with a sling and takes his sword, cutting off his head. The violence is presented as God's victory through the humble chosen one. No ethical reflection on the violence itself.",
+        "ritual_calendar": "Not addressed."
+      }
+    },
+    "3MA": {
+      "name": "3 Maccabees",
+      "id": "3MA",
+      "section": "Narrative",
+      "chapters": 7,
+      "dating": "c. 75\u201350 BCE",
+      "sources": "Despite its name, has nothing to do with the Maccabean revolt. Set in Egypt under Ptolemy IV Philopator (221\u2013204 BCE). Probably composed in Alexandria. Survives only in Greek.",
+      "summary": "Ptolemy IV attempts to force Egyptian Jews to worship Dionysus, then plans to have them all trampled by drunken elephants. In three miraculous reversals, the elephants turn on the soldiers instead of the Jews. The king repents, grants the Jews a festival, and allows them to punish Jewish apostates. A Diaspora tale of divine protection against forced assimilation, with escalating miraculous interventions.",
+      "tensions": {
+        "T01": {
+          "score": 2,
+          "note": "God intervenes dramatically three times \u2014 angels appear, elephants turn, the king's heart changes. Powerfully immanent in crisis."
+        },
+        "T02": {
+          "score": -4,
+          "note": "One of the most sharply particularist texts in the Apocrypha: Jewish dietary and social distinctiveness is the flashpoint. Jews who assimilate are apostates and are executed."
+        },
+        "T03": {
+          "score": -2,
+          "note": "God's dramatic interventions are decisive; human prayer initiates them but divine action determines the outcome."
+        },
+        "T04": {
+          "score": -2,
+          "note": "Enemies are punished; Jews are delivered. Also, Jewish apostates are executed by their own community \u2014 retributive within the community as well."
+        },
+        "T05": {
+          "score": 2,
+          "note": "Ritual distinctiveness (dietary laws, Temple connection) is what marks the Jews as a separate people deserving divine protection. Ritual identity drives the plot."
+        },
+        "T06": {
+          "score": -4,
+          "note": "The Jewish community of Egypt as a collective is the subject. Individual Jews who apostatize betray the collective."
+        },
+        "T07": {
+          "score": -1,
+          "note": "Fairly literal narrative with legendary exaggeration (500 elephants, divine intervention repeated thrice). The miraculous is treated as historical."
+        },
+        "T08": {
+          "score": -4,
+          "note": "Extremely exclusivist: the boundary between faithful Jews and Gentile-assimilated Jews is enforced by communal execution of apostates."
+        },
+        "T09": {
+          "score": -1,
+          "note": "Communal prayer and fasting are the Jewish response; God's gracious intervention is the result. Faith/prayer is the operative mechanism."
+        },
+        "T10": {
+          "score": -3,
+          "note": "Ptolemy's authority is repeatedly overridden by divine intervention. God is the true king whose protection of his people cannot be nullified by earthly decree."
+        },
+        "T11": {
+          "score": -2,
+          "note": "Patriarchal structure assumed. Women and children are mentioned among the threatened community but have no individual roles."
+        },
+        "T12": {
+          "score": 2,
+          "note": "Divine violence \u2014 angels and drunken elephants turned on the soldiers \u2014 is the mode of deliverance. No human warfare."
+        },
+        "T13": {
+          "score": -2,
+          "note": "The Jewish community suffers extreme persecution before divine deliverance \u2014 an anti-prosperity narrative insisting that the faithful may suffer greatly before vindication."
+        },
+        "T14": {
+          "score": 2,
+          "note": "Torah observance \u2014 dietary laws, social separation \u2014 is the mark of the community worth protecting."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not addressed."
+        },
+        "T16": {
+          "score": -4,
+          "note": "Strict monotheism: the Jews refuse Ptolemy's demand to worship Dionysus. Only YHWH is God; Dionysus is nothing."
+        },
+        "T17": {
+          "score": 3,
+          "note": "Divine intervention responds to prayer \u2014 revelation is the mode through which God's intent becomes visible."
+        },
+        "T18": {
+          "score": 2,
+          "note": "Ritual/communal identity (dietary distinctiveness, loyalty to the community) is the central concern. Social justice themes are not present."
+        },
+        "T19": {
+          "score": -1,
+          "note": "Immediate miraculous deliverance \u2014 this-worldly and present, not eschatological."
+        },
+        "T20": {
+          "score": -2,
+          "note": "The community's suffering is not punishment but persecution of the faithful. Their vindication is dramatic and this-worldly."
+        }
+      },
+      "conduct": {
+        "diet": "Jewish dietary distinctiveness is the precipitating issue: Jews refuse to participate in Ptolemy's cult meals (2:31). The text treats dietary separation from Gentile food as a non-negotiable mark of covenant identity.",
+        "marriage_sexuality": "Not specifically addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed.",
+        "violence_war": "The intended violence \u2014 trampling by elephants \u2014 is miraculous redirected by divine intervention. The Jewish apostates are subsequently executed by the community \u2014 internal enforcement of communal boundaries.",
+        "ritual_calendar": "A festival commemorating the deliverance is instituted (6:30\u201336), similar to the pattern of Purim and Hanukkah. Communal celebration as memorial of divine rescue."
+      }
+    },
+    "2ES": {
+      "name": "2 Esdras",
+      "id": "2ES",
+      "section": "Apocalyptic",
+      "chapters": 16,
+      "dating": "Core (4 Ezra, chs. 3\u201314): c. 100 CE. Christian additions (5 Ezra, chs. 1\u20132; 6 Ezra, chs. 15\u201316): 2nd\u20133rd century CE.",
+      "sources": "A composite work. The Jewish core (4 Ezra) was written after the destruction of the Temple in 70 CE, probably in Hebrew or Aramaic, preserved in Latin and other translations. It is among the most important Jewish apocalypses alongside 1 Enoch and 4 Baruch.",
+      "summary": "Ezra in Babylon wrestles with God through seven visions over whether God is just in allowing Israel's destruction. An angel gives unsatisfying answers. The visions escalate: a mourning woman transforms into the New Jerusalem; an eagle (Rome) is condemned; a man from the sea (the Messiah) defeats the nations; Ezra dictates 94 books including the 24 of Scripture and 70 secret ones. The most sustained theodicy in the biblical tradition, and the bleakest: only a very few will be saved.",
+      "tensions": {
+        "T01": {
+          "score": -3,
+          "note": "God is hidden and unapproachable. The angel's answers to Ezra's questions about divine justice are consistently unsatisfying. Divine transcendence creates the book's crisis: why does God allow the wicked to prosper over his people?"
+        },
+        "T02": {
+          "score": -4,
+          "note": "Strongly particularist and even pessimistic about that: Israel is chosen, but only the very few within Israel will be saved. The nations are condemned, but so are most Israelites."
+        },
+        "T03": {
+          "score": -2,
+          "note": "Human choice matters \u2014 keeping the law is the criterion \u2014 but predestination language is present and the angel insists on limits of human understanding."
+        },
+        "T04": {
+          "score": -1,
+          "note": "Retributive for the many; restorative only for the very few elect. The balance tips heavily toward judgment."
+        },
+        "T05": {
+          "score": -1,
+          "note": "Righteousness \u2014 keeping the law \u2014 is the standard of the elect. Ethical faithfulness to Torah is what distinguishes the few who will be saved."
+        },
+        "T06": {
+          "score": 0,
+          "note": "Both individual souls judged at death AND collective Israel/nations in the final judgment. The individual and collective eschatologies exist in tension within the book."
+        },
+        "T07": {
+          "score": 5,
+          "note": "The most symbolically elaborate text in the Apocrypha: the eagle with twelve wings and three heads (Rome), the weeping woman who becomes the New Jerusalem, the man rising from the sea. Visionary symbolism is the primary medium."
+        },
+        "T08": {
+          "score": -5,
+          "note": "The most exclusivist text in the Apocrypha: very few will be saved, even fewer than expected. The angel explicitly says that fewer are saved than are lost, and Ezra should not count himself among the righteous too quickly."
+        },
+        "T09": {
+          "score": 0,
+          "note": "Both Torah observance (works) and divine election/grace are present. The angel's insistence that many keep Torah yet still perish introduces a grace element: human effort alone is insufficient."
+        },
+        "T10": {
+          "score": -3,
+          "note": "Rome (the eagle) is condemned and will be replaced by messianic rule. All earthly empires are transient instruments of a larger divine plan."
+        },
+        "T11": {
+          "score": null,
+          "note": "Not a theme. The mourning woman who becomes Jerusalem is an allegorical figure, not a statement about gender roles."
+        },
+        "T12": {
+          "score": 3,
+          "note": "The Messiah defeats the nations in cosmic warfare (13:1\u201313). The end of days involves apocalyptic conflict."
+        },
+        "T13": {
+          "score": -2,
+          "note": "The righteous suffer now in a world given over to evil; they will be vindicated in the age to come. The entire book is a meditation on this deferral."
+        },
+        "T14": {
+          "score": 2,
+          "note": "Ezra is commissioned to restore the 24 books of Scripture (lost in the exile) and 70 secret books for the wise. Written revelation \u2014 both public and esoteric \u2014 is the highest authority."
+        },
+        "T15": {
+          "score": null,
+          "note": "Not a theme."
+        },
+        "T16": {
+          "score": -3,
+          "note": "Strict monotheism assumed. The nations' gods are nowhere challenged explicitly, but God's sovereignty over Rome and all history is the point."
+        },
+        "T17": {
+          "score": 5,
+          "note": "The book is pure revelation through visions and angelic intermediaries. Ezra does not reason his way to understanding \u2014 he is shown and told, and even then the mysteries remain beyond him."
+        },
+        "T18": {
+          "score": null,
+          "note": "Not a theme. The book is theodicy and eschatology, not social ethics."
+        },
+        "T19": {
+          "score": 5,
+          "note": "The most apocalyptically oriented text in the Apocrypha. The entire book anticipates the imminent coming age \u2014 judgment, resurrection, messianic rule, the renewal of creation."
+        },
+        "T20": {
+          "score": -2,
+          "note": "The righteous suffer in this age for reasons that remain ultimately mysterious ('many have been created, but few shall be saved,' 8:3). Their vindication is certain but deferred. Suffering is not punishment for the elect."
+        }
+      },
+      "conduct": {
+        "diet": "Not addressed.",
+        "marriage_sexuality": "Not addressed.",
+        "homosexuality": "Not addressed.",
+        "slavery": "Not addressed.",
+        "clothing": "Not addressed.",
+        "agriculture": "Not addressed.",
+        "economic_justice": "Not addressed. The book's concerns are entirely eschatological and theodicial.",
+        "violence_war": "Apocalyptic warfare at the end of days: the Messiah destroys the nations assembled against him with fire from his mouth (13:10\u201311). Divine violence at the eschaton is the mode of ultimate justice.",
+        "ritual_calendar": "Not specifically addressed. The restoration of the 24 books of Scripture implies a future Torah community, but the book does not specify ritual calendar concerns."
+      }
+    }
+  }
+}

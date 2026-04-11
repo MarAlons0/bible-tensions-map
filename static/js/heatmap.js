@@ -10,10 +10,11 @@ const COLORSCALE = [
   [1.0,  '#712B13'],
 ];
 
-const TESTAMENT_ORDER = ['Old Testament', 'New Testament'];
+const TESTAMENT_ORDER = ['Old Testament', 'Apocrypha', 'New Testament'];
 
 const SECTION_ORDER = {
   'Old Testament': ['Pentateuch', 'Historical Books', 'Wisdom Literature', 'Major Prophets', 'Minor Prophets'],
+  'Apocrypha': ['Narrative', 'Wisdom', 'Prophetic & Liturgical', 'Additions to Daniel', 'Apocalyptic'],
   'New Testament': ['Gospels', 'Gospels & Acts', 'Pauline Epistles', 'General Epistles', 'Revelation'],
 };
 

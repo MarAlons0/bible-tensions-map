@@ -2,6 +2,7 @@
 const GROUP_COLORS = {
   // Testament
   'Old Testament':     '#0C447C',
+  'Apocrypha':         '#00695C',
   'New Testament':     '#A0320A',
   // OT sections
   'Pentateuch':        '#1565C0',
@@ -9,11 +10,17 @@ const GROUP_COLORS = {
   'Wisdom Literature': '#6A1E8A',
   'Major Prophets':    '#B45309',
   'Minor Prophets':    '#C62828',
+  // Apocrypha sections
+  'Narrative':                '#00897B',
+  'Wisdom':                   '#26A69A',
+  'Prophetic & Liturgical':   '#00796B',
+  'Additions to Daniel':      '#004D40',
+  'Apocalyptic':              '#37474F',
   // NT sections
   'Gospels':           '#D84315',
   'Gospels & Acts':    '#E65100',
   'Pauline Epistles':  '#AD1457',
-  'General Epistles':  '#6A1E8A',
+  'General Epistles':  '#7B1FA2',
   'Revelation':        '#1A237E',
 };
 
