@@ -24,6 +24,10 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = database_url
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', 'dev-secret')
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        'pool_pre_ping': True,   # verify connection before use (handles Neon idle drops)
+        'pool_recycle': 300,     # recycle connections every 5 min
+    }
 
     db.init_app(app)
     return app
