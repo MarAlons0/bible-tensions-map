@@ -171,8 +171,7 @@ function renderHeatmap() {
     })
   );
 
-  const height = Math.max(140, rows.length * 26 + 90);
-  document.getElementById('heatmap').style.height = height + 'px';
+  const height = Math.max(200, rows.length * 28 + 100);
 
   const trace = {
     type: 'heatmap',
@@ -197,6 +196,7 @@ function renderHeatmap() {
   };
 
   const layout = {
+    height,
     margin: { t: 30, b: 60, l: 185, r: 60 },
     xaxis: { tickangle: -45, tickfont: { size: 11 }, fixedrange: true },
     yaxis: { tickfont: { size: 11 }, autorange: 'reversed', fixedrange: true },
