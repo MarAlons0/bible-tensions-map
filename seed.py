@@ -6,7 +6,10 @@ Run: python seed.py
 import json
 import os
 from app import create_app
-from models import db, Tension, ConductCategory, Book, BookTension, BookConduct
+from models import (
+    db, Tension, ConductCategory, Book, BookTension, BookConduct,
+    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote,
+)
 
 CONDUCT_LABELS = {
     'diet': 'Diet',
