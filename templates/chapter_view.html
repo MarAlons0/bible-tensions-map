@@ -79,7 +79,9 @@ document.getElementById('analyze-btn').addEventListener('click', async () => {
   if (res.ok) {
     window.location.reload();
   } else {
-    document.getElementById('analyze-status').innerHTML = '<p class="error">Analysis failed. Check your API key.</p>';
+    const body = await res.json().catch(() => ({}));
+    const msg = body.error || `HTTP ${res.status}`;
+    document.getElementById('analyze-status').innerHTML = `<p class="error">Analysis failed: ${msg}</p>`;
   }
 });
 </script>
