@@ -63,12 +63,16 @@ def analyze_chapter(book_id: str, chapter: int, book_name: str) -> dict:
 
     message = client.messages.create(
         model=MODEL,
-        max_tokens=2048,
+        max_tokens=4096,
         system=system,
         messages=[{'role': 'user', 'content': user_message}],
     )
 
-    raw = message.content[0].text
+    raw = message.content[0].text.strip()
+    # Strip markdown code fences if Claude wrapped the JSON anyway
+    if raw.startswith('```'):
+        raw = raw.split('\n', 1)[-1]
+        raw = raw.rsplit('```', 1)[0].strip()
     analysis = json.loads(raw)
 
     # Persist
