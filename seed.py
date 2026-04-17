@@ -143,6 +143,14 @@ def seed_file(data_path, testament):
           f"{len(data.get('conduct_categories', []))} conduct categories")
 
 
+def needs_seed():
+    """Return True if the DB is empty or missing expected books."""
+    try:
+        return Book.query.count() < 83
+    except Exception:
+        return True
+
+
 def seed():
     base = os.path.dirname(__file__)
 
@@ -166,4 +174,7 @@ if __name__ == '__main__':
     app = create_app()
     with app.app_context():
         db.create_all()
-        seed()
+        if needs_seed():
+            seed()
+        else:
+            print("DB already seeded, skipping.")
