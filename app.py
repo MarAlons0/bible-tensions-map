@@ -2,7 +2,7 @@ import os
 import re
 import json
 from collections import Counter
-from flask import Flask, render_template, request, jsonify, abort
+from flask import Flask, render_template, request, jsonify, abort, send_from_directory
 from dotenv import load_dotenv
 from models import (
     db, Tension, ConductCategory, Book, BookTension, BookConduct,
@@ -34,6 +34,21 @@ def create_app():
 
 
 app = create_app()
+
+
+# ---------------------------------------------------------------------------
+# Favicons (served at site root for Safari bookmarks)
+# ---------------------------------------------------------------------------
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(app.static_folder, 'favicon.ico', mimetype='image/x-icon')
+
+
+@app.route('/apple-touch-icon.png')
+@app.route('/apple-touch-icon-precomposed.png')
+def apple_touch_icon():
+    return send_from_directory(app.static_folder, 'apple-touch-icon.png', mimetype='image/png')
 
 
 # ---------------------------------------------------------------------------
