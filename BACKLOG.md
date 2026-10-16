@@ -7,6 +7,7 @@ _Last updated: 2026-06-09_
 - [ ] **Export heatmap / biplot** — download the current view as PNG (and data as CSV). `[feature]`
 - [ ] **Book search / jump** — quick search to jump to a book from any page. `[feature]`
 - [ ] **Mobile layout pass** — verify heatmap, biplot, and timeline are usable on small screens. `[chore]`
+- [ ] **Import thoughts** — Import ongoing discussion with Claude and insert thoughts into appropriate book `[feature]`
 
 ## 🟢 Low / Nice to have
 - [ ] **User notes per book** — finish/expose the `UserNote` model as an editable notes panel. `[feature]`
