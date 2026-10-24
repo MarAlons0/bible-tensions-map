@@ -4,6 +4,17 @@ All notable changes to Bible Tensions Map are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONING.md`.
 
+## [0.6.0] – 2026-10-24
+### Added
+- **Reading Journal** (`/journal`): my closing observations (in my words and summarised), themes traced across the canon, book-by-book points and open questions from my full reading of the Bible with Claude.
+- Two imported sources: my own points per book with Claude's short replies (`docs/my-points-by-book.md`, 216 points + 28 replies), and Claude's summary takeaways (`docs/reading-notes.md`).
+- `import_reading_notes.py` parses both into `seed_data_reading_notes.json`; `seed.py` loads it on deploy (re-runnable, replaces the previous import).
+- Imported points appear in each book's **My Notes** panel, linked to the chapter they reference.
+### Changed
+- `user_notes` gains `source`, `heading` and `speaker` columns (added automatically by `seed.py`).
+### Security
+- Notes are now HTML-escaped when rendered on the book page.
+
 ## [0.5.0] – 2026-06-01
 ### Added
 - `VERSIONING.md` and `FAVICON.md` project standards; this `CHANGELOG.md` and a `VERSION` file.

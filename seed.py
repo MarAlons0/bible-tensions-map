@@ -5,10 +5,11 @@ Run: python seed.py
 """
 import json
 import os
+from sqlalchemy import inspect, text
 from app import create_app
 from models import (
     db, Tension, ConductCategory, Book, BookTension, BookConduct,
-    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote,
+    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry,
 )
 
 CONDUCT_LABELS = {
@@ -170,11 +171,58 @@ def seed():
     print("Done.")
 
 
+def migrate():
+    """Add columns that create_all() won't add to existing tables."""
+    cols = {c['name'] for c in inspect(db.engine).get_columns('user_notes')}
+    with db.engine.begin() as conn:
+        for name in ('source', 'heading', 'speaker'):
+            if name not in cols:
+                conn.execute(text(f'ALTER TABLE user_notes ADD COLUMN {name} TEXT'))
+                print(f"Added user_notes.{name}")
+
+
+def seed_reading_notes():
+    """Load seed_data_reading_notes.json, replacing any previous import of it."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'seed_data_reading_notes.json')
+    if not os.path.exists(path):
+        return
+    with open(path) as f:
+        data = json.load(f)
+    source, points_source = data['source'], data.get('points_source')
+    UserNote.query.filter(UserNote.source.in_([source, points_source])).delete()
+    JournalEntry.query.filter_by(source=source).delete()
+
+    # My own points first, so they come before the summary takeaways (ordered by id)
+    for p in data.get('points', []):
+        for book_id in p['books'] or [None]:
+            db.session.add(UserNote(book_id=book_id, chapter=p['chapter'], note=p['note'],
+                                    source=points_source, heading=p['heading'],
+                                    speaker=p['speaker']))
+
+    entries = [('intro', None, data['intro'])]
+    entries += [('conclusion', c['title'], c['body']) for c in data['conclusions']]
+    entries += [('theme', t['theme'], t['trajectory']) for t in data['themes']]
+    entries += [('question', None, q) for q in data['open_questions']]
+    for i, (kind, title, body) in enumerate(entries):
+        db.session.add(JournalEntry(kind=kind, title=title, body=body, sort_order=i, source=source))
+
+    # A note spanning several books ("1-2 Kings") is stored once per book so it
+    # shows on each book's page; the journal page de-duplicates by heading.
+    for n in data['notes']:
+        for book_id in n['books'] or [None]:
+            db.session.add(UserNote(book_id=book_id, chapter=n['chapter'], note=n['note'],
+                                    source=source, heading=n['heading']))
+    db.session.commit()
+    print(f"Loaded {len(data.get('points', []))} dialog points and {len(data['notes'])} summary notes.")
+
+
 if __name__ == '__main__':
     app = create_app()
     with app.app_context():
         db.create_all()
+        migrate()
         if needs_seed():
             seed()
         else:
             print("DB already seeded, skipping.")
+        seed_reading_notes()

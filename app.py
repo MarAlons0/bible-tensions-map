@@ -6,10 +6,20 @@ from flask import Flask, render_template, request, jsonify, abort, send_from_dir
 from dotenv import load_dotenv
 from models import (
     db, Tension, ConductCategory, Book, BookTension, BookConduct,
-    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote,
+    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry,
 )
+from markupsafe import Markup, escape
 
 load_dotenv()
+
+
+def _read_version() -> str:
+    version_file = os.path.join(os.path.dirname(__file__), 'VERSION')
+    try:
+        with open(version_file) as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        return '?.?.?'
 
 
 def create_app():
@@ -30,6 +40,21 @@ def create_app():
     }
 
     db.init_app(app)
+
+    _version = _read_version()
+
+    @app.context_processor
+    def inject_globals():
+        return {'app_version': _version}
+
+    @app.template_filter('inline_md')
+    def inline_md(s):
+        """Escape, then render **bold** and *italic* — all the notes use."""
+        html = str(escape(s or ''))
+        html = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', html)
+        html = re.sub(r'\*(.+?)\*', r'<em>\1</em>', html)
+        return Markup(html)
+
     return app
 
 
@@ -133,6 +158,60 @@ def timeline():
     tensions = Tension.query.order_by(Tension.sort_order).all()
     return render_template('timeline.html', books=books, tensions=tensions,
                            date_estimates=DATE_ESTIMATES)
+
+
+@app.route('/journal')
+def journal():
+    entries = JournalEntry.query.order_by(JournalEntry.sort_order).all()
+    books = {b.id: b for b in Book.query.all()}
+
+    # One group per heading, in reading order. My dialog points (and notes typed
+    # in the app) drive the grouping; the summary's takeaways attach to the first
+    # group that shares a book or heading. Multi-book notes are stored once per
+    # book, so items are de-duplicated by text and collect their chapter refs.
+    def item(bucket, n):
+        it = bucket.setdefault(n.note, {'note': n.note, 'speaker': n.speaker, 'refs': []})
+        if n.chapter and n.book_id in books:
+            it['refs'].append((books[n.book_id], n.chapter))
+
+    groups, own_conclusions, takeaways = {}, {}, []
+    for n in UserNote.query.order_by(UserNote.id):
+        if n.source == 'reading-notes':
+            takeaways.append(n)
+            continue
+        heading = n.heading or (books[n.book_id].name if n.book_id in books else 'General')
+        if heading == 'Overall final observations':
+            item(own_conclusions, n)
+            continue
+        g = groups.setdefault(heading, {'heading': heading, 'books': [], 'points': {}, 'takeaways': {}})
+        if n.book_id in books and books[n.book_id] not in g['books']:
+            g['books'].append(books[n.book_id])
+        item(g['points'], n)
+
+    note_books = {}  # takeaway text -> every book it was stored under
+    for n in takeaways:
+        note_books.setdefault(n.note, set()).add(books.get(n.book_id))
+    same_heading = {'Other topics': 'General (not tied to one book)'}
+    placed = {}  # takeaway text -> its group, so every copy of a multi-book note lands together
+    for n in takeaways:
+        g = placed.get(n.note) or next(
+            (g for g in groups.values()
+             if g['heading'] == same_heading.get(n.heading, n.heading)
+             or note_books[n.note] & set(g['books'])), None)
+        if g is None:
+            g = groups.setdefault(n.heading, {'heading': n.heading, 'books': [], 'points': {}, 'takeaways': {}})
+        placed[n.note] = g
+        item(g['takeaways'], n)
+
+    return render_template(
+        'journal.html',
+        intro=next((e.body for e in entries if e.kind == 'intro'), ''),
+        conclusions=[e for e in entries if e.kind == 'conclusion'],
+        own_conclusions=list(own_conclusions.values()),
+        themes=[e for e in entries if e.kind == 'theme'],
+        questions=[e for e in entries if e.kind == 'question'],
+        groups=list(groups.values()),
+    )
 
 
 @app.route('/about')
@@ -687,12 +766,15 @@ def api_notes():
     query = UserNote.query.filter_by(book_id=book_id)
     if chapter is not None:
         query = query.filter_by(chapter=chapter)
-    notes = query.order_by(UserNote.created_at.desc()).all()
+    # Notes typed in the app, newest first; then imported notes in reading order
+    typed = query.filter(UserNote.source.is_(None)).order_by(UserNote.created_at.desc()).all()
+    imported = query.filter(UserNote.source.isnot(None)).order_by(UserNote.id).all()
     return jsonify([{
         'id': n.id, 'book_id': n.book_id, 'chapter': n.chapter,
         'tension_id': n.tension_id, 'note': n.note,
+        'source': n.source, 'heading': n.heading, 'speaker': n.speaker,
         'created_at': n.created_at.isoformat(),
-    } for n in notes])
+    } for n in typed + imported])
 
 
 if __name__ == '__main__':

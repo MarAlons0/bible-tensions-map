@@ -13,14 +13,15 @@
 </head>
 <body>
   <nav>
-    <a href="/" class="nav-brand">Bible Tensions Map</a>
+    <a href="/" class="nav-brand">Bible Tensions Map <span style="font-size:.7rem;font-weight:normal;opacity:.6">v{{ app_version }}</span></a>
     <div class="nav-links">
       <a href="/" {% if request.path == '/' %}class="active"{% endif %}>Heatmap</a>
       <a href="/biplot" {% if request.path == '/biplot' %}class="active"{% endif %}>Biplot</a>
       <a href="/conduct" {% if request.path == '/conduct' %}class="active"{% endif %}>Conduct</a>
       <a href="/timeline" {% if request.path == '/timeline' %}class="active"{% endif %}>Timeline</a>
       <a href="/wordcloud" {% if request.path == '/wordcloud' %}class="active"{% endif %}>Word Cloud</a>
-      <a href="/about" {% if request.path == '/about' %}class="active"{% endif %}>About</a>
+      <a href="/journal" {% if request.path == '/journal' %}class="active"{% endif %}>Journal</a>
+      <a href="/about"{% if request.path == '/about' %}class="active"{% endif %}>About</a>
     </div>
   </nav>
 

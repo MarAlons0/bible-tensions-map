@@ -81,3 +81,17 @@ class UserNote(db.Model):
     tension_id = db.Column(db.String(3), db.ForeignKey('tensions.id'))  # null = general note
     note = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    source = db.Column(db.Text)              # null = typed in the app; 'reading-notes' = imported
+    heading = db.Column(db.Text)             # recap heading it came from, e.g. "1-2 Samuel"
+    speaker = db.Column(db.Text)             # 'me' | 'claude' for imported dialog points
+
+
+class JournalEntry(db.Model):
+    """Book-independent parts of the reading journal: conclusions, themes, open questions."""
+    __tablename__ = 'journal_entries'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    kind = db.Column(db.Text, nullable=False)   # 'intro' | 'conclusion' | 'theme' | 'question'
+    title = db.Column(db.Text)
+    body = db.Column(db.Text)
+    sort_order = db.Column(db.Integer)
+    source = db.Column(db.Text)

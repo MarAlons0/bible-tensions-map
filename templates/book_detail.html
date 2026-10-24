@@ -116,9 +116,18 @@ async function loadNotes() {
   const notes = await res.json();
   const list = document.getElementById('notes-list');
   if (!notes.length) { list.innerHTML = '<p class="empty-state">No notes yet.</p>'; return; }
-  list.innerHTML = notes.map(n =>
-    `<div class="note-item"><p>${n.note}</p><small>${n.created_at.slice(0,10)}</small></div>`
-  ).join('');
+  const esc = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const md = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+  const SUBHEADS = {'my-points': 'From my reading', 'reading-notes': 'Summary takeaways'};
+  let lastSource;
+  list.innerHTML = notes.map(n => {
+    const ref = n.chapter ? `<a class="note-ref" href="/book/${BOOK_ID}/chapter/${n.chapter}">ch. ${n.chapter}</a>` : '';
+    const head = n.source && n.source !== lastSource ? `<h3 class="notes-subhead">${SUBHEADS[n.source] || n.source}</h3>` : '';
+    lastSource = n.source;
+    const meta = n.source ? '' : `<small>${n.created_at.slice(0,10)}</small>`;
+    const who = n.speaker === 'claude' ? '<span class="speaker">Claude</span>' : '';
+    return `${head}<div class="note-item${n.speaker === 'claude' ? ' reply' : ''}"><p>${who}${md(n.note)}${ref}</p>${meta}</div>`;
+  }).join('');
 }
 
 document.getElementById('note-form').addEventListener('submit', async e => {

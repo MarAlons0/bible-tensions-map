@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}Reading Journal — Bible Tensions Map{% endblock %}
+
+{% macro note_items(items) %}
+<ul>
+  {% for n in items %}
+  <li{% if n.speaker == 'claude' %} class="journal-reply"{% endif %}>
+    {% if n.speaker == 'claude' %}<span class="speaker">Claude</span>{% endif %}
+    {{ n.note | inline_md }}
+    {% for b, ch in n.refs %}<a class="journal-ref" href="/book/{{ b.id }}/chapter/{{ ch }}">{{ b.name }} {{ ch }}</a>{% endfor %}
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Reading Journal</h1>
+  {% if intro %}<p class="subtitle">{{ intro | inline_md }}</p>{% endif %}
+</div>
+
+{% if not groups and not conclusions %}
+<p class="empty-state">No journal yet. Run <code>python import_reading_notes.py</code> then <code>python seed.py</code>.</p>
+{% endif %}
+
+<div class="journal">
+  {% if conclusions or own_conclusions %}
+  <section>
+    <h2>Closing observations</h2>
+    {% if own_conclusions %}
+    <div class="journal-own">
+      <h3>In my words</h3>
+      {{ note_items(own_conclusions) }}
+    </div>
+    {% endif %}
+    {% for c in conclusions %}
+    <div class="journal-conclusion">
+      <h3>{{ loop.index }}. {{ c.title }}</h3>
+      <p>{{ c.body | inline_md }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if themes %}
+  <section>
+    <h2>Threads traced across the canon</h2>
+    <table class="journal-themes">
+      {% for t in themes %}
+      <tr><th>{{ t.title }}</th><td>{{ t.body | inline_md }}</td></tr>
+      {% endfor %}
+    </table>
+  </section>
+  {% endif %}
+
+  {% if groups %}
+  <section>
+    <h2>Book by book</h2>
+    <nav class="journal-index">
+      {% for g in groups %}<a href="#j-{{ loop.index }}">{{ g.heading }}</a>{% endfor %}
+    </nav>
+    {% for g in groups %}
+    <div class="journal-book" id="j-{{ loop.index }}">
+      <h3>{{ g.heading }}
+        {% for b in g.books %}<a class="journal-book-link" href="/book/{{ b.id }}">{{ b.id }} →</a>{% endfor %}
+      </h3>
+      {% if g.points %}{{ note_items(g.points.values()) }}{% endif %}
+      {% if g.takeaways %}
+      <details class="journal-takeaways" {% if not g.points %}open{% endif %}>
+        <summary>Summary takeaways ({{ g.takeaways | length }})</summary>
+        {{ note_items(g.takeaways.values()) }}
+      </details>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if questions %}
+  <section>
+    <h2>Open questions</h2>
+    <ul>{% for q in questions %}<li>{{ q.body | inline_md }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

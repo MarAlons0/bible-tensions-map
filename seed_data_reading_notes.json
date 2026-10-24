@@ -1,0 +1,3402 @@
+{
+  "source": "reading-notes",
+  "intro": "Hebrew Bible, Apocrypha and New Testament, read in the New Oxford Annotated Bible (NRSV). Reading approach: literary, historical and theological analysis, not historical verification. Update this file as the reading continues.",
+  "conclusions": [
+    {
+      "title": "The Bible is a Rorschach test.",
+      "body": "Largely supported. The same texts were used to defend and attack slavery, to demand and to forbid political obedience (Romans 13 versus Revelation 13), to support and to oppose women's ordination, and to justify opposite views on predestination, the millennium and images. The text underdetermines doctrine. It isn't \"anything goes,\" though. Some readings need much more interpretive strain than others, and the historical-critical method exists to tell them apart."
+    },
+    {
+      "title": "No coherent narrative or ethics; even 'thou shalt not kill' is malleable.",
+      "body": "Half right. The ethics are inconsistent, and the clearest cases are the ones you identified: violence against outsiders is celebrated, while violence against insiders is punished; slavery is accepted; women are subordinated; God commands what other texts forbid. On the commandment itself, the Hebrew verb (*ratsach*) usually means unlawful killing or murder, so the real conflict is less \"thou shalt not kill\" versus war than *who counts* as protected. That is your in-group/out-group point. A narrative does run through the canon (covenant, kingship, exile and return, hope for restoration), but it was imposed by editors and later readers, not by one author."
+    },
+    {
+      "title": "A series of books over a thousand years, each with its own agenda.",
+      "body": "The strongest of the three, and mainstream scholarly consensus. Most contradictions you found (Samuel/Chronicles, Matthew/Luke genealogies, Matthew/Acts on Judas, Job's frame versus its speeches) are what a composite library produces. Believers who read it as one book have to harmonize, and the harmonizations were often the weakest part of what we discussed."
+    }
+  ],
+  "themes": [
+    {
+      "theme": "Afterlife",
+      "trajectory": "None (Pentateuch) → shadowy Sheol (Psalms, Job) → total cessation (Ecclesiastes) → hints (Isaiah 24-27, Psalm 49) → resurrection (Daniel 12, 2 Maccabees 7) → heaven and hell (2 Esdras) → eternal torment and immortality (Revelation)"
+    },
+    {
+      "theme": "Monotheism",
+      "trajectory": "Other gods exist (Exodus, \"God of gods,\" \"jealous\") → Deuteronomy transitional → explicit denial (Second Isaiah) → Paul still says \"many gods\" (1 Cor 8:5)"
+    },
+    {
+      "theme": "Satan and evil",
+      "trajectory": "Talking serpent → \"the satan\" as role in Job → \"Satan\" inciting David (Chronicles) → named demons (Tobit) → cosmic enemy (NT) → identified with the serpent (Revelation 12:9)"
+    },
+    {
+      "theme": "Messiah",
+      "trajectory": "\"Anointed\" = kings and priests → hope for restored David line → Elijah/messenger (Malachi) → \"my son the Messiah\" (2 Esdras) → Jesus"
+    },
+    {
+      "theme": "Christology",
+      "trajectory": "Empowered human agent (Acts 10:38) → pre-existent Word (John) → Hebrews 1 and Revelation's shared titles → Nicaea. Arian and Trinitarian readings both cite the same verses"
+    },
+    {
+      "theme": "Holy Spirit",
+      "trajectory": "God's breath/power → \"his holy spirit\" → personal Paraclete (John) → Trinity (4th century)"
+    },
+    {
+      "theme": "Divine character",
+      "trajectory": "Anger/compassion oscillation, changeable God, God hardening hearts, God \"setting people up\" (Eden to the beast of Revelation 13)"
+    },
+    {
+      "theme": "Violence",
+      "trajectory": "Celebrated against outsiders (herem, Maccabees); non-retaliation taught in the NT but retribution deferred to Christ as judge"
+    },
+    {
+      "theme": "Women",
+      "trajectory": "Purity laws, silence texts, household codes, \"equality after death, hierarchy in life\""
+    },
+    {
+      "theme": "Failed expectations",
+      "trajectory": "Matthew 24:34, 1 Corinthians 7, 2 Peter's reply to the delay"
+    }
+  ],
+  "notes": [
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": 3,
+      "note": "The serpent of Genesis 3 is never called Satan; that identification is later (Revelation 12:9)."
+    },
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": 20,
+      "note": "Abraham marries his half-sister (20:12), later forbidden in Leviticus."
+    },
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": 10,
+      "note": "Table of Nations (ch. 10) and Babel explain the world's peoples without separate creator gods."
+    },
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": 17,
+      "note": "Circumcision (ch. 17) is given as a covenant sign with no stated rationale; it works as an identity marker."
+    },
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": null,
+      "note": "Polygamy among the patriarchs goes uncondemned."
+    },
+    {
+      "heading": "Exodus",
+      "books": [
+        "EXO"
+      ],
+      "chapter": null,
+      "note": "\"Who is like you among the gods?\" and \"no other gods before me\" assume other gods exist."
+    },
+    {
+      "heading": "Exodus",
+      "books": [
+        "EXO"
+      ],
+      "chapter": null,
+      "note": "God relents after the golden calf when Moses argues."
+    },
+    {
+      "heading": "Exodus",
+      "books": [
+        "EXO"
+      ],
+      "chapter": null,
+      "note": "Jealousy implies rivals."
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 18,
+      "note": "Sibling relations are prohibited (18, 20), but Abraham and Jacob's marriages (sisters) show the later date of the law."
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": null,
+      "note": "Menstruation and childbirth cause ritual impurity. *Observation: the contradiction between God designing female biology and that biology being impure is never addressed anywhere in the Bible.*"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 27,
+      "note": "Sukkot/booths, consecration of houses and animals (ch. 27), the Jubilee (never practiced)."
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": null,
+      "note": "Orthodox Judaism still keeps Sukkot, but there is no Temple, so no sacrifice or consecration system."
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": 5,
+      "note": "Bitter-water ordeal (ch. 5): magical, not toxicological, and applied only to wives."
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": null,
+      "note": "Anakim giants: narrative function, not history."
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": null,
+      "note": "\"Wilderness\" as testing ground. A population of 600,000 men is archaeologically absent."
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": 21,
+      "note": "Bronze serpent (ch. 21), later destroyed as Nehushtan."
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "All rewards and punishments are earthly and generational; no afterlife."
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "Centralization of worship explains the later condemnation of \"high places.\""
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "Intermarriage ban targets the seven Canaanite nations on religious grounds."
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": 12,
+      "note": "Non-sacrificial slaughter permitted (ch. 12), not a contradiction of Leviticus."
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "Polygamy accepted; polyandry never."
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": 10,
+      "note": "\"God of gods\" (10:17) is supremacy language, not exclusive monotheism."
+    },
+    {
+      "heading": "Joshua and Judges",
+      "books": [
+        "JOS",
+        "JDG"
+      ],
+      "chapter": null,
+      "note": "The Caleb/Achsah story appears in both (a doublet)."
+    },
+    {
+      "heading": "Joshua and Judges",
+      "books": [
+        "JOS",
+        "JDG"
+      ],
+      "chapter": null,
+      "note": "Herem (total destruction) is presented as obedience."
+    },
+    {
+      "heading": "Joshua and Judges",
+      "books": [
+        "JOS",
+        "JDG"
+      ],
+      "chapter": null,
+      "note": "Gideon's blood vengeance for two brothers versus thousands killed in war: no reflection on the double standard."
+    },
+    {
+      "heading": "Joshua and Judges",
+      "books": [
+        "JOS",
+        "JDG"
+      ],
+      "chapter": null,
+      "note": "Abimelech's murder of 70 brothers on one stone is likely stylized."
+    },
+    {
+      "heading": "Joshua and Judges",
+      "books": [
+        "JOS",
+        "JDG"
+      ],
+      "chapter": null,
+      "note": "Samson is a failed hero; the story resists a coherent moral."
+    },
+    {
+      "heading": "1-2 Samuel",
+      "books": [
+        "1SA",
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "Anti-monarchical (1 Sam 8) and pro-monarchical (2 Sam 7) strands side by side."
+    },
+    {
+      "heading": "1-2 Samuel",
+      "books": [
+        "1SA"
+      ],
+      "chapter": 31,
+      "note": "David executes the Amalekite messenger without verification. We already know from 1 Sam 31 that Saul killed himself, so the \"he was lying\" defense doesn't rescue David's justice."
+    },
+    {
+      "heading": "1-2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": 11,
+      "note": "Bathsheba and Uriah (2 Sam 11): the text condemns it, but Bathsheba's agency is invisible."
+    },
+    {
+      "heading": "1-2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": 22,
+      "note": "David's victory hymn (2 Sam 22 = Psalm 18) claims blamelessness after those events."
+    },
+    {
+      "heading": "1-2 Samuel",
+      "books": [
+        "1SA",
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "The census: God incites it here, Satan in Chronicles."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Stock curse formula (\"dogs shall eat...\") against condemned dynasties, likely written after the fact."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Casualty numbers (100,000 killed in a day) are hyperbole."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Baal-zebub (a mocked Philistine god) becomes the NT's Beelzebul."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "High places were normal YHWH worship sites until the Deuteronomistic reforms."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Nehushtan: Moses's bronze serpent destroyed by Hezekiah."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Male cult prostitutes in the Temple (Josiah's reforms) show how mainstream syncretism was."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Annals formula (\"are they not written in the Book of the Annals...?\") is a citation convention."
+    },
+    {
+      "heading": "1-2 Kings",
+      "books": [
+        "1KI",
+        "2KI"
+      ],
+      "chapter": null,
+      "note": "Solomon's foreign wives are central to his fall here but absent from Chronicles."
+    },
+    {
+      "heading": "1-2 Chronicles",
+      "books": [
+        "1CH"
+      ],
+      "chapter": 21,
+      "note": "Satan first appears as a named instigator (1 Chron 21:1), replacing God from 2 Sam 24:1."
+    },
+    {
+      "heading": "1-2 Chronicles",
+      "books": [
+        "1CH",
+        "2CH"
+      ],
+      "chapter": null,
+      "note": "Idealizes David and Solomon: omits Bathsheba, the foreign wives and apostasy."
+    },
+    {
+      "heading": "1-2 Chronicles",
+      "books": [
+        "1CH",
+        "2CH"
+      ],
+      "chapter": null,
+      "note": "Why counting people is a sin is never explained; pride and conscription are the leading theories."
+    },
+    {
+      "heading": "Ezra-Nehemiah",
+      "books": [
+        "EZR",
+        "NEH"
+      ],
+      "chapter": null,
+      "note": "Forced divorce of foreign wives is much harsher than Deuteronomy."
+    },
+    {
+      "heading": "Ezra-Nehemiah",
+      "books": [
+        "EZR",
+        "NEH"
+      ],
+      "chapter": null,
+      "note": "\"Jews\" as a term arises after the exile because only Judah survived."
+    },
+    {
+      "heading": "Ezra-Nehemiah",
+      "books": [
+        "EZR",
+        "NEH"
+      ],
+      "chapter": null,
+      "note": "Language loss in mixed families is treated as an identity threat."
+    },
+    {
+      "heading": "Job",
+      "books": [
+        "JOB"
+      ],
+      "chapter": null,
+      "note": "The frame story (a wager with \"the satan\") is incompatible with God's speeches about cosmic mystery."
+    },
+    {
+      "heading": "Job",
+      "books": [
+        "JOB"
+      ],
+      "chapter": null,
+      "note": "Leviathan is a mythological chaos monster, not a whale; in Canaanite myth the storm god defeats it, in Job God created and controls it."
+    },
+    {
+      "heading": "Job",
+      "books": [
+        "JOB"
+      ],
+      "chapter": null,
+      "note": "God vindicates Job's protest over the friends' defense of divine justice."
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": null,
+      "note": "Sheol is passive silence: \"in Sheol who can give you praise?\""
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 30,
+      "note": "\"Brought up from Sheol\" (Ps 30) is rescue language; the text is ambiguous enough that it can be read more literally."
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 49,
+      "note": "Psalm 49 is ambiguous on afterlife; Psalm 51:5 is not original sin."
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": null,
+      "note": "Sacrifice is downplayed in favor of a contrite heart, which later enabled worship without the Temple."
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 117,
+      "note": "Psalm 117 is universal praise, not evangelism; \"awake my soul\" (Ps 57:8, 108:2), not Proverbs, is the Mumford & Sons phrase."
+    },
+    {
+      "heading": "Proverbs",
+      "books": [
+        "PRO"
+      ],
+      "chapter": 5,
+      "note": "The \"cistern\" passage (ch. 5) is about marital fidelity."
+    },
+    {
+      "heading": "Proverbs",
+      "books": [
+        "PRO"
+      ],
+      "chapter": null,
+      "note": "Numerical sayings (\"three things... four\") are a poetic device, not counting."
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 1,
+      "note": "\"Nothing new under the sun\" is from 1:9."
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 9,
+      "note": "\"The dead know nothing\" (9:5-6) is the clearest statement of finality in the Bible."
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 7,
+      "note": "7:28 (\"one man among a thousand... a woman not found\") is plain misogyny."
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 12,
+      "note": "The silver cord (12:6) is physical death imagery; \"a time for everything\" became \"Turn! Turn! Turn!\""
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": null,
+      "note": "You found it the most sincere book; it was nearly excluded from the canon."
+    },
+    {
+      "heading": "Song of Songs",
+      "books": [
+        "SNG"
+      ],
+      "chapter": null,
+      "note": "No mention of God; \"my sister, my bride\" is love-poetry convention, not incest."
+    },
+    {
+      "heading": "Song of Songs",
+      "books": [
+        "SNG"
+      ],
+      "chapter": null,
+      "note": "Included via Solomonic attribution and allegory."
+    },
+    {
+      "heading": "Song of Songs",
+      "books": [
+        "SNG"
+      ],
+      "chapter": null,
+      "note": "Catholic tradition allegorized away the eroticism, which conflicts with its shame-based sexual ethics."
+    },
+    {
+      "heading": "Isaiah",
+      "books": [
+        "ISA"
+      ],
+      "chapter": null,
+      "note": "Second Isaiah gives the first explicit monotheism."
+    },
+    {
+      "heading": "Isaiah",
+      "books": [
+        "ISA"
+      ],
+      "chapter": 24,
+      "note": "Isaiah 24-27 has the first hints of resurrection (\"your dead shall live\")."
+    },
+    {
+      "heading": "Isaiah",
+      "books": [
+        "ISA"
+      ],
+      "chapter": 23,
+      "note": "Chapter 23 is an oracle against Tyre."
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 4,
+      "note": "God negotiates the dung used for baking bread (4:12-15)."
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 22,
+      "note": "Menstruation violations listed among Jerusalem's sins (22:10); Oholah and Oholibah are allegories for Samaria and Jerusalem."
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 47,
+      "note": "Water from the Temple (ch. 47) is restoration imagery echoed in Revelation 22."
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 18,
+      "note": "Ezekiel 18 rejects inherited guilt."
+    },
+    {
+      "heading": "Daniel",
+      "books": [
+        "DAN"
+      ],
+      "chapter": 12,
+      "note": "First explicit resurrection with differentiated fates (12:2)."
+    },
+    {
+      "heading": "Daniel",
+      "books": [
+        "DAN"
+      ],
+      "chapter": 8,
+      "note": "\"Prince of princes\" in 8:25 means God, not a Messiah; I was wrong to suggest otherwise."
+    },
+    {
+      "heading": "Daniel",
+      "books": [
+        "DAN"
+      ],
+      "chapter": 7,
+      "note": "Post-facto prophecy of Antiochus IV; \"Son of Man\" appears in ch. 7."
+    },
+    {
+      "heading": "Hosea",
+      "books": [
+        "HOS"
+      ],
+      "chapter": 6,
+      "note": "\"On the third day he will raise us up\" (6:2) refers to national restoration. It may have supplied the \"third day\" motif for the resurrection narratives; that is plausible but unproven."
+    },
+    {
+      "heading": "Zephaniah and the prophets on Moab",
+      "books": [
+        "ZEP"
+      ],
+      "chapter": null,
+      "note": "Moab is consistently negative in the text. Moab, Utah (named 1855) probably took the name from landscape or biblical familiarity, not endorsement."
+    },
+    {
+      "heading": "Malachi",
+      "books": [
+        "MAL"
+      ],
+      "chapter": null,
+      "note": "The nearest OT approach to hell (\"burning like an oven\") and to a messianic messenger (Elijah returning)."
+    },
+    {
+      "heading": "Tobit",
+      "books": [
+        "TOB"
+      ],
+      "chapter": null,
+      "note": "Named angel (Raphael) and named demon (Asmodeus), magic, Hades; a folktale genre unlike the canonical OT."
+    },
+    {
+      "heading": "Tobit",
+      "books": [
+        "TOB"
+      ],
+      "chapter": null,
+      "note": "The sparrow-dropping blindness is medically plausible."
+    },
+    {
+      "heading": "Sirach",
+      "books": [
+        "SIR"
+      ],
+      "chapter": 3,
+      "note": "\"Neither seek what is too difficult for you\" (3:21) is conservative anti-speculation advice. Sirach 31 has the closest thing to table-manners rules, relevant to the \"elbows\" question; no Bible verse says it."
+    },
+    {
+      "heading": "Baruch and the Letter of Jeremiah",
+      "books": [
+        "BAR",
+        "LJE"
+      ],
+      "chapter": null,
+      "note": "\"Everlasting joy\" is national restoration, not afterlife."
+    },
+    {
+      "heading": "Baruch and the Letter of Jeremiah",
+      "books": [
+        "BAR",
+        "LJE"
+      ],
+      "chapter": null,
+      "note": "The anti-idol polemic uses menstrual impurity as a measure of worthlessness."
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": 9,
+      "note": "War elephants with towers are a likely source for Tolkien's oliphaunts. Revenge on a wedding party (9:37-41) is narrated approvingly."
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": null,
+      "note": "\"Gentile\" comes from Latin *gentilis*, translating *goyim*/*ethne*."
+    },
+    {
+      "heading": "2 Maccabees",
+      "books": [
+        "2MA"
+      ],
+      "chapter": 7,
+      "note": "Chapter 7 is the first explicit resurrection theology, driven by martyrdom (the old reward theology had failed)."
+    },
+    {
+      "heading": "4 Maccabees",
+      "books": [],
+      "chapter": null,
+      "note": "\"Reason\" means Stoic self-mastery within Torah, not modern empirical reason."
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": null,
+      "note": "Written around 100 CE as pseudonymous prophecy. \"My son the Messiah\" dies after a 400-year reign."
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": 7,
+      "note": "First clear heaven/hell dualism (7:36), with Persian influence."
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": null,
+      "note": "\"Holy spirit\" is more personal here, but not yet a distinct person."
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": null,
+      "note": "The genealogy runs through Joseph while the virgin birth removes him."
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": null,
+      "note": "Sermon on the Mount intensifies the law (thought crime, divorce); NT \"relaxation\" is Paul, not Jesus."
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 24,
+      "note": "\"Let the dead bury their dead,\" \"call no one father,\" the failed \"this generation\" prophecy (24:34)."
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": null,
+      "note": "\"Son of Man\" is a multilayered title; in the parable of the weeds it clearly means Jesus."
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": null,
+      "note": "Slavery is accepted; tax collectors were hated as Roman collaborators; baptism has no OT equivalent."
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 6,
+      "note": "No birth narrative; named brothers and sisters of Jesus (6:3), which is hard to square with perpetual virginity."
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 3,
+      "note": "Jesus's family thought he was out of his mind (3:21)."
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 7,
+      "note": "\"All foods clean\" (7:19) is Mark's editorial gloss, which Matthew omits."
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": null,
+      "note": "The messianic secret goes wrong comically (can't stay hidden); demon dialogue (Legion) supports a literal reading, which is why only the literalist position is textually consistent."
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 12,
+      "note": "\"Receive the kingdom as a child\" is about manner, not age; marriage ends in the resurrection (12:25)."
+    },
+    {
+      "heading": "Luke and John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": 20,
+      "note": "Passion narratives never mention nails at the crucifixion; only John 20:25 mentions them, afterward."
+    },
+    {
+      "heading": "Luke and John",
+      "books": [
+        "LUK"
+      ],
+      "chapter": 23,
+      "note": "Luke 23:34 (\"forgive them\") is textually uncertain; Stephen's version in Acts 7 may have come first."
+    },
+    {
+      "heading": "Luke and John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": 17,
+      "note": "John 17: the prayer of a Son who is \"God\" to the Father raises the Trinity problem."
+    },
+    {
+      "heading": "Luke and John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": null,
+      "note": "John increasingly blames \"the Jews,\" a trajectory that fed centuries of antisemitism."
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 1,
+      "note": "Judas dies by hanging (Matthew) or by rupture (Acts 1); the field-purchase stories conflict."
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": null,
+      "note": "Peter's argument for Davidic descent depends on lineage the virgin birth undermines."
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": null,
+      "note": "\"Hanging on a tree\" means the cross (Deut 21:23)."
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 10,
+      "note": "Acts 10:38 is \"low\" Christology; the Peter vision reverses dietary law."
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 16,
+      "note": "The \"we\" passages (16:10 onward) are debated: eyewitness, source, or convention."
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 17,
+      "note": "Acts 17:29 critiques images, which sits uneasily with church iconography."
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 10,
+      "note": "Universal \"hearing\" (10:18) conflicts with geography; God hardening hearts (11:8) is the recurring setup problem."
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 11,
+      "note": "Gentile inclusion is framed as making Israel jealous (11:11-14)."
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 12,
+      "note": "Romans 12 (\"do not repay evil\") versus an eye for an eye; Romans 13 (\"authorities are God's servants\") reverses the Gospel tone."
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 15,
+      "note": "Romans 15:9-12 quotes genuine OT passages (Ps 18:49, Deut 32:43, Ps 117:1, Isa 11:10), but Paul builds more from them than they say."
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 16,
+      "note": "Tertius (16:22) was the scribe."
+    },
+    {
+      "heading": "1-2 Corinthians",
+      "books": [
+        "1CO",
+        "2CO"
+      ],
+      "chapter": null,
+      "note": "\"God's foolishness\" (1:25) is deliberate paradox."
+    },
+    {
+      "heading": "1-2 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": 7,
+      "note": "1 Cor 7: Paul expects the end soon; 8:5-6 states \"many gods and many lords\"; 14:34-35 (women silent) is probably an interpolation; chapter 13 is about church gifts, not weddings."
+    },
+    {
+      "heading": "1-2 Corinthians",
+      "books": [
+        "2CO"
+      ],
+      "chapter": 8,
+      "note": "2 Corinthians is partly a fundraising letter (ch. 8-9) and partly Paul's defense against unnamed \"super-apostles.\""
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": null,
+      "note": "Paul's law-versus-faith contrast fails the logic test you raised: both are claimed revelation, and Christianity's \"believe or be lost\" is as binary."
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": 5,
+      "note": "Circumcision is called both fatal and meaningless (5:2-6)."
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": null,
+      "note": "\"Apostle\" means \"sent one\"; Paul claims the title via vision, not acquaintance with Jesus."
+    },
+    {
+      "heading": "Colossians, Ephesians, 1 Timothy, Titus",
+      "books": [
+        "COL",
+        "EPH",
+        "1TI",
+        "TIT"
+      ],
+      "chapter": null,
+      "note": "Household codes replicate Greco-Roman hierarchy: \"equality after death, hierarchy during life.\""
+    },
+    {
+      "heading": "Colossians, Ephesians, 1 Timothy, Titus",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 1,
+      "note": "1 Tim 1:10 condemns slave traders, i.e. kidnappers, not slavery. 1 Tim 2:9-15 bars women from teaching."
+    },
+    {
+      "heading": "Colossians, Ephesians, 1 Timothy, Titus",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 3,
+      "note": "The \"bishop married once\" line (1 Tim 3) and Catholic celibacy; \"love of money\" is the misquoted \"root of evil.\""
+    },
+    {
+      "heading": "Colossians, Ephesians, 1 Timothy, Titus",
+      "books": [
+        "TIT"
+      ],
+      "chapter": 1,
+      "note": "Titus 1:12 endorses a stereotype of Cretans while chapter 3 says speak evil of no one."
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": null,
+      "note": "Not Paul's. The \"40 years\" is the wilderness generation."
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": null,
+      "note": "Melchizedek priesthood sets aside descent, but Hebrews itself says Jesus came from Judah, so the factual contradiction is between Matthew and Luke, not Hebrews."
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": 8,
+      "note": "\"If the first covenant had been faultless\" (8:7) concedes a flawed first covenant; Hebrews 1 reads comfortably in Arian terms."
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": null,
+      "note": "The OT never reveals a Trinity, which believers explain as progressive revelation."
+    },
+    {
+      "heading": "James, 1-2 Peter, 1 John",
+      "books": [
+        "JAS"
+      ],
+      "chapter": null,
+      "note": "James: Jesus's brother named matter-of-factly; Catholic reading treats \"brother\" as kinsman. \"Friendship with the world\" means the status-driven social order."
+    },
+    {
+      "heading": "James, 1-2 Peter, 1 John",
+      "books": [
+        "1PE"
+      ],
+      "chapter": 2,
+      "note": "1 Peter 2:23 \"did not threaten\" versus Jesus as final judge; the church's ostentation against \"God opposes the proud.\""
+    },
+    {
+      "heading": "James, 1-2 Peter, 1 John",
+      "books": [
+        "2PE"
+      ],
+      "chapter": null,
+      "note": "2 Peter likely dates around 90-150 CE and answers the delay of the Second Coming."
+    },
+    {
+      "heading": "James, 1-2 Peter, 1 John",
+      "books": [
+        "1JN"
+      ],
+      "chapter": 3,
+      "note": "1 John: sinlessness (3:6) versus \"if we say we have no sin\" (1:8); circular test of truth (4:6); a \"mortal sin\" (5:16-17) that Catholic theology later built on."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "Author is probably not the apostle; Catholic doctrine doesn't require it."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "\"Alpha and Omega\" echoes Isaiah's \"first and last\" and is shared by God and Jesus."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "Jezebel is a nickname for a prophetess in Thyatira; the Laodicea \"lukewarm\" image reflects the local water supply."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "The four horsemen (third is famine; oil and wine spared as class contrast, not Eucharist)."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "Seven means completeness, four means earth, 3.5 means limited evil."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 11,
+      "note": "Two witnesses (11), woman clothed with the sun (12; the church/Israel, not primarily Mary), beast \"given\" authority (13), the 144,000 (14), the closest NT image of hell (14:9-11)."
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 20,
+      "note": "Satan is bound and then must be released (20); death ends in the new creation (21:4)."
+    },
+    {
+      "heading": "Other topics",
+      "books": [],
+      "chapter": null,
+      "note": "**Arianism and \"Aryan\"** are unrelated; the similarity is spelling only."
+    },
+    {
+      "heading": "Other topics",
+      "books": [],
+      "chapter": null,
+      "note": "**Last Supper**: Leonardo painted Renaissance Italian food, not a Passover seder."
+    },
+    {
+      "heading": "Other topics",
+      "books": [],
+      "chapter": null,
+      "note": "**\"Turn! Turn! Turn!\"**, **Tolkien's debt to Maccabees** and **iconoclasm** came up as cultural spin-offs."
+    },
+    {
+      "heading": "Other topics",
+      "books": [],
+      "chapter": null,
+      "note": "**70 CE** is the destruction of the Second Temple that reshaped both Judaism and Christianity."
+    }
+  ],
+  "open_questions": [
+    "Gospel of Luke and John, read in full: how much of the \"Jews\" trajectory is present?",
+    "Pauline letters not yet discussed: Philippians, Thessalonians, Philemon.",
+    "Any further Apocrypha (Judith, Wisdom of Solomon) not yet covered.",
+    "Does any text address the \"setup\" problem directly, beyond Job?"
+  ],
+  "points_source": "my-points",
+  "own_conclusions_heading": "Overall final observations",
+  "points": [
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": 3,
+      "note": "After our conversation about Satan, I reread this part of Genesis (Genesis 3:1-7). How does this relate to the notion of Satan?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Genesis",
+      "books": [
+        "GEN"
+      ],
+      "chapter": 3,
+      "note": "Genesis never calls the serpent Satan. That identification comes much later (Wisdom 2:24, Revelation 12:9).",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Exodus",
+      "books": [
+        "EXO"
+      ],
+      "chapter": 32,
+      "note": "What is the meaning when god supposedly calls the Israelites \"stiff‐necked people\" (Exodus 32:9, 33:3, 34:9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 18,
+      "note": "In Leviticus is there any admonition against relations between siblings? (Leviticus 18:9, 18:11)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": null,
+      "note": "Wasn't Abraham married to his half sister? (Genesis 20:12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 23,
+      "note": "What does the reference of booths mean? (Leviticus 23:42-43)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 23,
+      "note": "Do Orthodox Jews still abide by this command? (Leviticus 23:42-43)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 25,
+      "note": "Can they own land in Israel? (Leviticus 25:23-24)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": 27,
+      "note": "What does Leviticus mean by consecrating a house or an animal (Leviticus 27)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Leviticus",
+      "books": [
+        "LEV"
+      ],
+      "chapter": null,
+      "note": "Why is there so much repetition in the old testament? When god speaks to Moses he seems to say the same thing multiple times",
+      "speaker": "me"
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": 5,
+      "note": "In Nmbers there is a section that refers to how to deal with suspicion of infidelity. Is the bitter water supposed to be a true poison or just a \"magically\" modified water? (Numbers 5:11-31)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": 14,
+      "note": "What's the meaning of the expression \"fell on their faces\" (e.g., Numbers 14:5, 16:4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Numbers",
+      "books": [
+        "NUM"
+      ],
+      "chapter": null,
+      "note": "What does the Pentateuch when it talks about the wilderness",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "Am I right to understand that there is no claim of monotheism before deuteronomy?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": 5,
+      "note": "Is the statement that god allegedly makes multiple times of being a jealous god also imply the existence of other, competing gods? (Exodus 20:5; Deuteronomy 5:9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "How is the existence of other peoples, who do not come from the biblical lineage from the Pentateuch explained, and does it necessitate by force a polytheistic philosophy?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": 2,
+      "note": "Who is Anakim? (Deuteronomy 2:10-11, 9:2)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": 10,
+      "note": "Does this paragraph from Deuteronomy also imply polytheism? (Deuteronomy 10:17-18)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": 12,
+      "note": "Does this contradict Leviticus admonishment of not eating certain types of meat? (Deuteronomy 12:22; Leviticus 11)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Deuteronomy",
+      "books": [
+        "DEU"
+      ],
+      "chapter": null,
+      "note": "I finished reading Deuteronomy now. One thing that I found intriguing was the lack of reference to the afterlife, which seems si central to Christianity. The punishments and rewards happen in the world to the person and his (always his) descendants. Am I missing something?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": 1,
+      "note": "This scene in the book of Judges feels familiar. Was there a very similar story in a previous book? (Judges 1:11-15)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": 1,
+      "note": "It's nearly word for word Joshua 15:15-19.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": 8,
+      "note": "What is the intent of this paragraph? (Judges 8:18-21)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": 8,
+      "note": "Is there here, or elsewhere in the old testament any reflection of the double standard implicit in the need to avenge the death of two individuals, from someone who allegedly killed thousands, many not combatants? (Judges 8)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": 9,
+      "note": "Is this meant literally, of as a matter of speech (Judges 9:5)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": null,
+      "note": "How do people who believe in the bible reconcile with the description of a god that is so fickle and can be fooled?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Judges",
+      "books": [
+        "JDG"
+      ],
+      "chapter": 16,
+      "note": "What is the supposed meaning of Samson's story? Why would he tell Delilah how he could be defeated when she was obviously cooperating with his enemies? (Judges 16)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Samuel",
+      "books": [
+        "1SA"
+      ],
+      "chapter": 25,
+      "note": "Throughout the Old Testament many of the main male characters have multiple wives. At what point, if at all, does polygamy become not accepted? (1 Samuel 25:42-44)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Samuel",
+      "books": [
+        "1SA"
+      ],
+      "chapter": null,
+      "note": "The opposite, polyandry, is never accepted though… right?",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Samuel",
+      "books": [
+        "1SA"
+      ],
+      "chapter": 27,
+      "note": "In Kings 27, are the peoples that David kills (\"Against the Negeb of Judah,\" or \"Against the Negeb of the Jerahmeelites,\" or, \"Against the Negeb of the Kenites.\") Israelites? (1 Samuel 27:10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Samuel",
+      "books": [
+        "1SA"
+      ],
+      "chapter": 27,
+      "note": "The passage is 1 Samuel 27, not Kings.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": 1,
+      "note": "How do believers and scholars reconcile the injustice in this text? (2 Samuel 1:14-16)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "To be clear, the very text precludes number 1, even if David had no way of knowing… right? (1 Samuel 31:4-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "\"Number 1\" was the reading that the Amalekite was lying. 1 Samuel 31 shows Saul killed himself, so the reader knows the claim was false.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": 11,
+      "note": "How do people reconcile David's actions in 2 Samuel 11?",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": 22,
+      "note": "This poem seems almost sarcastic in light of some of David's actions (2 Samuel 22:22-25)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": 22,
+      "note": "The same hymn appears as Psalm 18.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "Am I right in sensing that initially god was against a monarchy? (1 Samuel 8)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "How do scholars interpret then the statements in Salomon 9?",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Samuel",
+      "books": [
+        "2SA"
+      ],
+      "chapter": null,
+      "note": "The reference is unclear. It's probably 1 Kings 9 (God's promise to Solomon) or 2 Samuel 7 (the covenant with David).",
+      "speaker": "claude"
+    },
+    {
+      "heading": "1 Kings",
+      "books": [
+        "1KI"
+      ],
+      "chapter": 15,
+      "note": "Why are these statements posted as questions? (1 Kings 15:7)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Kings",
+      "books": [
+        "1KI"
+      ],
+      "chapter": 20,
+      "note": "What's the point of this? (1 Kings 20:18)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Kings",
+      "books": [
+        "1KI"
+      ],
+      "chapter": 20,
+      "note": "multiple passages in the old testament make reference to casualties that seem unreasonably large with the technology available at the time. Is there any evidence to support these figures or is this just hyperbole? (1 Kings 20:29-30)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Kings",
+      "books": [
+        "1KI"
+      ],
+      "chapter": 21,
+      "note": "Is this a generic curse, or a specific prophecy? I've seen it in many parts in kings (1 Kings 21:24)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Kings",
+      "books": [
+        "2KI"
+      ],
+      "chapter": 1,
+      "note": "What is the relationship of the deity Baal-zebub mentioned here and the name given to satan by some people? (2 Kings 1:1-4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Kings",
+      "books": [
+        "2KI"
+      ],
+      "chapter": 18,
+      "note": "What are the \"high places\" that are often referred to in Kings as an affront to god? (e.g., 1 Kings 3:2; 2 Kings 18:4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Kings",
+      "books": [
+        "2KI"
+      ],
+      "chapter": 18,
+      "note": "What is this? Isn't Moses supposed to be \"one of the good ones\"? (2 Kings 18:4; Numbers 21:4-9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Kings",
+      "books": [
+        "2KI"
+      ],
+      "chapter": 23,
+      "note": "Is the mention of male prostitutes literal, or an insult. (2 Kings 23:7)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Kings",
+      "books": [
+        "2KI"
+      ],
+      "chapter": 23,
+      "note": "Also, who were they supposed to offer their services to? (2 Kings 23:7)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Chronicles",
+      "books": [
+        "1CH"
+      ],
+      "chapter": 17,
+      "note": "What's the meaning of god of hosts? (1 Chronicles 17:24)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Chronicles",
+      "books": [
+        "1CH"
+      ],
+      "chapter": 21,
+      "note": "Is this the first time satan is mentioned? This seems out of the blue. What is the background? (1 Chronicles 21:1)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Chronicles",
+      "books": [
+        "1CH"
+      ],
+      "chapter": 21,
+      "note": "Related to this same chapter, why is counting the people a sin or bad in the eye of god? (1 Chronicles 21; 2 Samuel 24)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Chronicles",
+      "books": [
+        "2CH"
+      ],
+      "chapter": null,
+      "note": "Was there a command in Leviticus or Deuteronomy related with marriage with \"foreigners\"? (Deuteronomy 7:1-4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Chronicles",
+      "books": [
+        "2CH"
+      ],
+      "chapter": null,
+      "note": "Indeed my question was triggered by the story of Salomon in 2 Chronicles. I noticed that the marriage of foreign women there is not mentioned, while it was central in Kings (1 Kings 11:1-13)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Nehemiah",
+      "books": [
+        "NEH"
+      ],
+      "chapter": 13,
+      "note": "In multiple verses, I see references to \"the Jews\", but weren't all of them Jews? (Nehemiah 13:23-24)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Job",
+      "books": [
+        "JOB"
+      ],
+      "chapter": 41,
+      "note": "In Job, when god talks about Leviathan, does it refer to whales? (Job 41)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Job",
+      "books": [
+        "JOB"
+      ],
+      "chapter": 1,
+      "note": "On this story, what I find interesting is that the set up seems incongruous with the conclusion, as testing Job was not part of a misterios plan from god, but a challenge placed by Satan. How do people reconcile this? (Job 1-2, 42)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 6,
+      "note": "Reading the psalms, I notice that there is still no afterlife reward or punishment. If anything Sheol seems to be amorphous and passive (Psalm 6:5)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 30,
+      "note": "Who is supposed to be the character who is resurrected in Psalm 30? This seems consistent with our previous observation",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 30,
+      "note": "But doesn't the verse \"and you have healed me. O Lord, you brought up my soul from Sheol, restored me to life from among those gone down to the Pit\" indicate some sort of resurrection? (Psalm 30:2-3)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 30,
+      "note": "I conceded that the Hebrew can bear a literal reading, though most scholars still take it as rescue from near death.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 49,
+      "note": "What's the idea of psalm 49? Is it telling if an afterlife (Psalm 49:15) or ruling it out (Psalm 49:19) or neither?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": 51,
+      "note": "in psalm 51 is the notion of original sin introduced for the first time (Psalm 51:5)? There seems to be no explanation as to the source, and my sense is that up to this point, there is no taboo as to txt itself, like is typical in Christianity",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": null,
+      "note": "I'm still reading the psalms (currently up to 111). One thing that I think I notice is that in the previous books, there was a lot of emphasis on animal sacrifices and in kind offerings, and in psalms, this seems to be much less. What's going on?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": null,
+      "note": "Are sacrifices still done by Jewish or Christian churches?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Psalms",
+      "books": [
+        "PSA"
+      ],
+      "chapter": null,
+      "note": "Is psalm 117 to be understood as evangelical to other peoples?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Proverbs",
+      "books": [
+        "PRO"
+      ],
+      "chapter": 5,
+      "note": "What is the idea here? (Proverbs 5:15-19)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Proverbs",
+      "books": [
+        "PRO"
+      ],
+      "chapter": 30,
+      "note": "There are at least a couple of proverbs with this structure… what is the meaning? The numbers don't seem to add up… (Proverbs 30:18-19)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Proverbs",
+      "books": [
+        "PRO"
+      ],
+      "chapter": null,
+      "note": "I also saw a phrase in Proverbs that I had heard in a song by Mumford & Sons - awake my soul… is the song inspired by proverbs?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Proverbs",
+      "books": [
+        "PRO"
+      ],
+      "chapter": null,
+      "note": "The phrase is from Psalms (Psalm 57:8, 108:2), not Proverbs.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 1,
+      "note": "Is the expression \"there's nothing new under the sun\" originally from Ecclesiastics? (Ecclesiastes 1:9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 3,
+      "note": "Again, the following section reminds me of a song, but can't remember which… can you help? (Ecclesiastes 3:1-8)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 3,
+      "note": "\"Turn! Turn! Turn!\" (Pete Seeger; The Byrds, 1965).",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 7,
+      "note": "Please explain what is meant by… (Ecclesiastes 7:27-28)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 9,
+      "note": "On the topic of the absence of the Christian vision of afterlife, I think this paragraph is interesting… (Ecclesiastes 9:5-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": 12,
+      "note": "Is the silver strand representing life, the same as in Greek mythology? (Ecclesiastes 12:6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ecclesiastes",
+      "books": [
+        "ECC"
+      ],
+      "chapter": null,
+      "note": "Yes, I meant from Ecclesiastes. It is interesting from reading the commentary that this book has historically been controversial and rabbinic scholars hesitated to include it, yet so fat is the book I found to be most sincere and with beautiful imagery (other than the misogyny)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Song of Songs",
+      "books": [
+        "SNG"
+      ],
+      "chapter": 4,
+      "note": "Is this part of the Song of Songs implying physical attraction to the speaker's own sister? Was this not barred? (Song of Songs 4:9-10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Song of Songs",
+      "books": [
+        "SNG"
+      ],
+      "chapter": null,
+      "note": "While interesting, Song of Songs feels out of place. Why is it included with the rest?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Song of Songs",
+      "books": [
+        "SNG"
+      ],
+      "chapter": null,
+      "note": "I grew up in a Catholic country, and my impression is that Catholics see sexuality as shameful… how does the church reconcile that attitude with the book?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Isaiah",
+      "books": [
+        "ISA"
+      ],
+      "chapter": 23,
+      "note": "What is Professes 23 about (briefly)? (Isaiah 23:1)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Isaiah",
+      "books": [
+        "ISA"
+      ],
+      "chapter": 23,
+      "note": "This is Isaiah 23, not Proverbs.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Isaiah",
+      "books": [
+        "ISA"
+      ],
+      "chapter": 24,
+      "note": "On Isaiah 24, is there an introduction to some sort of afterlife judgement? (Isaiah 24-27)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 4,
+      "note": "Did god tell Ezequiel to eat human fesses and negotiate down to cow dung? (Ezekiel 4:12-15)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 22,
+      "note": "I don't remember the emphasis on women's periods before. Was there any law about this and why (Ezekiel 22:10; Leviticus 15:19-24, 18:19)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 23,
+      "note": "Are these supposed to be real people or metaphors? (Ezekiel 23:4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Ezekiel",
+      "books": [
+        "EZK"
+      ],
+      "chapter": 47,
+      "note": "Briefly, what is the point of this paragraph? (Ezekiel 47:3-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Daniel",
+      "books": [
+        "DAN"
+      ],
+      "chapter": 8,
+      "note": "Who is the prince of princes in this paragraph? (Daniel 8:25-26)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Daniel",
+      "books": [
+        "DAN"
+      ],
+      "chapter": null,
+      "note": "You said, maybe the messiah, but up to this point there's been no mention of a messiah, right?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Daniel",
+      "books": [
+        "DAN"
+      ],
+      "chapter": null,
+      "note": "Correct, and I withdrew it. \"Prince of princes\" here means God.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Hosea",
+      "books": [
+        "HOS"
+      ],
+      "chapter": 6,
+      "note": "Is this idea of resurrection after three days, the basis for the mirth if Jesus resurrection? (Hosea 6:1-2)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hosea",
+      "books": [
+        "HOS"
+      ],
+      "chapter": null,
+      "note": "My question is not one of predicting Jesus (who I do not assume to be a historical human, and much less his alleged divinity), but rather whether this was used as a basis for the myth of the resurrection",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hosea",
+      "books": [
+        "HOS"
+      ],
+      "chapter": null,
+      "note": "It's a possible source and is debated, not established.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Zephaniah",
+      "books": [
+        "ZEP"
+      ],
+      "chapter": 2,
+      "note": "It seems to me that every time Moab is mentioned it is in a negative light. (Zephaniah 2:9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Zephaniah",
+      "books": [
+        "ZEP"
+      ],
+      "chapter": null,
+      "note": "Why was the city of Moab in Utah named after it?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Malachi",
+      "books": [
+        "MAL"
+      ],
+      "chapter": 4,
+      "note": "Just finished reading Malachi. Here is my first sense of potential allusion to what Christians refer to as hell for non believers. (Malachi 4:1)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Malachi",
+      "books": [
+        "MAL"
+      ],
+      "chapter": 3,
+      "note": "And also the only thing that I would interpret as a promise of a messiah, or at least a representative off god… is this right? (Malachi 3:1, 4:5)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Tobit",
+      "books": [
+        "TOB"
+      ],
+      "chapter": 2,
+      "note": "Is this a common belief? (Tobit 2:9-10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Tobit",
+      "books": [
+        "TOB"
+      ],
+      "chapter": null,
+      "note": "Tobit feels different in kind to everything else in the OT. I read references of hell, including Hades (why a Hades) and named angels",
+      "speaker": "me"
+    },
+    {
+      "heading": "Sirach",
+      "books": [
+        "SIR"
+      ],
+      "chapter": 3,
+      "note": "This prescription seems to be instructing people not to go beyond what they know today… (Sirach 3:21)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Sirach",
+      "books": [
+        "SIR"
+      ],
+      "chapter": null,
+      "note": "What book of the bible talks about not laying your elbows on the table?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Sirach",
+      "books": [
+        "SIR"
+      ],
+      "chapter": null,
+      "note": "I'm sure I did read it, I think as an example of doing something wrong",
+      "speaker": "me"
+    },
+    {
+      "heading": "Sirach",
+      "books": [
+        "SIR"
+      ],
+      "chapter": null,
+      "note": "I was wrong when I said it isn't in the Bible. It's Sirach 41:19. The Greek reads roughly \"leaning your elbow over the bread\" among things to be ashamed of, and the NRSV renders it as leaning on your elbow at meals.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Baruch",
+      "books": [
+        "BAR"
+      ],
+      "chapter": 4,
+      "note": "In Baruch, what do they mean with salvation, given that the notion of eternal life does not seem to be present yet (Baruch 4:29)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Baruch",
+      "books": [
+        "BAR"
+      ],
+      "chapter": 6,
+      "note": "Why is this relevant? (Baruch 6:29, Letter of Jeremiah)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Baruch",
+      "books": [
+        "BAR"
+      ],
+      "chapter": null,
+      "note": "Is the contradiction that menstruation is part of how the female body works, which is supposedly designed by god, and yet it is impure ever get addressed in the bible?",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": 1,
+      "note": "How do believers reconcile the claims of a god capable of summarily burning a person for shaking the arch of the covenant or making the wrong offering, while allowing the pillage of the temple like in this text? (1 Maccabees 1:20-24; 2 Samuel 6:7; Leviticus 10:1-2)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": null,
+      "note": "Is the term gentile showing up here for the first time? What is the origin and actual meaning of?",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": 9,
+      "note": "1 Maccabees is interesting, although when I get to the NT, I am interested to see how they reconcile the celebration of the brutality (1 Maccabees 9:37-41)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": null,
+      "note": "On a separate topic, I think I see echoes of Maccabee in modern works like The Return of The King by JRT, like the battle for Gondor",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Maccabees",
+      "books": [
+        "1MA"
+      ],
+      "chapter": 6,
+      "note": "Even the description of the armies, with Elephants and thousands of foot soldiers reminded me of LOTR (1 Maccabees 6:28-47)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Maccabees",
+      "books": [
+        "2MA"
+      ],
+      "chapter": null,
+      "note": "I'm reading the commentary about 2 Maccabees, and here again I see the bipolar god that oscillates between anger and love (or compassion) for the Jews. How many times altogether are these swings related in the old testament + apocrypha?",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Maccabees",
+      "books": [
+        "2MA"
+      ],
+      "chapter": 7,
+      "note": "This talk of after life came out of the blue (2 Maccabees 7:9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": 7,
+      "note": "2 Esdars is totally different to the rest, clearly a postfacto foretelling of a messiah (2 Esdras 7:26-28)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": 7,
+      "note": "This is also a new concept… (2 Esdras 7:36)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": null,
+      "note": "Did this concepts ever make their way into Judaism, or are they only inherited by Christianity?",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": 14,
+      "note": "Is this also the first mention of the holy spirit? (2 Esdras 14:22)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Esdras",
+      "books": [
+        "2ES"
+      ],
+      "chapter": 14,
+      "note": "No. \"Holy spirit\" appears earlier (Psalm 51:11; Isaiah 63:10-11), but not as a distinct person.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "4 Maccabees",
+      "books": [],
+      "chapter": null,
+      "note": "In 4 Macabee's, was the definition of reason different than today's? When he says (4 Maccabees 1:34-35), that may be a conscious choice, but I don't think it fits with our definition of reason",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 1,
+      "note": "Now I Am reading Mathew. Is The whole point of the genealogy that links Jesus to Abraham through Joseph contradicted by the supposed virgin birth? Joseph had nothing to do with it (Matthew 1:1-16)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": null,
+      "note": "Briefly, was the concept of baptism present anywhere in the OT (I don't think so)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 5,
+      "note": "I always heard that the NT was a lot more \"relaxed\" than the OT, but Jesus' teachings sound even more draconian than a lot of the OT (Matthew 5:26-32)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 8,
+      "note": "This seems harsh… What's the idea? (Matthew 8:21-22)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 10,
+      "note": "Does the NT ever speak against slavery clearly? (Matthew 10:24-25)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 11,
+      "note": "Why so much reference to tax collectors? (Matthew 11:19)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 12,
+      "note": "Who is \"he\" in this sentence? (Matthew 12:46-50)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": null,
+      "note": "Son of man = Jesus?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 13,
+      "note": "So here… (Matthew 13:37-38)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 23,
+      "note": "Doesn't this contradict Moses commandment to honor your father? (Matthew 23:9-12; Exodus 20:12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Matthew",
+      "books": [
+        "MAT"
+      ],
+      "chapter": 24,
+      "note": "Is this message predicting the end of times happening within that generation? How do people reconcile this with the fact that we're two thousand years later? (Matthew 24:32-35)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 3,
+      "note": "So now I'm reading Mark, and found it interesting that here to there is an explicit mention of Christs brothers, which he extends to mean everyone, but from context would seem to refer to specific siblings (Mark 3:31-35; Mark 6:3)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 7,
+      "note": "How do Christian's reconcile this with OT teachings, which are quite black and white, and taken to the extreme in 4 Macabees (Mark 7:17-23)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 7,
+      "note": "Another interesting contradiction, despite all the magical powers, he is not able to hide from people… (Mark 7:24-25) No need for a long commentary, but I find it bemusing",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 9,
+      "note": "For a deity, who is supposed to love and understand its creation, Jesus constantly seems to treat them with contempt. Is this not seen as inconsistent? (Mark 9:19)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 9,
+      "note": "how does religion deal with the description of ailments that we know have biological basis (like epilepsy) described as demonic possessions? (Mark 9:17-27)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 5,
+      "note": "Only 4 is consistent, even if absurd. 1-3 discount the fact that in many cases the demons are described as real entities and even engage in dialogs (Mark 5:1-13)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 5,
+      "note": "Option 4 was the literal reading. I agreed that it's the only one consistent with the text.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 10,
+      "note": "Doesn't this mean that no one who adopts Christianity as an adult (including his disciples) can be saved? (Mark 10:15-16)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 12,
+      "note": "I don't understand the response. Is he saying that your past relationships are no longer valid in the afterlife? I constantly hear people talk about rejoining dead partners or relatives in death (Mark 12:18-27)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Mark",
+      "books": [
+        "MRK"
+      ],
+      "chapter": 14,
+      "note": "I just realized that the last supper is supposed to be a Passover dinner. Is Leonardo's painting consistent with what would be served for Passover? (Mark 14:12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": 17,
+      "note": "What is the alleged logic of Jesus pleading to god if he is god? (John 17:6-11)",
+      "speaker": "me"
+    },
+    {
+      "heading": "John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": 20,
+      "note": "Regarding the gospels, am I right that the first three never talk about Jesus being nailed to the cross. Only John indirectly talks about the marks in his hands after resurrection. Where did the idea of nailing come from? (John 20:25)",
+      "speaker": "me"
+    },
+    {
+      "heading": "John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": 20,
+      "note": "I checked: none of the four Gospels mention nails in the crucifixion scene. The only Gospel reference is John 20:25, after the resurrection. Luke 24:39 implies wounds without naming nails.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "John",
+      "books": [
+        "JHN"
+      ],
+      "chapter": null,
+      "note": "My understanding is that nailing would just tear the flesh with the weight of the body",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 1,
+      "note": "Didn't the first three testaments talk about Judas hanging himself? (Acts 1:15-20; Matthew 27:5)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 1,
+      "note": "Only Matthew reports the hanging. Mark and Luke don't describe Judas's death.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 2,
+      "note": "Here again comes the issue of paternal genealogy… (Acts 2:29-31)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 3,
+      "note": "As noted in the analysis section, John and now Acts take on a gentile, anti Jewish tone. (Acts 3:12-15)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 5,
+      "note": "Why does Peter say that Jesus was hung? (Acts 5:29-30)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 7,
+      "note": "Is this passage the first time this shows up? I don't recall reading it in the gospels (Acts 7:60)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 7,
+      "note": "Luke 23:34 has a similar prayer from Jesus, but it's missing from several early manuscripts.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 10,
+      "note": "How is this reconciled with the OT? God changed its mind? (Acts 10:15)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 10,
+      "note": "This does not sound as Jesus being god, but just a empowered mortal (Acts 10:37-38)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 16,
+      "note": "What is the point about Asia? (Acts 16:6-10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 16,
+      "note": "Why is it that after this point the narrative becomes 1st person? (Acts 16:11-12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": 17,
+      "note": "How does religion reconcile the disdain shown throughout the OT and NT towards imagery of deities with the Christs, crosses saints, virgins, angels and so on that pack Christian churches? (Acts 17:29)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Acts",
+      "books": [
+        "ACT"
+      ],
+      "chapter": null,
+      "note": "Exorcisms and characterization of illness as being caused by demons seems to be central to the NT. How do the major Christian churches reconcile this with modern understanding of medicine?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 10,
+      "note": "Is the claim that every human has heard \"the word\". How do modern Christian's think about this? (Romans 10:14-21)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 11,
+      "note": "So, if god made them non receptive, how can it be their fault? (Romans 11:8)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 11,
+      "note": "Is the message, that gentiles are just secondary… a tool to entice Jews? (Romans 11:11-14)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 12,
+      "note": "How is this reconciled with an eye for an eye? (Romans 12:17-18; Exodus 21:24)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 13,
+      "note": "This is an interesting twist, from tax collectors and authorities - Pharisees, Pílate, etc) being villains (Romans 13:6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 15,
+      "note": "Are all these quotes real? I don't recall such positive attitude towards gentiles in the OT (Romans 15:9-12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 15,
+      "note": "I checked: all four are real. They are Psalm 18:49, Deuteronomy 32:43, Psalm 117:1 and Isaiah 11:10 (Greek version).",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": 16,
+      "note": "The section about authorship attributes Romans to Paul, so how should I interpret this sentence? (Romans 16:22-23)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Romans",
+      "books": [
+        "ROM"
+      ],
+      "chapter": null,
+      "note": "What do we know of Paul?",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": 1,
+      "note": "I understand the point he is trying to make, but still this is a weird statement… can God have foolishness and weakness? (1 Corinthians 1:25)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": 7,
+      "note": "Is this telling them that the end of time was imminent? (1 Corinthians 7:25-31)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": 8,
+      "note": "Is this stating the existence of other gods? (1 Corinthians 8:5-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": null,
+      "note": "What is the meaning of the word Apostle? Paul calls him self an apostle, despite not having met Jesus personally",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": 14,
+      "note": "This, as most of the bible is extremely sexist. How do denominations that allow female priesthood reconcile it? (1 Corinthians 14:34)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Corinthians",
+      "books": [
+        "1CO"
+      ],
+      "chapter": 13,
+      "note": "This paragraph is read at catholic weddings, but as I read it in context, it does not refer to the love between a couple, but more generally as part of the church - speaking in tongues, prophecy and love. (1 Corinthians 13:4-7)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Corinthians",
+      "books": [
+        "2CO"
+      ],
+      "chapter": 8,
+      "note": "Is 2 Corinthians a fund raising letter? (2 Corinthians 8-9)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Corinthians",
+      "books": [
+        "2CO"
+      ],
+      "chapter": 11,
+      "note": "This is a very unusual part of the bible. Indeed I see the apologetic part, where he seems to have a beef with one of the super apostles. Do we know who this was? (2 Corinthians 11:5, 12:11)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Corinthians",
+      "books": [
+        "2CO"
+      ],
+      "chapter": null,
+      "note": "Why is this preserved as part of the bible? It feels so idiosyncratic to Paul's situation rather than deal with broader principles or teachings",
+      "speaker": "me"
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": 3,
+      "note": "There is a logical inconsistency in Paul's reasoning. The (OT) law is an article of faith, as much as the belief in Jesus… is this not an issue for Christians? (Galatians 3:10-12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": null,
+      "note": "To me it is simpler than that. The Jewish Law is not found in nature, it is supposedly handed down by \"god\", just like the New Testament belief. The binary vs continuous distinction is irrelevant in that respect (not to mention that Christianity is pretty categorical too - eg you can only be saved through Jesus",
+      "speaker": "me"
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": null,
+      "note": "I agreed that this is a sharper critique than the \"achievement vs. gift\" framing I had offered.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Galatians",
+      "books": [
+        "GAL"
+      ],
+      "chapter": 5,
+      "note": "Another logical inconsistency - doesn't the last sentence negates the first premise? (Galatians 5:2-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Colossians",
+      "books": [
+        "COL"
+      ],
+      "chapter": 3,
+      "note": "For a supposedly pro equality religion, this is just as hierarchical as anything in the OT (Colossians 3:20-25)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Colossians",
+      "books": [
+        "COL"
+      ],
+      "chapter": null,
+      "note": "Equality after death, but hierarchy during life",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 1,
+      "note": "This is the first hint I see of reproach to slavery. (1 Timothy 1:8-11)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 1,
+      "note": "The Greek word (*andrapodistēs*) means kidnapper or slave-trader, not slave-owner.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": null,
+      "note": "Even more depressing",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 2,
+      "note": "This is hard to read, particularly knowing that many people consider these words divinely inspired. (1 Timothy 2:9-15)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 3,
+      "note": "The same letter decrees that bishops and deacons should be married… does the Catholic Church not accept this letter? (1 Timothy 3:2, 3:12)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": 6,
+      "note": "Interesting. My interpretation is that the disdain of richness is not for egalitarian reasons, but for lack of focus on religion. (1 Timothy 6:10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Timothy",
+      "books": [
+        "1TI"
+      ],
+      "chapter": null,
+      "note": "This made it even to Pink Floyd",
+      "speaker": "me"
+    },
+    {
+      "heading": "Titus",
+      "books": [
+        "TIT"
+      ],
+      "chapter": 1,
+      "note": "Ironic that this should be in the letter to Titus, shortly after stating \"Cretans are always liars, vicious brutes, lazy gluttons.\" (Titus 1:12; Titus 3:1-2)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": 3,
+      "note": "What is the 40 years referenced here? (Hebrews 3:7-10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": 7,
+      "note": "Isn't this contradictory to all the emphasis placed earlier on the (flawed) genealogy of Jesus? (Hebrews 7:15-16)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": null,
+      "note": "There is the theoretical contradiction, but also in my mind more importantly the factual contradiction… the genealogy from the gospels is either right or wrong, so both these and Hebrews cannot be right (that's obviously can both be wrong)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": null,
+      "note": "Hebrews 7:14 accepts descent from Judah. It denies that descent matters for priesthood, so the factual clash is mainly between Matthew and Luke.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": 7,
+      "note": "Another implication of this portion is that god is capable of making an imperfect covenant… why not make it perfect from the start if it is all seeing and powerful? (Hebrews 7:21-22; Hebrews 8:7)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": 1,
+      "note": "The language in Hebrews 1 is totally consistent with Arianism interpretation, not Trinitarianism. How is this addressed by the churches? (Hebrews 1:2-4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Hebrews",
+      "books": [
+        "HEB"
+      ],
+      "chapter": null,
+      "note": "And if Jesus pre existed the human incarnation, should the trinitarian nature of god not have been revealed in the OT?",
+      "speaker": "me"
+    },
+    {
+      "heading": "James",
+      "books": [
+        "JAS"
+      ],
+      "chapter": 1,
+      "note": "As we discussed earlier, interesting to see so many references to Jesus siblings (in this case the letter of James preface). Even if the authorship is disputed, I find it interesting that the existence of a brother named James is stated so matter-of-factly. How does the Catholic Church regard this? (James 1:1; Galatians 1:19; Mark 6:3)",
+      "speaker": "me"
+    },
+    {
+      "heading": "James",
+      "books": [
+        "JAS"
+      ],
+      "chapter": 4,
+      "note": "Why is friendship with the world seen as bad? (James 4:4-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Peter",
+      "books": [
+        "1PE"
+      ],
+      "chapter": 2,
+      "note": "Yet one more contradiction… doesn't the bible elsewhere state that Judas and all those that mistreated and crucified Jesus would be punished agree death? (1 Peter 2:23-25)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Peter",
+      "books": [
+        "1PE"
+      ],
+      "chapter": null,
+      "note": "Even that is not a complete recount, as the bible states that Jesus himself will be the judge after he comes back, so the judgement and reprisal is carried out by himself",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 Peter",
+      "books": [
+        "1PE"
+      ],
+      "chapter": null,
+      "note": "I conceded the point. John 5:22 and Matthew 25:31-46 make Jesus the judge.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "1 Peter",
+      "books": [
+        "1PE"
+      ],
+      "chapter": 5,
+      "note": "Interesting to read this and see the ostentation of churches and clerics of different stripes (1 Peter 5:5; James 4:6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Peter",
+      "books": [
+        "2PE"
+      ],
+      "chapter": 3,
+      "note": "It seems to me that while this is written supposedly by Peter, the real author wanted to address the tardiness of the second coming that had not happened at the real time it was written, around 125 CE. Is this how scholars think about it? (2 Peter 3:8-10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "2 Peter",
+      "books": [
+        "2PE"
+      ],
+      "chapter": 3,
+      "note": "Yes, that's the mainstream view. Scholarly dates range from about 90 to 150 CE.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "1 John",
+      "books": [
+        "1JN"
+      ],
+      "chapter": 1,
+      "note": "Aren't these two portions of John contradictory? (1 John 1:8-10; 1 John 3:6-7)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 John",
+      "books": [
+        "1JN"
+      ],
+      "chapter": 4,
+      "note": "Circular logic… (1 John 4:5-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "1 John",
+      "books": [
+        "1JN"
+      ],
+      "chapter": 5,
+      "note": "Is there any discussion prior to this point about mortal vs non mortal sin? (1 John 5:16-17)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "Where does the expression \"the whore of Babylon\" comes from?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "You asked this while reading the Apocrypha. The phrase comes from Revelation 17:1-5.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 1,
+      "note": "What does the Catholic Church say about the author of the Apocalypse? (Revelation 1:4, 1:9, 21:14)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 1,
+      "note": "This is the first time this expression is used, right? (Revelation 1:8)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 1,
+      "note": "As a phrase, yes. The idea echoes Isaiah 44:6 (\"I am the first and I am the last\").",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 2,
+      "note": "Is this supposed to be John talking to god? (Revelation 2:20-21)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 2,
+      "note": "And who is he giving the authority to? (Revelation 2:26-29)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 3,
+      "note": "What is the meaning of cold or hot here? (Revelation 3:15-16)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 5,
+      "note": "Here again, the you, is Jesus? (Revelation 5:9-10)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 6,
+      "note": "So here the riders are introduced, what is the third? (Revelation 6:5-6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 6,
+      "note": "Why are oil and wine spared? (Revelation 6:6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "Regarding 4, wouldn't wheel also be exempt as it is key for bread - the body of Christ?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "\"Wheel\" means wheat. Option 4 was the sacramental reading, and your objection counts against it.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "What's with the repeated use of the number seven, and to a lesser extent the number four in Revelations?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 11,
+      "note": "Who are the THEY in this portion? (Revelation 11:6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 12,
+      "note": "Is this Mary? (Revelation 12:6)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "Where does the idea / festivity of Ascension show up in the bible?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 13,
+      "note": "Why is god allowing this? (Revelation 13:5)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "The problem of god setting up humans is everywhere, from genesis to revelations. There is no bible without it",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": null,
+      "note": "But even where a choice is assumed, it is contrived and almost a set-up. God may not directly tempt them, but he creates the conditions that lead to the temptation",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 14,
+      "note": "This is a sudden turn. Where does this come from? (Revelation 14:3-4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 14,
+      "note": "Is this used by the Catholic church to justify celibacy? (Revelation 14:4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 14,
+      "note": "This is by my count the closest description of a Dantean hell. (Revelation 14:9-11)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 20,
+      "note": "Who places these constraints on god? (Revelation 20:1-3)",
+      "speaker": "me"
+    },
+    {
+      "heading": "Revelation",
+      "books": [
+        "REV"
+      ],
+      "chapter": 21,
+      "note": "Aren't people at this point immortal? (Revelation 21:3-4)",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "Are the historical books part of the old or the new testament?",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "To clarify, my assumption is that most aspects of the bible have little to no relation with facts, so the spirit of my questions are focused in clarifying my interpretation and ultimately to understand how believers and those who study it deal with those questions",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "What's the right way to pronounce the numbered books - e.g., 1 Chronicles and 2 Chronicles?",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "What are the Apocryphal/Deuterocanonical Books of the Old Testament?",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "Where does the practice and focus on circumcision comes from? I don't recall reading any explanation so far of why it is important, so my take away is that it is just a way to tell between groups. Is this right? (Genesis 17:9-14)",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "What is the year 70 ce.?",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "What does CE stand for?",
+      "speaker": "me"
+    },
+    {
+      "heading": "General (not tied to one book)",
+      "books": [],
+      "chapter": null,
+      "note": "Is Arianism at all related to the term as used by Nazis?",
+      "speaker": "me"
+    },
+    {
+      "heading": "Overall final observations",
+      "books": [],
+      "chapter": null,
+      "note": "1. The Bible is like a Rorshach test, where people can find justification for almost anything they already believe",
+      "speaker": "me"
+    },
+    {
+      "heading": "Overall final observations",
+      "books": [],
+      "chapter": null,
+      "note": "2. There is no coherent narrative or even ethics. Even the commandments are maleable - eg thou shall not kill, yet god and \"his people\" kills thousands.",
+      "speaker": "me"
+    },
+    {
+      "heading": "Overall final observations",
+      "books": [],
+      "chapter": null,
+      "note": "The Hebrew verb (*ratsach*) usually means unlawful killing, so war and execution fall outside it. The stronger form of your point is about who counts as protected.",
+      "speaker": "claude"
+    },
+    {
+      "heading": "Overall final observations",
+      "books": [],
+      "chapter": null,
+      "note": "3. Playing on #2, the bible is a series of books written across more than a thousand years, and each individual book has an agenda for the time and place.",
+      "speaker": "me"
+    }
+  ]
+}
