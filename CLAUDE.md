@@ -16,7 +16,6 @@ them here; change the master there and run its `sync-standards.sh`.
 No 🔴 High items at present.
 
 **🟡 Medium**
-- Journal meta-analysis (Claude synthesis of reading notes + tension scores)
 - Export heatmap / biplot as PNG + CSV
 - Book search / jump (quick nav from any page)
 - Mobile layout pass (heatmap, biplot, timeline)
@@ -30,5 +29,7 @@ No 🔴 High items at present.
 book notes. After editing either,
 run `python import_reading_notes.py` and commit the regenerated `seed_data_reading_notes.json`;
 `seed.py` (run on every Render deploy) replaces the previous import.
+`meta_analysis.py` builds the meta-analysis prompt from those notes + tension scores and runs it
+in a background thread (longer than gunicorn's 120s timeout); results are stored in `meta_analyses`.
 
 When a task ships: move its BACKLOG.md entry to ✅ Shipped with its version, add a CHANGELOG.md entry, bump VERSION, commit + tag.

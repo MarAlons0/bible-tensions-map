@@ -4,6 +4,13 @@ All notable changes to Bible Tensions Map are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONING.md`.
 
+## [0.7.0] – 2026-10-24
+### Added
+- **Meta-analysis** (`/journal/analysis`): Claude (Opus 5.5) reads every point in the Reading Journal alongside the app's tension scores and writes a structured synthesis — lines of questioning, how the reading changed, notes vs. scores, closing observations assessed, the dialog itself, threads to pull.
+- Runs in the background and the page polls until done; each run is saved, with earlier runs listed.
+### Changed
+- `anthropic` SDK upgraded 0.40.0 → 0.125.0.
+
 ## [0.6.0] – 2026-10-24
 ### Added
 - **Reading Journal** (`/journal`): my closing observations (in my words and summarised), themes traced across the canon, book-by-book points and open questions from my full reading of the Bible with Claude.

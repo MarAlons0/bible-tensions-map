@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block title %}Meta-analysis — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Meta-analysis of my reading</h1>
+  <p class="subtitle">
+    Claude reads every point in the <a href="/journal">Reading Journal</a> alongside the app's tension
+    scores and writes a synthesis of the thinking behind them.
+  </p>
+</div>
+
+<div class="journal">
+  <div class="meta-controls">
+    <button id="meta-run" {% if running %}disabled{% endif %}>
+      {% if running %}Analysis running…{% elif history %}Generate a new analysis{% else %}Generate analysis{% endif %}
+    </button>
+    <span id="meta-status" class="meta-status">
+      {% if running %}Started {{ running.created_at.strftime('%H:%M') }} UTC — usually takes a few minutes. This page will refresh when it's done.{% endif %}
+    </span>
+  </div>
+
+  {% if shown and shown.status == 'error' %}
+  <p class="meta-error">This run failed: {{ shown.error }}</p>
+  {% endif %}
+
+  {% if result %}
+  <p class="meta-stamp">
+    Generated {{ shown.created_at.strftime('%Y-%m-%d %H:%M') }} UTC by {{ shown.model }}
+    {% if shown.input_tokens %}· {{ '{:,}'.format(shown.input_tokens) }} tokens in, {{ '{:,}'.format(shown.output_tokens) }} out{% endif %}
+  </p>
+
+  <section>
+    <h2>Overview</h2>
+    {% for p in result.overview.split('\n') if p.strip() %}<p>{{ p | inline_md }}</p>{% endfor %}
+  </section>
+
+  <section>
+    <h2>Your lines of questioning</h2>
+    {% for q in result.lines_of_questioning %}
+    <div class="journal-conclusion">
+      <h3>{{ q.title }}</h3>
+      {% for p in q.analysis.split('\n') if p.strip() %}<p>{{ p | inline_md }}</p>{% endfor %}
+      {% if q.books %}<p class="meta-books">{{ q.books | join(' · ') }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>How your reading changed</h2>
+    {% for p in result.evolution.split('\n') if p.strip() %}<p>{{ p | inline_md }}</p>{% endfor %}
+  </section>
+
+  <section>
+    <h2>Your notes against the tension scores</h2>
+    <table class="journal-themes meta-scores">
+      {% for s in result.against_the_scores %}
+      <tr>
+        <th>{{ s.book }}<br><small>{{ s.tension }}{% if s.score is not none %} ({{ '%+d' % s.score }}){% endif %}</small></th>
+        <td><span class="verdict verdict-{{ s.verdict }}">{{ s.verdict }}</span> {{ s.comment | inline_md }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </section>
+
+  <section>
+    <h2>Your closing observations, assessed</h2>
+    {% for c in result.conclusions_assessed %}
+    <div class="journal-conclusion">
+      <h3>{{ loop.index }}. {{ c.observation }}</h3>
+      {% for p in c.assessment.split('\n') if p.strip() %}<p>{{ p | inline_md }}</p>{% endfor %}
+    </div>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>The dialog itself</h2>
+    {% for p in result.dialog_dynamics.split('\n') if p.strip() %}<p>{{ p | inline_md }}</p>{% endfor %}
+  </section>
+
+  <section>
+    <h2>Threads worth pulling</h2>
+    <ul>{% for t in result.open_threads %}<li>{{ t | inline_md }}</li>{% endfor %}</ul>
+  </section>
+
+  <section>
+    {% for p in result.closing.split('\n') if p.strip() %}<p>{{ p | inline_md }}</p>{% endfor %}
+  </section>
+  {% elif not running and not (shown and shown.status == 'error') %}
+  <p class="empty-state">No analysis yet.</p>
+  {% endif %}
+
+  {% if history | length > 1 %}
+  <section>
+    <h2>Earlier runs</h2>
+    <ul class="meta-history">
+      {% for m in history %}
+      <li>
+        {% if m.status == 'done' %}<a href="?id={{ m.id }}">{{ m.created_at.strftime('%Y-%m-%d %H:%M') }} UTC</a>
+        {% else %}{{ m.created_at.strftime('%Y-%m-%d %H:%M') }} UTC — {{ m.status }}{% endif %}
+        {% if shown and m.id == shown.id %}(shown){% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const runBtn = document.getElementById('meta-run');
+const statusEl = document.getElementById('meta-status');
+
+function poll(id) {
+  runBtn.disabled = true;
+  runBtn.textContent = 'Analysis running…';
+  const timer = setInterval(async () => {
+    const res = await fetch(`/api/journal/meta-analysis/${id}`);
+    const data = await res.json();
+    if (data.status === 'done') { clearInterval(timer); location.href = `?id=${id}`; }
+    if (data.status === 'error') {
+      clearInterval(timer);
+      statusEl.textContent = `Failed: ${data.error}`;
+      runBtn.disabled = false;
+      runBtn.textContent = 'Try again';
+    }
+  }, 5000);
+}
+
+runBtn.addEventListener('click', async () => {
+  statusEl.textContent = 'Starting… this usually takes a few minutes.';
+  const res = await fetch('/api/journal/meta-analysis', {method: 'POST'});
+  const data = await res.json();
+  poll(data.id);
+});
+
+{% if running %}poll({{ running.id }});{% endif %}
+</script>
+{% endblock %}

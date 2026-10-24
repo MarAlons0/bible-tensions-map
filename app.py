@@ -6,8 +6,9 @@ from flask import Flask, render_template, request, jsonify, abort, send_from_dir
 from dotenv import load_dotenv
 from models import (
     db, Tension, ConductCategory, Book, BookTension, BookConduct,
-    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry,
+    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry, MetaAnalysis,
 )
+from datetime import datetime, timedelta
 from markupsafe import Markup, escape
 
 load_dotenv()
@@ -212,6 +213,33 @@ def journal():
         questions=[e for e in entries if e.kind == 'question'],
         groups=list(groups.values()),
     )
+
+
+@app.route('/journal/analysis')
+def journal_analysis():
+    _expire_stale_analyses()
+    history = MetaAnalysis.query.order_by(MetaAnalysis.created_at.desc()).all()
+    chosen = request.args.get('id', type=int)
+    shown = next((m for m in history if m.id == chosen), None) if chosen else \
+        next((m for m in history if m.status == 'done'), None)
+    return render_template(
+        'journal_analysis.html',
+        shown=shown,
+        result=json.loads(shown.result_json) if shown and shown.result_json else None,
+        running=next((m for m in history if m.status == 'running'), None),
+        history=history,
+    )
+
+
+def _expire_stale_analyses():
+    # A worker restart kills the background thread; don't leave its row "running" forever
+    cutoff = datetime.utcnow() - timedelta(minutes=20)
+    stale = MetaAnalysis.query.filter(MetaAnalysis.status == 'running',
+                                      MetaAnalysis.created_at < cutoff).all()
+    for m in stale:
+        m.status, m.error = 'error', 'Interrupted (the server restarted while it was running).'
+    if stale:
+        db.session.commit()
 
 
 @app.route('/about')
@@ -727,6 +755,23 @@ def api_analyze(book_id, chapter):
         return jsonify({'cached': False, **result})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/journal/meta-analysis', methods=['POST'])
+def api_start_meta_analysis():
+    _expire_stale_analyses()
+    running = MetaAnalysis.query.filter_by(status='running').first()
+    if running:
+        return jsonify({'id': running.id, 'status': running.status}), 409
+    from meta_analysis import start
+    ma = start(app)
+    return jsonify({'id': ma.id, 'status': ma.status}), 202
+
+
+@app.route('/api/journal/meta-analysis/<int:analysis_id>')
+def api_meta_analysis_status(analysis_id):
+    ma = db.get_or_404(MetaAnalysis, analysis_id)
+    return jsonify({'id': ma.id, 'status': ma.status, 'error': ma.error})
 
 
 @app.route('/api/chapter/<book_id>/<int:chapter>')

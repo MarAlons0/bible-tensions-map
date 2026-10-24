@@ -86,6 +86,19 @@ class UserNote(db.Model):
     speaker = db.Column(db.Text)             # 'me' | 'claude' for imported dialog points
 
 
+class MetaAnalysis(db.Model):
+    """A Claude synthesis of the whole reading journal against the tension scores."""
+    __tablename__ = 'meta_analyses'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    status = db.Column(db.Text, nullable=False, default='running')   # running | done | error
+    model = db.Column(db.Text)
+    result_json = db.Column(db.Text)
+    error = db.Column(db.Text)
+    input_tokens = db.Column(db.Integer)
+    output_tokens = db.Column(db.Integer)
+
+
 class JournalEntry(db.Model):
     """Book-independent parts of the reading journal: conclusions, themes, open questions."""
     __tablename__ = 'journal_entries'

@@ -312,3 +312,17 @@ main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 .note-item.reply { margin-left: 1.5rem; background: transparent; }
 .notes-subhead { font-size: 13px; color: var(--text-muted); margin: 1rem 0 0.4rem;
   text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ===== Meta-analysis ===== */
+.meta-controls { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.meta-controls button { padding: 0.5rem 1rem; border: 1px solid var(--pole-a); border-radius: var(--radius);
+  background: var(--pole-a); color: #fff; cursor: pointer; font: inherit; }
+.meta-controls button:disabled { opacity: 0.6; cursor: default; }
+.meta-status, .meta-stamp, .meta-books { color: var(--text-muted); font-size: 13px; }
+.meta-error { color: var(--pole-b); }
+.meta-scores th small { font-weight: normal; color: var(--text-muted); }
+.verdict { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
+  padding: 0 0.35rem; border-radius: var(--radius); margin-right: 0.35rem; border: 1px solid currentColor; }
+.verdict-agrees { color: #2e7d32; }
+.verdict-sharpens { color: var(--pole-a); }
+.verdict-challenges { color: var(--pole-b); }

@@ -4,7 +4,6 @@ _Last updated: 2026-10-24_
 > Starter backlog — the open items below are a scaffold; edit/replace with your real priorities.
 
 ## 🟡 Medium
-- [ ] **Journal meta-analysis** — send all reading notes + tension scores to Claude for a saved synthesis of my thinking. `[feature]`
 - [ ] **Export heatmap / biplot** — download the current view as PNG (and data as CSV). `[feature]`
 - [ ] **Book search / jump** — quick search to jump to a book from any page. `[feature]`
 - [ ] **Mobile layout pass** — verify heatmap, biplot, and timeline are usable on small screens. `[chore]`
@@ -14,6 +13,7 @@ _Last updated: 2026-10-24_
 
 ## ✅ Shipped
 _Full history in [CHANGELOG.md](CHANGELOG.md). Notable:_
+- [x] **Journal meta-analysis** — v0.7.0
 - [x] **Reading Journal + imported reading notes** — v0.6.0
 - [x] **Project standards + Safari favicon support** — v0.5.0
 - [x] **Stability fixes (Neon SSL, gunicorn timeout, JSON parse)** — v0.4.1
