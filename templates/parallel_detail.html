@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}{{ p.question }} — Parallel Passages{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <p class="pv-crumb"><a href="/parallels">← Parallel passages</a> · {{ p.group }}</p>
+  <h1>{{ p.question }}</h1>
+  <p class="subtitle">{{ p.note }}</p>
+</div>
+
+<div class="parallel-columns cols-{{ columns | length }}">
+  {% for c in columns %}
+  <section class="parallel-col">
+    <h2>{{ c.ref }}</h2>
+    <p class="pv-says">{{ c.says }}</p>
+    <div class="parallel-text">
+      {% for v in c.verses %}
+      <p><sup>{{ v.label }}</sup> {% for w, diff, sp in v.words %}{% if sp %} {% endif %}{% if diff %}<mark>{{ w }}</mark>{% else %}{{ w }}{% endif %}{% endfor %}</p>
+      {% endfor %}
+    </div>
+  </section>
+  {% endfor %}
+</div>
+<p class="pv-source">
+  World English Bible (public domain).
+  {% if columns | selectattr('diffed') | list %}Highlighted words differ from the {% if columns | length > 2 %}first passage{% else %}other passage{% endif %}.{% endif %}
+  <a href="{{ nrsv }}" target="_blank" rel="noopener">Read in the NRSV on BibleGateway →</a>
+</p>
+
+<section class="journal parallel-compare">
+  <h2>Claude's comparison</h2>
+  <div class="meta-controls">
+    <button id="cmp-run" {% if running %}disabled{% endif %}>
+      {% if running %}Comparing…{% elif latest %}Compare again{% else %}Compare with Claude{% endif %}
+    </button>
+    <span id="cmp-status" class="meta-status">{% if running %}Usually takes under a minute.{% endif %}</span>
+  </div>
+  {% if failed and not running %}<p class="meta-error">The last attempt failed: {{ failed.error }}</p>{% endif %}
+
+  {% if comparison %}
+  <p class="meta-stamp">Generated {{ latest.created_at.strftime('%Y-%m-%d %H:%M') }} UTC by {{ latest.model }}</p>
+  <p>{{ comparison.summary | inline_md }}</p>
+  <h3>Differences</h3>
+  {% for d in comparison.differences %}
+  <p><strong>{{ d.title }}.</strong> {{ d.detail | inline_md }}</p>
+  {% endfor %}
+  <h3>What each version is doing</h3>
+  {% for a in comparison.agendas %}
+  <p><strong>{{ a.passage }}:</strong> {{ a.agenda | inline_md }}</p>
+  {% endfor %}
+  <h3>How believers reconcile it</h3>
+  <p>{{ comparison.harmonizations | inline_md }}</p>
+  <h3>Critical view</h3>
+  <p>{{ comparison.critical_view | inline_md }}</p>
+  {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const runBtn = document.getElementById('cmp-run');
+const statusEl = document.getElementById('cmp-status');
+
+function poll(id) {
+  runBtn.disabled = true;
+  runBtn.textContent = 'Comparing…';
+  const timer = setInterval(async () => {
+    const data = await (await fetch(`/api/parallels/compare/${id}`)).json();
+    if (data.status === 'done') { clearInterval(timer); location.reload(); }
+    if (data.status === 'error') {
+      clearInterval(timer);
+      statusEl.textContent = `Failed: ${data.error}`;
+      runBtn.disabled = false;
+      runBtn.textContent = 'Try again';
+    }
+  }, 4000);
+}
+
+runBtn.addEventListener('click', async () => {
+  statusEl.textContent = 'Starting… usually under a minute.';
+  const data = await (await fetch('/api/parallels/{{ p.id }}/compare', {method: 'POST'})).json();
+  poll(data.id);
+});
+
+{% if running %}poll({{ running.id }});{% endif %}
+</script>
+{% endblock %}

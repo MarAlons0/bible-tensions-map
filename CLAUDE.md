@@ -38,3 +38,8 @@ When a task ships: move its BACKLOG.md entry to ✅ Shipped with its version, ad
 `seed.py` reseeds whenever `seed_data*.json` change (hash stored in `seed_state`) and warns if
 the `POLARITY_ANCHORS` point the wrong way. Score polarity follows each tension's definition
 (-5 = pole A). Apocrypha + Malachi scores come from `rescored_tensions.py`.
+
+## Parallel passages
+Curated in `parallels.py` (question + one line per version). After editing, run
+`python fetch_parallel_texts.py` to refresh the WEB text in `seed_data_parallels.json` (bible-api.com,
+rate-limited; cached refs are reused). `parallel_compare.py` runs the on-demand Claude comparison.

@@ -326,3 +326,38 @@ main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
 .verdict-agrees { color: #2e7d32; }
 .verdict-sharpens { color: var(--pole-a); }
 .verdict-challenges { color: var(--pole-b); }
+
+/* ===== Parallel passages ===== */
+.parallels { max-width: 1000px; }
+.parallels h2 { margin: 1.75rem 0 0.5rem; }
+.parallels-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.parallels-table th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--text-muted); border-bottom: 1px solid var(--border); padding: 0.4rem 0.5rem; }
+.parallels-table td { vertical-align: top; padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--border); }
+.parallels-table td.pq { width: 32%; font-weight: 600; }
+.pq-badge { display: inline-block; margin-left: 0.4rem; font-size: 10px; font-weight: normal;
+  text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 0 0.3rem; }
+.pv { list-style: none; padding: 0; margin: 0; }
+.pv li { margin-bottom: 0.3rem; }
+.pv-ref { font-weight: 600; white-space: nowrap; margin-right: 0.25rem; }
+.pv-note, .pv-source, .pv-crumb { color: var(--text-muted); font-size: 13px; margin-top: 0.3rem; }
+.pv-says { font-size: 14px; color: var(--text-muted); margin-bottom: 0.5rem; }
+.parallel-columns { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.parallel-columns.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.parallel-columns.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.parallel-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem; }
+.parallel-col h2 { font-size: 1rem; margin-bottom: 0.25rem; }
+.parallel-text { font-size: 14px; line-height: 1.6; max-height: 70vh; overflow-y: auto; }
+.parallel-text p { margin-bottom: 0.35rem; }
+.parallel-text sup { color: var(--text-muted); font-size: 10px; }
+.parallel-text mark { background: #fde68a; padding: 0 1px; }
+.parallel-compare { margin-top: 2rem; }
+@media (max-width: 900px) {
+  .parallel-columns, .parallel-columns.cols-3, .parallel-columns.cols-4 { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .parallels-table thead { display: none; }
+  .parallels-table tr, .parallels-table td { display: block; width: 100% !important; }
+  .parallels-table td.pq { border-bottom: none; padding-bottom: 0.2rem; }
+}

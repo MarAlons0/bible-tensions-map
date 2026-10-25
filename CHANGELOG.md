@@ -4,6 +4,13 @@ All notable changes to Bible Tensions Map are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONING.md`.
 
+## [0.8.0] – 2026-10-25
+### Added
+- **Parallel passages** (`/parallels`): a concise table of 46 places where the Bible tells the same thing more than once and the versions disagree — each posed as a question, with one line per version (Torah doublets, Samuel–Kings vs. Chronicles, Ezra/Nehemiah, the Gospels, Acts vs. Paul, Jude vs. 2 Peter).
+- Each parallel opens a side-by-side reading in the World English Bible (public domain), with differing words highlighted where the versions share wording, and a link to the NRSV on BibleGateway.
+- On-demand **Claude comparison** per parallel: differences, what each version is doing, how believers harmonize it, and the critical view. Saved after the first run.
+- Book pages list the parallels that involve that book.
+
 ## [0.7.1] – 2026-10-25
 ### Fixed
 - **Apocrypha scores were on the wrong axes.** The 17 Apocrypha books (and Malachi) had been scored against an earlier list of 20 tensions, so their scores appeared under unrelated tensions (e.g. 2 Maccabees' resurrection under eschatology, its monotheism under "Historical vs. Mythological"). All 18 books re-scored against the app's T01–T20 (`rescored_tensions.py`, applied by `apply_tension_fixes.py`).

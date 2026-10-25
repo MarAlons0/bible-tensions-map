@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Parallel Passages — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Parallel passages{% if book %}: {{ book.name }}{% endif %}</h1>
+  <p class="subtitle">
+    Where the Bible tells the same thing more than once — and the versions disagree.
+    Read "horizontally": one question, what each version says. Open a row for the texts side by side.
+    {% if book %}<a href="/parallels">Show all →</a>{% endif %}
+  </p>
+</div>
+
+<div class="parallels">
+  {% for group in groups %}
+  {% set items = rows | selectattr('group', 'equalto', group) | list %}
+  {% if items %}
+  <h2>{{ group }}</h2>
+  <table class="parallels-table">
+    <thead><tr><th>Question</th><th>What each version says</th></tr></thead>
+    <tbody>
+      {% for p in items %}
+      <tr>
+        <td class="pq">
+          <a href="/parallels/{{ p.id }}">{{ p.question }}</a>
+          {% if p.id in done %}<span class="pq-badge" title="Claude comparison available">compared</span>{% endif %}
+        </td>
+        <td>
+          <ul class="pv">
+            {% for ref, says in p.passages %}
+            <li><span class="pv-ref">{{ ref }}</span> {{ says }}</li>
+            {% endfor %}
+          </ul>
+          <p class="pv-note">{{ p.note }}</p>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endfor %}
+  {% if not rows %}<p class="empty-state">No curated parallels for this book yet.</p>{% endif %}
+</div>
+{% endblock %}

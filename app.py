@@ -7,7 +7,10 @@ from dotenv import load_dotenv
 from models import (
     db, Tension, ConductCategory, Book, BookTension, BookConduct,
     ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry, MetaAnalysis,
+    ParallelComparison,
 )
+import difflib
+import urllib.parse
 from datetime import datetime, timedelta
 from markupsafe import Markup, escape
 
@@ -104,9 +107,15 @@ def book_detail(book_id):
         ca.chapter for ca in ChapterAnalysis.query.filter_by(book_id=book_id)
     }
 
+    from parallels import PARALLELS
+    parallels = [p for p in PARALLELS
+                 if any(r.strip().startswith(book.name + ' ')
+                        for ref, _ in p['passages'] for r in ref.split(';'))]
+
     return render_template(
         'book_detail.html',
         book=book,
+        parallels=parallels,
         tensions=tensions,
         categories=categories,
         scores=scores,
@@ -231,15 +240,139 @@ def journal_analysis():
     )
 
 
-def _expire_stale_analyses():
+def _expire_stale_analyses(model=MetaAnalysis):
     # A worker restart kills the background thread; don't leave its row "running" forever
     cutoff = datetime.utcnow() - timedelta(minutes=20)
-    stale = MetaAnalysis.query.filter(MetaAnalysis.status == 'running',
-                                      MetaAnalysis.created_at < cutoff).all()
+    stale = model.query.filter(model.status == 'running', model.created_at < cutoff).all()
     for m in stale:
         m.status, m.error = 'error', 'Interrupted (the server restarted while it was running).'
     if stale:
         db.session.commit()
+
+
+# ---------------------------------------------------------------------------
+# Parallel passages
+# ---------------------------------------------------------------------------
+
+_parallel_texts = None
+
+
+def parallel_texts():
+    """WEB text for every curated passage (seed_data_parallels.json), loaded once."""
+    global _parallel_texts
+    if _parallel_texts is None:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'seed_data_parallels.json')
+        with open(path) as f:
+            _parallel_texts = json.load(f)['texts']
+    return _parallel_texts
+
+
+def _ref_book(ref, books_by_name):
+    """Book for a reference like '2 Samuel 24:1-25' (longest matching book name)."""
+    for name in sorted(books_by_name, key=len, reverse=True):
+        if ref.startswith(name + ' '):
+            return books_by_name[name]
+    return None
+
+
+def _words(text):
+    return re.findall(r"[\w’']+|[^\w\s]", text)
+
+
+def _norm(word):
+    return word.lower().strip("’'")
+
+
+def _passage_view(ref, base_tokens=None):
+    """Verses of one passage; if base_tokens is given, mark words absent from it."""
+    texts = parallel_texts()
+    verses = [(ch, v, t) for part in ref.split(';') for ch, v, t in texts[part.strip()]['verses']]
+    if base_tokens is None:
+        return [{'label': f'{ch}:{v}', 'words': _spaced([(w, False) for w in _words(t)])} for ch, v, t in verses]
+    flat = [(i, w) for i, (_, _, t) in enumerate(verses) for w in _words(t)]
+    sm = difflib.SequenceMatcher(None, base_tokens, [_norm(w) for _, w in flat], autojunk=False)
+    same = set()
+    for block in sm.get_matching_blocks():
+        same.update(range(block.b, block.b + block.size))
+    marked = [k not in same and w.isalnum() for k, (_, w) in enumerate(flat)]
+    # A lone differing function word ("the", "and") is noise, not a variant
+    for k, (_, w) in enumerate(flat):
+        if marked[k] and _norm(w) in STOPWORDS and \
+                not (k > 0 and marked[k - 1]) and not (k + 1 < len(flat) and marked[k + 1]):
+            marked[k] = False
+    out = [{'label': f'{ch}:{v}', 'words': []} for ch, v, _ in verses]
+    for k, (i, w) in enumerate(flat):
+        out[i]['words'].append((w, marked[k]))
+    for verse in out:
+        verse['words'] = _spaced(verse['words'])
+    return out
+
+
+def _spaced(words):
+    """(word, marked) -> (word, marked, space_before), so punctuation hugs its word."""
+    out, prev = [], ''
+    for w, m in words:
+        out.append((w, m, bool(prev) and not re.match(r'[,.;:!?”’)\]]', w) and prev not in '“‘(['))
+        prev = w
+    return out
+
+
+STOPWORDS = set('a an the and or but of to in on at by for with from as is was were be been '
+                'he she it they them his her their him that this which who then so all'.split())
+
+
+def _tokens(ref):
+    return [_norm(w) for part in ref.split(';')
+            for _, _, t in parallel_texts()[part.strip()]['verses'] for w in _words(t)]
+
+
+@app.route('/parallels')
+def parallels_index():
+    from parallels import GROUPS, PARALLELS
+    books_by_name = {b.name: b for b in Book.query.all()}
+    book_filter = request.args.get('book')
+    rows = []
+    for p in PARALLELS:
+        refs = [ref for ref, _ in p['passages']]
+        books = {_ref_book(r.strip(), books_by_name) for ref in refs for r in ref.split(';')}
+        if book_filter and book_filter not in {b.id for b in books if b}:
+            continue
+        rows.append(p)
+    done = {pc.parallel_id for pc in ParallelComparison.query.filter_by(status='done')}
+    return render_template('parallels.html', groups=GROUPS, rows=rows, done=done,
+                           book=db.session.get(Book, book_filter) if book_filter else None)
+
+
+@app.route('/parallels/<parallel_id>')
+def parallel_detail(parallel_id):
+    from parallels import PARALLELS_BY_ID
+    p = PARALLELS_BY_ID.get(parallel_id) or abort(404)
+    refs = [ref for ref, _ in p['passages']]
+
+    # Highlight wording that differs from the first passage, but only where the
+    # versions share enough text for a word diff to mean anything
+    base = _tokens(refs[0])
+    columns = []
+    for i, (ref, says) in enumerate(p['passages']):
+        similar = i > 0 and difflib.SequenceMatcher(None, base, _tokens(ref), autojunk=False).ratio() > 0.35
+        columns.append({'ref': ref, 'says': says, 'verses': _passage_view(ref, base if similar else None),
+                        'diffed': similar})
+    if any(c['diffed'] for c in columns):
+        columns[0]['verses'] = _passage_view(refs[0], _tokens(refs[1]))
+        columns[0]['diffed'] = True
+
+    _expire_stale_analyses(ParallelComparison)
+    comparisons = ParallelComparison.query.filter_by(parallel_id=parallel_id) \
+        .order_by(ParallelComparison.created_at.desc()).all()
+    latest = next((c for c in comparisons if c.status == 'done'), None)
+    nrsv = 'https://www.biblegateway.com/passage/?' + urllib.parse.urlencode(
+        {'search': '; '.join(refs), 'version': 'NRSVUE'})
+    return render_template(
+        'parallel_detail.html', p=p, columns=columns, nrsv=nrsv,
+        comparison=json.loads(latest.result_json) if latest else None, latest=latest,
+        running=next((c for c in comparisons if c.status == 'running'), None),
+        failed=comparisons[0] if comparisons and comparisons[0].status == 'error' else None,
+    )
 
 
 @app.route('/about')
@@ -766,6 +899,26 @@ def api_start_meta_analysis():
     from meta_analysis import start
     ma = start(app)
     return jsonify({'id': ma.id, 'status': ma.status}), 202
+
+
+@app.route('/api/parallels/<parallel_id>/compare', methods=['POST'])
+def api_start_parallel_compare(parallel_id):
+    from parallels import PARALLELS_BY_ID
+    if parallel_id not in PARALLELS_BY_ID:
+        abort(404)
+    _expire_stale_analyses(ParallelComparison)
+    running = ParallelComparison.query.filter_by(parallel_id=parallel_id, status='running').first()
+    if running:
+        return jsonify({'id': running.id, 'status': running.status}), 409
+    from parallel_compare import start
+    pc = start(app, parallel_id, parallel_texts())
+    return jsonify({'id': pc.id, 'status': pc.status}), 202
+
+
+@app.route('/api/parallels/compare/<int:comparison_id>')
+def api_parallel_compare_status(comparison_id):
+    pc = db.get_or_404(ParallelComparison, comparison_id)
+    return jsonify({'id': pc.id, 'status': pc.status, 'error': pc.error})
 
 
 @app.route('/api/journal/meta-analysis/<int:analysis_id>')

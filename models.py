@@ -106,6 +106,18 @@ class MetaAnalysis(db.Model):
     output_tokens = db.Column(db.Integer)
 
 
+class ParallelComparison(db.Model):
+    """A Claude comparison of one curated parallel (see parallels.py)."""
+    __tablename__ = 'parallel_comparisons'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    parallel_id = db.Column(db.Text, nullable=False, index=True)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    status = db.Column(db.Text, nullable=False, default='running')   # running | done | error
+    model = db.Column(db.Text)
+    result_json = db.Column(db.Text)
+    error = db.Column(db.Text)
+
+
 class JournalEntry(db.Model):
     """Book-independent parts of the reading journal: conclusions, themes, open questions."""
     __tablename__ = 'journal_entries'

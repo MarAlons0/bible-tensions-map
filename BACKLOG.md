@@ -1,5 +1,5 @@
 # Bible Tensions Map — Backlog
-_Last updated: 2026-10-24_
+_Last updated: 2026-10-25_
 
 > Starter backlog — the open items below are a scaffold; edit/replace with your real priorities.
 
@@ -13,6 +13,7 @@ _Last updated: 2026-10-24_
 
 ## ✅ Shipped
 _Full history in [CHANGELOG.md](CHANGELOG.md). Notable:_
+- [x] **Parallel passages table + Claude comparisons** — v0.8.0
 - [x] **Journal meta-analysis** — v0.7.0
 - [x] **Reading Journal + imported reading notes** — v0.6.0
 - [x] **Project standards + Safari favicon support** — v0.5.0
