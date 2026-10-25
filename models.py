@@ -86,6 +86,13 @@ class UserNote(db.Model):
     speaker = db.Column(db.Text)             # 'me' | 'claude' for imported dialog points
 
 
+class SeedState(db.Model):
+    """Key/value bookkeeping for seed.py (e.g. a hash of the seed files last loaded)."""
+    __tablename__ = 'seed_state'
+    key = db.Column(db.Text, primary_key=True)
+    value = db.Column(db.Text)
+
+
 class MetaAnalysis(db.Model):
     """A Claude synthesis of the whole reading journal against the tension scores."""
     __tablename__ = 'meta_analyses'

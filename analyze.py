@@ -4,7 +4,7 @@ Called from the POST /api/analyze/<book_id>/<chapter> route.
 """
 import json
 import anthropic
-from models import db, Tension, ConductCategory, ChapterAnalysis, ChapterTension, ChapterConduct
+from models import db, Book, Tension, ConductCategory, ChapterAnalysis, ChapterTension, ChapterConduct
 
 MODEL = 'claude-sonnet-4-6'
 
@@ -59,7 +59,12 @@ def analyze_chapter(book_id: str, chapter: int, book_name: str) -> dict:
     """
     client = anthropic.Anthropic()
     system = build_system_prompt()
-    user_message = f'Analyze {book_name} chapter {chapter} from the Hebrew Bible / Old Testament.'
+    corpus = {
+        'Old Testament': 'the Hebrew Bible / Old Testament',
+        'Apocrypha': 'the Apocrypha / Deuterocanonical books',
+        'New Testament': 'the New Testament',
+    }.get(db.session.get(Book, book_id).testament, 'the Bible')
+    user_message = f'Analyze {book_name} chapter {chapter} from {corpus}.'
 
     message = client.messages.create(
         model=MODEL,

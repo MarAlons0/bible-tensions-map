@@ -4,6 +4,15 @@ All notable changes to Bible Tensions Map are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONING.md`.
 
+## [0.7.1] – 2026-10-25
+### Fixed
+- **Apocrypha scores were on the wrong axes.** The 17 Apocrypha books (and Malachi) had been scored against an earlier list of 20 tensions, so their scores appeared under unrelated tensions (e.g. 2 Maccabees' resurrection under eschatology, its monotheism under "Historical vs. Mythological"). All 18 books re-scored against the app's T01–T20 (`rescored_tensions.py`, applied by `apply_tension_fixes.py`).
+- **T02 was inverted for the Hebrew Bible** (−5 meant exclusivism, the reverse of the definition the New Testament follows). Signs flipped for 31 books; rationales unchanged.
+- Chapter analysis told Claude every chapter was from the Hebrew Bible; it now names the right corpus.
+- Corrected seed data now reaches production: `seed.py` reseeds when the seed files change, not only when books are missing.
+### Added
+- `seed.py` checks a set of unambiguous anchor scores after seeding and warns if any point the wrong way.
+
 ## [0.7.0] – 2026-10-24
 ### Added
 - **Meta-analysis** (`/journal/analysis`): Claude (Opus 5.5) reads every point in the Reading Journal alongside the app's tension scores and writes a structured synthesis — lines of questioning, how the reading changed, notes vs. scores, closing observations assessed, the dialog itself, threads to pull.

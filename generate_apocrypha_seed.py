@@ -4,6 +4,10 @@ following the NOAB NRSV ordering and section structure.
 """
 import json
 
+# The per-book "tensions" below were scored against an earlier tension list;
+# the corrected scores in rescored_tensions.py replace them.
+from rescored_tensions import RESCORED
+
 BOOKS = {
     "TOB": {
         "name": "Tobit", "section": "Narrative", "chapters": 14,
@@ -706,7 +710,8 @@ def build_seed():
             "dating":   b["dating"],
             "sources":  b["sources"],
             "summary":  b["summary"],
-            "tensions": b["tensions"],
+            "tensions": {tid: {"score": sc, "note": note}
+                         for tid, (sc, note) in sorted(RESCORED[bid].items())},
             "conduct":  b["conduct"],
         }
 

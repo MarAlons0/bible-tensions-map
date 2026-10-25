@@ -33,3 +33,8 @@ run `python import_reading_notes.py` and commit the regenerated `seed_data_readi
 in a background thread (longer than gunicorn's 120s timeout); results are stored in `meta_analyses`.
 
 When a task ships: move its BACKLOG.md entry to ✅ Shipped with its version, add a CHANGELOG.md entry, bump VERSION, commit + tag.
+
+## Seed data
+`seed.py` reseeds whenever `seed_data*.json` change (hash stored in `seed_state`) and warns if
+the `POLARITY_ANCHORS` point the wrong way. Score polarity follows each tension's definition
+(-5 = pole A). Apocrypha + Malachi scores come from `rescored_tensions.py`.

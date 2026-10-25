@@ -3,13 +3,14 @@ Seed (and re-seed) the database from seed_data.json.
 Safe to run multiple times — uses upserts throughout.
 Run: python seed.py
 """
+import hashlib
 import json
 import os
 from sqlalchemy import inspect, text
 from app import create_app
 from models import (
     db, Tension, ConductCategory, Book, BookTension, BookConduct,
-    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry,
+    ChapterAnalysis, ChapterTension, ChapterConduct, UserNote, JournalEntry, SeedState,
 )
 
 CONDUCT_LABELS = {
@@ -144,12 +145,61 @@ def seed_file(data_path, testament):
           f"{len(data.get('conduct_categories', []))} conduct categories")
 
 
+SEED_FILES = ['seed_data.json', 'seed_data_apocrypha.json', 'seed_data_nt.json']
+
+
+def seed_files_hash():
+    base = os.path.dirname(os.path.abspath(__file__))
+    h = hashlib.sha256()
+    for name in SEED_FILES:
+        path = os.path.join(base, name)
+        if os.path.exists(path):
+            with open(path, 'rb') as f:
+                h.update(f.read())
+    return h.hexdigest()
+
+
 def needs_seed():
-    """Return True if the DB is empty or missing expected books."""
+    """True if the DB is missing books or the seed files changed since the last seed."""
     try:
-        return Book.query.count() < 83
+        if Book.query.count() < 83:
+            return True
+        state = db.session.get(SeedState, 'seed_files_hash')
+        return state is None or state.value != seed_files_hash()
     except Exception:
         return True
+
+
+# Scores whose direction is beyond dispute: (book, tension, expected sign).
+# A violation means a book or a whole axis was scored with the poles reversed.
+POLARITY_ANCHORS = [
+    ('JOS', 'T02', +1), ('JON', 'T02', -1), ('GAL', 'T02', -1),   # exclusivism +
+    ('EXO', 'T01', -1), ('WIS', 'T01', +1),                       # monotheism +
+    ('ECC', 'T07', -1), ('DAN', 'T07', +1), ('2MA', 'T07', +1),   # resurrection +
+    ('LEV', 'T09', +1), ('GAL', 'T09', -1),                       # works +
+    ('SIR', 'T08', -1), ('SNG', 'T08', +1),                       # women as agents +
+    ('1MA', 'T16', -1), ('DAN', 'T16', +1),                       # mythological +
+]
+
+
+def check_polarity():
+    bad = []
+    for book_id, tension_id, sign in POLARITY_ANCHORS:
+        bt = db.session.get(BookTension, (book_id, tension_id))
+        if bt is None or bt.score is None or bt.score * sign <= 0:
+            bad.append(f"{book_id} {tension_id}={bt.score if bt else None}")
+    if bad:
+        print("WARNING: scores pointing the wrong way (poles reversed?): " + ', '.join(bad))
+    return not bad
+
+
+def record_seed():
+    state = db.session.get(SeedState, 'seed_files_hash')
+    if state is None:
+        db.session.add(SeedState(key='seed_files_hash', value=seed_files_hash()))
+    else:
+        state.value = seed_files_hash()
+    db.session.commit()
 
 
 def seed():
@@ -223,6 +273,8 @@ if __name__ == '__main__':
         migrate()
         if needs_seed():
             seed()
+            check_polarity()
+            record_seed()
         else:
             print("DB already seeded, skipping.")
         seed_reading_notes()

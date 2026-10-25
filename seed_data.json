@@ -246,7 +246,7 @@
           "note": "'Who is like you among the gods?' (15:11). 'No other gods before me' assumes others exist. Henotheistic throughout."
         },
         "T02": {
-          "score": -1,
+          "score": 1,
           "note": "Liberation narrative is particular to Israel; 'mixed multitude' joins but laws focus on Israelite community."
         },
         "T03": {
@@ -345,7 +345,7 @@
           "note": "YHWH assumed supreme but Azazel (scapegoat demon?) hints at other supernatural beings. Focus on YHWH-only worship."
         },
         "T02": {
-          "score": 1,
+          "score": -1,
           "note": "Mostly internal regulations, but 'love the stranger as yourself' (19:34) alongside strict separation."
         },
         "T03": {
@@ -441,7 +441,7 @@
           "note": "Balaam's oracles assume YHWH is one god among others. Henotheistic warfare framework."
         },
         "T02": {
-          "score": -3,
+          "score": 3,
           "note": "Tribal: herem against Midianites (ch.31), total destruction commanded. Balaam serves YHWH but is non-Israelite."
         },
         "T03": {
@@ -540,7 +540,7 @@
           "note": "Shema ('YHWH is one') is transitional: demands exclusive loyalty. 'God of gods' language still henotheistic. Moving toward monotheism."
         },
         "T02": {
-          "score": -1,
+          "score": 1,
           "note": "Both: 'love the stranger' (10:18-19) alongside herem genocide commands against Canaanites (ch.7,20)."
         },
         "T03": {
@@ -642,7 +642,7 @@
           "note": "'Choose whom you will serve' (24:15) implies other gods are live options. Holy war assumes YHWH competing with Canaanite gods."
         },
         "T02": {
-          "score": -5,
+          "score": 5,
           "note": "Maximum exclusivism: herem genocide of Canaanite populations. Rahab the exception that proves the rule."
         },
         "T03": {
@@ -744,7 +744,7 @@
           "note": "Israel repeatedly worships Baal and Asherah. YHWH-alone worship is the reform position, not the norm. Syncretism is the default."
         },
         "T02": {
-          "score": -3,
+          "score": 3,
           "note": "Tribal violence: civil war against Benjamin, massacre at Jabesh-Gilead. Foreigners are threat."
         },
         "T03": {
@@ -843,7 +843,7 @@
           "note": "God barely mentioned. No theological claims about divine nature."
         },
         "T02": {
-          "score": 5,
+          "score": -5,
           "note": "Maximum universalism: a Moabite \u2014 from a cursed people \u2014 embodies covenantal faithfulness and enters Israel's most important lineage."
         },
         "T03": {
@@ -942,7 +942,7 @@
           "note": "Ark theology: YHWH's power is localized in object. Captured by Philistines but defeats Dagon. Henotheistic competition."
         },
         "T02": {
-          "score": -2,
+          "score": 2,
           "note": "Tribal: Philistines as permanent enemy. But Goliath narrative individual rather than ethnic."
         },
         "T03": {
@@ -1041,7 +1041,7 @@
           "note": "Mostly assumes YHWH-only framework but other nations still have their gods."
         },
         "T02": {
-          "score": -1,
+          "score": 1,
           "note": "David's empire includes subject peoples. Philistines, Moabites subdued. Not exterminated \u2014 shift from Joshua."
         },
         "T03": {
@@ -1143,7 +1143,7 @@
           "note": "Carmel contest: YHWH vs Baal as real competition (ch.18). 'Still small voice' revises storm-god imagery. Transitional."
         },
         "T02": {
-          "score": -2,
+          "score": 2,
           "note": "Solomon's cosmopolitan court vs Elijah's exclusivism. Foreign wives condemned for bringing foreign worship."
         },
         "T03": {
@@ -1242,7 +1242,7 @@
           "note": "Josiah's reform pushes toward exclusive YHWH worship. Hezekiah destroys bronze serpent. Moving toward monotheism but still fighting syncretism."
         },
         "T02": {
-          "score": -2,
+          "score": 2,
           "note": "Tribal: Samaritans rejected as corrupted. Foreign nations as divine instruments."
         },
         "T03": {
@@ -1341,7 +1341,7 @@
           "note": "Moving toward monotheism. Satan emerges as separate figure."
         },
         "T02": {
-          "score": -2,
+          "score": 2,
           "note": "Genealogies define community boundaries."
         },
         "T03": {
@@ -1440,7 +1440,7 @@
           "note": "YHWH-alone assumed. Foreign gods as threat."
         },
         "T02": {
-          "score": -3,
+          "score": 3,
           "note": "Judah-only focus. North dismissed."
         },
         "T03": {
@@ -1539,7 +1539,7 @@
           "note": "YHWH worship exclusive. Persian God invoked (by Cyrus) \u2014 accommodation to empire."
         },
         "T02": {
-          "score": -5,
+          "score": 5,
           "note": "Maximum exclusivism: foreign wives expelled, ethnic purity enforced."
         },
         "T03": {
@@ -1635,7 +1635,7 @@
           "note": "YHWH worship assumed. No theological innovation."
         },
         "T02": {
-          "score": -4,
+          "score": 4,
           "note": "Exclusivist: opposition from Sanballat/Tobiah. Foreign wives condemned. Boundary enforcement."
         },
         "T03": {
@@ -1728,7 +1728,7 @@
       "tensions": {
         "T01": null,
         "T02": {
-          "score": -1,
+          "score": 1,
           "note": "Jews as distinct people within empire. Survival through ethnic solidarity. But also violent revenge on enemies."
         },
         "T03": null,
@@ -2172,7 +2172,7 @@
           "note": "Full arc: First Isaiah still henotheistic. Deutero-Isaiah achieves explicit monotheism: 'besides me there is no god' (45:5). The monotheism breakthrough."
         },
         "T02": {
-          "score": 2,
+          "score": -2,
           "note": "Both: Israel as 'light to nations' (universal) alongside judgment oracles against specific peoples (tribal)."
         },
         "T03": {
@@ -2274,7 +2274,7 @@
           "note": "YHWH supreme. 'Queen of Heaven' conflict reveals goddess worship still active. Monotheism not yet settled in practice."
         },
         "T02": {
-          "score": 1,
+          "score": -1,
           "note": "Both: judgment on nations (tribal) but also 'seek welfare of the city where I have sent you' (29:7) \u2014 diaspora universalism."
         },
         "T03": {
@@ -2460,7 +2460,7 @@
           "note": "YHWH supreme, cosmic sovereignty. But elaborate angelic beings (ch.1) hint at complex divine realm."
         },
         "T02": {
-          "score": -1,
+          "score": 1,
           "note": "Both: nations judged (tribal) but restoration 'for the sake of my name' \u2014 not Israel's merit. Ambiguous."
         },
         "T03": {
@@ -2841,7 +2841,7 @@
           "note": "Assumes YHWH controls all nations. Other gods not engaged. Practical monotheism emerging."
         },
         "T02": {
-          "score": 1,
+          "score": -1,
           "note": "Both: oracles against foreign nations (tribal framework) but also 'Are you not like the Cushites to me?' (9:7) \u2014 Israel not uniquely special."
         },
         "T03": {
@@ -2934,7 +2934,7 @@
       "tensions": {
         "T01": null,
         "T02": {
-          "score": -4,
+          "score": 4,
           "note": "Maximum tribal: Edom condemned, Israel restored. Nationalist revenge."
         },
         "T03": null,
@@ -3006,7 +3006,7 @@
           "note": "God controls sea, fish, wind, plant \u2014 sovereign over all nature and nations. Moving toward universal monotheism."
         },
         "T02": {
-          "score": 5,
+          "score": -5,
           "note": "Maximum universalism: God cares about Nineveh (Assyria!). Pagan sailors and Ninevites respond to God better than the Israelite prophet."
         },
         "T03": {
@@ -3177,7 +3177,7 @@
       "tensions": {
         "T01": null,
         "T02": {
-          "score": -5,
+          "score": 5,
           "note": "Maximum tribal: Nineveh's doom celebrated with relish. Compare Jonah's mercy toward same city."
         },
         "T03": {
@@ -3617,84 +3617,84 @@
       "summary": "Disputation dialogues between YHWH and a skeptical people. Condemns corrupt priests, improper sacrifices, divorce and intermarriage, withheld tithes, and social exploitation. Promises a coming messenger to purify the priesthood and a Day of the Lord that vindicates the faithful and incinerates the wicked. Closes the Hebrew canon with Moses and Elijah as twin pillars of law and prophecy.",
       "tensions": {
         "T01": {
-          "score": 2,
-          "note": "God speaks directly and personally in disputation form \u2014 highly relational. Yet transcendent judgment looms on the Day of the Lord."
+          "score": 3,
+          "note": "\"Have we not all one father? Has not one God created us?\" (2:10); the LORD is \"a great King\" whose name is feared among the nations (1:14)."
         },
         "T02": {
-          "score": -3,
-          "note": "Strongly particularist: Jacob loved, Esau hated (1:2-3). Intermarriage with foreign women condemned as profaning the covenant (2:11). Nations will witness Israel's vindication."
+          "score": 2,
+          "note": "Jacob loved, Esau hated (1:2\u20133); marriage to \"the daughter of a foreign god\" profanes the covenant (2:11). Yet offerings to God's name rise \"in every place\" among the nations (1:11)."
         },
         "T03": {
-          "score": -1,
-          "note": "People are called to return and can choose repentance (3:7), but God's judgment on the wicked is presented as certain and predetermined."
+          "score": -3,
+          "note": "\"I the LORD do not change\" (3:6)."
         },
         "T04": {
           "score": -2,
-          "note": "Day of the Lord is primarily retributive \u2014 the arrogant and evildoers will be stubble (4:1). The righteous are spared, not restored through a restorative process."
+          "note": "The people complain that evildoers prosper (2:17; 3:14\u201315); the book answers with the coming Day of judgment."
         },
         "T05": {
           "score": 2,
-          "note": "Ritual heavily emphasized: blemished sacrifices, improper priestly service, and withheld tithes are central grievances. But social exploitation (3:5) is also condemned alongside cultic failure."
+          "note": "Blemished sacrifices, faulty priestly service and withheld tithes are the central grievances, though exploitation of workers and widows is also condemned (3:5)."
         },
         "T06": {
           "score": -3,
-          "note": "Covenant identity is collective \u2014 Israel as a whole, the priests as a class, the nation before YHWH. The righteous remnant is a group, not individuals."
+          "note": "Curses come from God himself: \"I will send the curse on you\" (2:2; 3:9)."
         },
         "T07": {
           "score": -2,
-          "note": "Direct prophetic address; concrete, literal concerns about sacrificial animals, tithing, and marriage. The messenger and Elijah figures carry symbolic weight but are not elaborated allegorically."
+          "note": "No afterlife; the \"book of remembrance\" (3:16) promises the righteous vindication on the Day."
         },
         "T08": {
-          "score": -4,
-          "note": "Among the most exclusivist in the canon. Foreign marriage condemned, Jacob/Esau election asserted, the covenant is with Israel alone. Nations serve as witness to Israel's vindication, not as recipients of salvation."
+          "score": -2,
+          "note": "Men are addressed as covenant-breakers in marriage; wives appear as the \"wife of your youth\" to be treated faithfully (2:14\u201316)."
         },
         "T09": {
           "score": 2,
-          "note": "Works clearly emphasized: tithing, proper sacrifice, covenant fidelity in marriage, treatment of workers. Return to YHWH is enacted through concrete deeds, not faith alone."
+          "note": "Tithing, proper sacrifice and fidelity in marriage are how return to the LORD is enacted."
         },
         "T10": {
           "score": -3,
-          "note": "Temple, priesthood, and tithing are the social infrastructure. YHWH is king (1:14) and the Levitical covenant defines proper governance. Theocratic assumptions throughout."
+          "note": "\"Return to me, and I will return to you\" (3:7)."
         },
         "T11": {
           "score": -2,
-          "note": "Patriarchal framing: men are addressed as covenant-breakers in marriage (2:14-16), priests as sons of Levi. Women appear as wives to be treated faithfully, not as agents."
+          "note": "People can choose repentance (3:7); the judgment on the wicked is certain."
         },
         "T12": {
-          "score": 1,
-          "note": "No human warfare. The Day of the Lord involves divine fire and judgment, not military action. Slightly toward sanctioned divine violence as the mechanism of justice."
+          "score": -3,
+          "note": "Tithes are brought to the Temple storehouse (3:10), though 1:11 imagines pure offerings to God \"in every place\"."
         },
         "T13": {
-          "score": -1,
-          "note": "Tithing promises material blessing (3:10-12) \u2014 a prosperity element. But the book also grapples with why the arrogant prosper now (3:14-15), which it resolves eschatologically, not in present experience."
+          "score": 0,
+          "note": "A prophet critiques the priests, yet upholds Levi's covenant and the priest as \"the messenger of the LORD\" (2:4\u20137)."
         },
         "T14": {
-          "score": 2,
-          "note": "Closes with explicit appeal to \"the law of my servant Moses\" (4:4) as written, binding authority. Textual tradition invoked as foundation for fidelity."
+          "score": 1,
+          "note": "God loves Israel (1:2) but curses the blessings of unfaithful priests (2:2)."
         },
         "T15": {
-          "score": null,
-          "note": "Creation care vs. dominion not a theme in Malachi."
+          "score": -1,
+          "note": "The Day will burn like an oven (4:1), but for the faithful \"the sun of righteousness shall rise, with healing in its wings\" (4:2)."
         },
         "T16": {
-          "score": -4,
-          "note": "Fierce insistence on YHWH's exclusive claim. Foreign marriage condemned partly because it imports foreign gods (2:11). \"I am a great King\" and \"my name is great among the nations\" (1:14) \u2014 but only YHWH is to be worshipped."
+          "score": -3,
+          "note": "Concrete disputes about sacrifices, tithes and marriage in Persian-period Judah."
         },
         "T17": {
-          "score": 3,
-          "note": "Pure revelation: \"Thus says the LORD of hosts\" throughout. No wisdom reflection or rational inquiry. Divine speech is the only epistemological anchor."
+          "score": -3,
+          "note": "\"Remember the teaching of my servant Moses, the statutes and ordinances\" (4:4)."
         },
         "T18": {
-          "score": 0,
-          "note": "Genuinely balanced: cultic failures (blemished offerings, unpaid tithes) and social exploitation (unpaid workers, oppressed widows and orphans, 3:5) are condemned with equal weight."
+          "score": 3,
+          "note": "Covenant identity is collective \u2014 Israel as a whole, the priests as a class."
         },
         "T19": {
           "score": 4,
-          "note": "Strongly apocalyptic eschatology: Day of the Lord as a consuming fire, a messenger to prepare the way, Elijah returning before the great and terrible day (4:5). The future decisive event dominates."
+          "note": "Strongly apocalyptic eschatology: Day of the Lord as a consuming fire, a messenger to prepare the way, Elijah returning before the great and terrible day."
         },
         "T20": {
           "score": 3,
-          "note": "Suffering of the righteous is temporary; the wicked will be punished on the Day of the Lord. Suffering is framed as the current unjust state soon to be rectified by divine retribution, not as redemptive in itself."
+          "note": "The land is cursed because the people rob God of tithes (3:9\u201311)."
         }
       },
       "conduct": {
