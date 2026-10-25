@@ -4,6 +4,15 @@ All notable changes to Bible Tensions Map are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONING.md`.
 
+## [0.9.0] – 2026-10-25
+### Added
+- **Sayings** (`/sayings`): 72 biblical phrases that live on in everyday English, songs, books, film and art — each with its verse (World English Bible), what it meant in context versus how it is used today, and where it turns up. Includes a section on misquotes and sayings that are not in the Bible at all; 12 phrases from my own reading are tagged and filterable.
+- Book pages list the sayings that come from that book.
+### Changed
+- The WEB text download is shared by parallels and sayings: `fetch_bible_texts.py` → `seed_data_bible_texts.json`.
+### Fixed
+- Missing space before the `class` attribute in the Journal and About nav links.
+
 ## [0.8.0] – 2026-10-25
 ### Added
 - **Parallel passages** (`/parallels`): a concise table of 46 places where the Bible tells the same thing more than once and the versions disagree — each posed as a question, with one line per version (Torah doublets, Samuel–Kings vs. Chronicles, Ezra/Nehemiah, the Gospels, Acts vs. Paul, Jude vs. 2 Peter).

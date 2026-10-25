@@ -41,5 +41,9 @@ the `POLARITY_ANCHORS` point the wrong way. Score polarity follows each tension'
 
 ## Parallel passages
 Curated in `parallels.py` (question + one line per version). After editing, run
-`python fetch_parallel_texts.py` to refresh the WEB text in `seed_data_parallels.json` (bible-api.com,
+`python fetch_bible_texts.py` (shared with `sayings.py`) to refresh the WEB text in `seed_data_bible_texts.json` (bible-api.com,
 rate-limited; cached refs are reused). `parallel_compare.py` runs the on-demand Claude comparison.
+
+## Sayings
+Curated in `sayings.py` (phrase, ref, context, echoes; `mine` = raised in my reading notes). Song
+references are titles/artists only — never quote lyrics. Run `python fetch_bible_texts.py` after edits.

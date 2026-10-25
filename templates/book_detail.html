@@ -86,6 +86,16 @@
   </div>
 </section>
 
+{% if sayings %}
+<section class="notes-section">
+  <h2>Sayings from {{ book.name }}</h2>
+  <ul>
+    {% for s in sayings %}<li>"{{ s.phrase }}" — {{ s.ref }}</li>{% endfor %}
+  </ul>
+  <p class="pv-note"><a href="/sayings">All sayings →</a></p>
+</section>
+{% endif %}
+
 {% if parallels %}
 <section class="notes-section">
   <h2>Parallel passages</h2>

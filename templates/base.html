@@ -21,8 +21,9 @@
       <a href="/timeline" {% if request.path == '/timeline' %}class="active"{% endif %}>Timeline</a>
       <a href="/wordcloud" {% if request.path == '/wordcloud' %}class="active"{% endif %}>Word Cloud</a>
       <a href="/parallels" {% if request.path.startswith('/parallels') %}class="active"{% endif %}>Parallels</a>
-      <a href="/journal"{% if request.path == '/journal' %}class="active"{% endif %}>Journal</a>
-      <a href="/about"{% if request.path == '/about' %}class="active"{% endif %}>About</a>
+      <a href="/sayings" {% if request.path == '/sayings' %}class="active"{% endif %}>Sayings</a>
+      <a href="/journal" {% if request.path.startswith('/journal') %}class="active"{% endif %}>Journal</a>
+      <a href="/about" {% if request.path == '/about' %}class="active"{% endif %}>About</a>
     </div>
   </nav>
 

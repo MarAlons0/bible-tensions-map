@@ -112,10 +112,14 @@ def book_detail(book_id):
                  if any(r.strip().startswith(book.name + ' ')
                         for ref, _ in p['passages'] for r in ref.split(';'))]
 
+    from sayings import SAYINGS
+    sayings = [s for s in SAYINGS if s['ref'] and s['ref'].startswith(book.name + ' ')]
+
     return render_template(
         'book_detail.html',
         book=book,
         parallels=parallels,
+        sayings=sayings,
         tensions=tensions,
         categories=categories,
         scores=scores,
@@ -258,10 +262,10 @@ _parallel_texts = None
 
 
 def parallel_texts():
-    """WEB text for every curated passage (seed_data_parallels.json), loaded once."""
+    """WEB text for every curated passage (seed_data_bible_texts.json), loaded once."""
     global _parallel_texts
     if _parallel_texts is None:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'seed_data_parallels.json')
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'seed_data_bible_texts.json')
         with open(path) as f:
             _parallel_texts = json.load(f)['texts']
     return _parallel_texts
@@ -324,6 +328,29 @@ STOPWORDS = set('a an the and or but of to in on at by for with from as is was w
 def _tokens(ref):
     return [_norm(w) for part in ref.split(';')
             for _, _, t in parallel_texts()[part.strip()]['verses'] for w in _words(t)]
+
+
+@app.route('/sayings')
+def sayings_index():
+    from sayings import CATEGORIES, SAYINGS
+    books_by_name = {b.name: b for b in Book.query.all()}
+    texts = parallel_texts()
+    only_mine = request.args.get('mine') == '1'
+    rows = []
+    for s in SAYINGS:
+        if only_mine and not s.get('mine'):
+            continue
+        row = dict(s, book=None, chapter=None, text=None)
+        if s['ref']:
+            row['book'] = _ref_book(s['ref'], books_by_name)
+            verses = texts[s['ref']]['verses']
+            row['chapter'] = verses[0][0]
+            words = ' '.join(t for _, _, t in verses).split()
+            # Long passages (a whole parable) would swamp the table; the chapter link has the rest
+            row['text'] = ' '.join(words[:50]) + (' …' if len(words) > 50 else '')
+        rows.append(row)
+    return render_template('sayings.html', categories=CATEGORIES, rows=rows, only_mine=only_mine,
+                           mine_count=sum(1 for s in SAYINGS if s.get('mine')))
 
 
 @app.route('/parallels')

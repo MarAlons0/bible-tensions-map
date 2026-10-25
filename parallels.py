@@ -5,7 +5,7 @@ question and says, in one line per passage, what that version claims.
 
 Passage references use full book names (as bible-api.com expects); several
 ranges in one passage are separated by "; ". After editing, run
-fetch_parallel_texts.py to refresh seed_data_parallels.json.
+fetch_bible_texts.py to refresh seed_data_bible_texts.json.
 """
 
 GROUPS = [

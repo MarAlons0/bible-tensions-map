@@ -361,3 +361,11 @@ main { max-width: 1400px; margin: 0 auto; padding: 1.5rem; }
   .parallels-table tr, .parallels-table td { display: block; width: 100% !important; }
   .parallels-table td.pq { border-bottom: none; padding-bottom: 0.2rem; }
 }
+
+/* ===== Sayings ===== */
+.say-filter { font-size: 13px; margin-top: 0.5rem; }
+.say-ref { font-weight: normal; font-size: 12px; margin-top: 0.25rem; color: var(--text-muted); }
+.say-text { margin: 0 0 0.4rem; padding-left: 0.6rem; border-left: 2px solid var(--border);
+  color: var(--text-muted); font-size: 13px; font-style: italic; }
+.sayings td.pq { width: 24%; }
+.say-echoes { width: 26%; font-size: 13px; }

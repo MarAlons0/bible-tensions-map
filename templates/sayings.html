@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Sayings — Bible Tensions Map{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Biblical sayings in common use</h1>
+  <p class="subtitle">
+    Phrases that left the Bible for everyday speech, songs, books and art — what they meant in context,
+    and where they turn up. Not exhaustive.
+  </p>
+  <p class="say-filter">
+    {% if only_mine %}<a href="/sayings">Show all</a> · <strong>From my reading ({{ mine_count }})</strong>
+    {% else %}<strong>All</strong> · <a href="/sayings?mine=1">From my reading ({{ mine_count }})</a>{% endif %}
+  </p>
+</div>
+
+<div class="parallels sayings">
+  {% for cat in categories %}
+  {% set items = rows | selectattr('category', 'equalto', cat) | list %}
+  {% if items %}
+  <h2>{{ cat }}</h2>
+  <table class="parallels-table">
+    <thead><tr><th>Saying</th><th>In context, and today</th><th>Echoes</th></tr></thead>
+    <tbody>
+      {% for s in items %}
+      <tr>
+        <td class="pq">
+          {{ s.phrase }}
+          {% if s.mine %}<span class="pq-badge" title="Raised in my reading notes">my reading</span>{% endif %}
+          <div class="say-ref">
+            {% if s.book %}<a href="/book/{{ s.book.id }}/chapter/{{ s.chapter }}">{{ s.ref }}</a>
+            {% elif s.ref %}{{ s.ref }}{% else %}<em>not in the Bible</em>{% endif %}
+          </div>
+        </td>
+        <td>
+          {% if s.text %}<blockquote class="say-text">{{ s.text }}</blockquote>{% endif %}
+          <p>{{ s.context | inline_md }}</p>
+        </td>
+        <td class="say-echoes">
+          {% if s.echoes %}<ul class="pv">{% for e in s.echoes %}<li>{{ e | inline_md }}</li>{% endfor %}</ul>
+          {% else %}<span class="pv-note">Everyday idiom</span>{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endfor %}
+  <p class="pv-source">Verse text: World English Bible (public domain).</p>
+</div>
+{% endblock %}

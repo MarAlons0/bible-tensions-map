@@ -1,8 +1,9 @@
 """
-Fetch the World English Bible (public domain) text for every passage in
-parallels.py from bible-api.com and save it to seed_data_parallels.json.
+Fetch the World English Bible (public domain) text for every reference in
+parallels.py and sayings.py from bible-api.com and save it to
+seed_data_bible_texts.json.
 
-Run after editing parallels.py:  python fetch_parallel_texts.py
+Run after editing either file:  python fetch_bible_texts.py
 Already-fetched references are reused; the API allows ~15 requests per 30 s.
 """
 import json
@@ -12,9 +13,10 @@ import urllib.parse
 import urllib.request
 
 from parallels import PARALLELS
+from sayings import SAYINGS
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(BASE, 'seed_data_parallels.json')
+OUT = os.path.join(BASE, 'seed_data_bible_texts.json')
 API = 'https://bible-api.com/{}?translation=web'
 
 
@@ -36,7 +38,8 @@ def main():
         with open(OUT) as f:
             cache = json.load(f)['texts']
 
-    refs = sorted({r.strip() for p in PARALLELS for ref, _ in p['passages'] for r in ref.split(';')})
+    refs = {r.strip() for p in PARALLELS for ref, _ in p['passages'] for r in ref.split(';')}
+    refs = sorted(refs | {s['ref'] for s in SAYINGS if s['ref']})
     todo = [r for r in refs if r not in cache]
     print(f'{len(refs)} references, {len(todo)} to fetch')
     for i, ref in enumerate(todo, 1):
