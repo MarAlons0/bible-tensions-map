@@ -6,7 +6,7 @@ this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONI
 
 ## [0.9.1] – 2026-10-27
 ### Security
-- **`certifi` CA bundle raised to ≥ 2026.10.19** for the eMudhra intermediate-certificate compromise (disclosed 2026-10-19). `requests`/`httpx` trust `certifi`'s bundled CA list, not the system store, so a rebuild alone kept trusting the compromised intermediates; `certifi` is now listed in `requirements.txt` so every build installs a fixed version.
+- **`certifi` CA bundle raised to ≥ 2026.10.19** for the eMudhra intermediate-certificate compromise (disclosed 2026-10-19). `requests`/`httpx` trust `certifi`'s bundled CA list, not the system store, so a rebuild alone could keep trusting the compromised intermediates; `certifi` is now listed in `requirements.txt` so every build installs a fixed version.
 
 ## [0.9.0] – 2026-10-25
 ### Added
