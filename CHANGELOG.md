@@ -4,6 +4,10 @@ All notable changes to Bible Tensions Map are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 this project adheres to [Semantic Versioning](https://semver.org/) per `VERSIONING.md`.
 
+## [0.9.1] – 2026-10-27
+### Security
+- **`certifi` CA bundle raised to ≥ 2026.10.19** for the eMudhra intermediate-certificate compromise (disclosed 2026-10-19). `requests`/`httpx` trust `certifi`'s bundled CA list, not the system store, so a rebuild alone kept trusting the compromised intermediates; `certifi` is now listed in `requirements.txt` so every build installs a fixed version.
+
 ## [0.9.0] – 2026-10-25
 ### Added
 - **Sayings** (`/sayings`): 72 biblical phrases that live on in everyday English, songs, books, film and art — each with its verse (World English Bible), what it meant in context versus how it is used today, and where it turns up. Includes a section on misquotes and sayings that are not in the Bible at all; 12 phrases from my own reading are tagged and filterable.
